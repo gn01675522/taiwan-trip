@@ -1,8 +1,7 @@
 import BannerForm from "../bannerForm/bannerForm.component";
-import Shadow from "../shadow/shadow.component";
+import BannerImage from "../bannerImage/bannerImage.component";
+import Card from "../UI/card.component";
 import {
-  BannerContainer,
-  BannerImage,
   BannerContent,
   BannerTitle,
   BannerSubtitle,
@@ -16,7 +15,7 @@ import {
 const Banner = () => {
   return (
     <>
-      <BannerContainer>
+      <Card>
         <BannerImage>
           <BannerContent>
             <BannerTitle>
@@ -36,8 +35,7 @@ const Banner = () => {
             <BannerForm />
           </BannerContent>
         </BannerImage>
-      </BannerContainer>
-      <Shadow />
+      </Card>
     </>
   );
 };

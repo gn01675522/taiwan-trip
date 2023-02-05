@@ -1,7 +1,13 @@
-import classes from "./card.style.module.scss";
+import { CardOutline,Shadow } from "./card.styles";
+// import { ReactComponent as Shadow } from "../../assets/shadow.svg";
 
 const Card = ({ children }) => {
-  return <div className={classes.card}>{children}</div>;
+  return (
+    <>
+      <CardOutline>{children}</CardOutline>
+      <Shadow />
+    </>
+  );
 };
 
 export default Card;
