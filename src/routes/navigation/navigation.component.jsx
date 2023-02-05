@@ -1,3 +1,5 @@
+//* Parent： App.js
+
 import { Outlet, Link } from "react-router-dom";
 
 import { ReactComponent as TaiwanLogo } from "../../assets/taiwanLogo.svg";
@@ -5,49 +7,54 @@ import { ReactComponent as PinkFrame } from "../../assets/pinkFrame.svg";
 import { ReactComponent as YellowFrame } from "../../assets/yellowFrame.svg";
 import { ReactComponent as GreenFrame } from "../../assets/greenFrame.svg";
 
-import classes from "./navigation.styles.module.scss";
+import {
+  NavigationContainer,
+  NavigationLinkContainer,
+  NavLink,
+  LinkTitle,
+  Blocker,
+} from "./navigation.styles";
 
 const navOption = [
   {
     id: "n1",
     title: "台灣景點",
     link: "/",
-    frame: <PinkFrame className={classes.frame} />,
+    frame: <PinkFrame />,
   },
   {
     id: "n2",
     title: "美食住宿",
     link: "/",
-    frame: <YellowFrame className={classes.frame} />,
+    frame: <YellowFrame />,
   },
   {
     id: "n3",
     title: "景點交通",
     link: "/",
-    frame: <GreenFrame className={classes.frame} />,
+    frame: <GreenFrame />,
   },
 ];
 
 const Navigation = () => {
   return (
     <>
-      <nav className={classes.nav}>
+      <NavigationContainer>
         <div>
-          <TaiwanLogo className={classes.logo} />
+          <TaiwanLogo />
         </div>
-        <ul className={classes["nav-list"]}>
+        <NavigationLinkContainer>
           {navOption.map(({ id, title, link, frame }) => {
             return (
-              <Link to={link} key={id}>
-                <li className={classes["nav-item"]}>
-                  {frame}
-                  <span>{title}</span>
-                </li>
-              </Link>
+              <NavLink to={link} key={id}>
+                {frame}
+                <LinkTitle>{title}</LinkTitle>
+              </NavLink>
             );
           })}
-        </ul>
-      </nav>
+        </NavigationLinkContainer>
+      </NavigationContainer>
+      <Blocker />
       <Outlet />
     </>
   );
