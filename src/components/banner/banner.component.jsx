@@ -1,6 +1,8 @@
+import { Outlet } from "react-router-dom";
+
 import BannerForm from "../bannerForm/bannerForm.component";
 import BannerImage from "../bannerImage/bannerImage.component";
-import Card from "../UI/card.component";
+import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import {
   BannerContent,
   BannerTitle,
@@ -15,7 +17,7 @@ import {
 const Banner = () => {
   return (
     <>
-      <Card>
+      <ShadowCard>
         <BannerImage>
           <BannerContent>
             <BannerTitle>
@@ -31,11 +33,14 @@ const Banner = () => {
                 wan
               </TaiwanText>
             </BannerTitle>
-            <BannerSubtitle>台北台中台南屏東宜蘭......遊遍台灣</BannerSubtitle>
+            <BannerSubtitle>
+              台北、台中、台南、屏東、宜蘭......遊遍台灣
+            </BannerSubtitle>
             <BannerForm />
           </BannerContent>
         </BannerImage>
-      </Card>
+      </ShadowCard>
+      <Outlet />
     </>
   );
 };

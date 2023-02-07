@@ -15,8 +15,26 @@ export const FormContainer = styled.form`
     width: 100%;
   }
   input {
-    width: 100%;
     grid-area: input;
+    padding: 8.5px 24px;
+    font-size: 16px;
+    line-height: 40px;
+    ::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      color: #d2d2d2;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+  }
+  select {
+    position: relative;
+    padding: 8px 5px 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: "Noto Sans TC", sans-serif;
   }
 `;
 
@@ -26,4 +44,5 @@ export const SubmitButton = styled.button`
   border-radius: 6px;
   background-color: #ff1d6c;
   grid-area: btn;
+  border: none;
 `;

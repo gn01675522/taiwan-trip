@@ -17,19 +17,16 @@ import {
 
 const navOption = [
   {
-    id: "n1",
     title: "台灣景點",
     link: "/",
     frame: <PinkFrame />,
   },
   {
-    id: "n2",
     title: "美食住宿",
     link: "/",
     frame: <YellowFrame />,
   },
   {
-    id: "n3",
     title: "景點交通",
     link: "/",
     frame: <GreenFrame />,
@@ -46,7 +43,7 @@ const Navigation = () => {
         <NavigationLinkContainer>
           {navOption.map(({ id, title, link, frame }) => {
             return (
-              <NavLink to={link} key={id}>
+              <NavLink to={link} key={title}>
                 {frame}
                 <LinkTitle>{title}</LinkTitle>
               </NavLink>

@@ -6,6 +6,7 @@ export const CardOutline = styled.div`
   height: 536px;
   padding: 23px 27px;
   background-color: white;
+  z-index: 998;
 `;
 
 export const Shadow = styled.div`
@@ -17,5 +18,5 @@ export const Shadow = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -20;
+  z-index: 997;
 `;
