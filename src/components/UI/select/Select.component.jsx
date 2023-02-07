@@ -10,11 +10,7 @@ const SortSelected = ({ selected }) => {
       <SelectInput>
         {selectedOption.map((option) => {
           return (
-            <Option
-              id={option.enTitle}
-              key={option.enTitle}
-              name={option.enTitle}
-            >
+            <Option id={option.id} key={option.id} name={option.id}>
               {option.tcTitle}
             </Option>
           );

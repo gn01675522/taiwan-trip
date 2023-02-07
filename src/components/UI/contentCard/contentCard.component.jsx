@@ -1,7 +1,13 @@
+//* who call this：
+//*   1. popularCityList.component.jsx
+//*   2. popularEventList.component.jsx
+//*   3. popularFoodList.component.jsx
+
 import {
   CardOutline,
   ContentTitle,
   TriangleSymbol,
+  SquareSymbol,
 } from "./contentCard.styles";
 
 const ContentCard = ({ children }) => {
@@ -9,7 +15,7 @@ const ContentCard = ({ children }) => {
     <CardOutline>
       <ContentTitle>
         <TriangleSymbol />
-        熱門景點
+        熱門城市
       </ContentTitle>
       {children}
     </CardOutline>

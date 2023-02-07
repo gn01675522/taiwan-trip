@@ -7,3 +7,4 @@ export const ContainerOutline = styled.div`
   padding: 65px 109px 60px 109px;
   background-color: #e5e5e5;
 `;
+//* 109px

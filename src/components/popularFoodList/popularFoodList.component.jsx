@@ -1,5 +1,7 @@
+import ContentCard from "../UI/contentCard/contentCard.component";
+
 const PopularFoodList = () => {
-  return <div>This is PopularFoodList.</div>;
+  return <ContentCard>This is PopularFoodList.</ContentCard>;
 };
 
 export default PopularFoodList;
