@@ -12,9 +12,4 @@ export const CityListLayout = styled.div`
     "div0 div2 div3 div5 div6";
 `;
 
-export const CityCard = styled.div`
-  width: 100%;
-  height: 100%;
-  outline: 1px solid red;
-  grid-area: ${(props) => `div${props.gridArea}`};
-`;
+

@@ -1,17 +1,21 @@
-import ContentCard from "../UI/contentCard/contentCard.component";
+import ListBlock from "../UI/listBlock/listBlock.component";
+import ShadowCard from "../UI/shadowCard/shadowCard.component";
 
 import { EventListLayout, EventCard } from "./popularEvent.styles";
 
+const TEMP_ARRAY = [1, 2, 3, 4];
+
 const PopularEventList = () => {
   return (
-    <ContentCard>
+    <ListBlock topicType="event">
       <EventListLayout>
-        <EventCard>Temp</EventCard>
-        <EventCard>Temp</EventCard>
-        <EventCard>Temp</EventCard>
-        <EventCard>Temp</EventCard>
+        {TEMP_ARRAY.map((temp) => (
+          <ShadowCard key={temp} $contentType="me-list">
+            <EventCard>{temp}</EventCard>
+          </ShadowCard>
+        ))}
       </EventListLayout>
-    </ContentCard>
+    </ListBlock>
   );
 };
 

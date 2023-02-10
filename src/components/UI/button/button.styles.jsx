@@ -46,21 +46,17 @@ export const BlackTriangleSymbol = styled.div`
   border-color: transparent black transparent transparent;
 `;
 
-// export const SearchBtn = () => (
-//   <PinkSquareWrapper>
-//     <Search />
-//   </PinkSquareWrapper>
-// );
-
-// export const NextBtn = () => (
-//   <BlackSquareWrapper>
-//     <WhiteTriangleSymbol />
-//   </BlackSquareWrapper>
-// );
-
-// export const PreviousBtn = () => (
-//   <WhiteSquareWrapper>
-//     <BlackTriangleSymbol />
-//   </WhiteSquareWrapper>
-// );
-//* 暫存
+export const WhiteCrossSymbol = styled.span`
+  :before {
+    width: 10px;
+    height: 2px;
+    color: white;
+    transform: rotate(45deg);
+  }
+  :after {
+    width: 10px;
+    height: 2px;
+    color: white;
+    transform: rotate(45deg);
+  }
+`;

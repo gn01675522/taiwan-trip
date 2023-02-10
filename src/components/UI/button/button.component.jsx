@@ -6,6 +6,7 @@ import {
   PinkSquareWrapper,
   WhiteTriangleSymbol,
   BlackTriangleSymbol,
+  WhiteCrossSymbol,
 } from "./button.styles";
 
 export const BUTTON_TYPE_CLASSES = {
@@ -16,35 +17,35 @@ export const BUTTON_TYPE_CLASSES = {
   detail: "detail",
 };
 
-// const getButton = (buttonType) =>
-//   ({
-//     [BUTTON_TYPE_CLASSES.search]: SearchBtn,
-//     [BUTTON_TYPE_CLASSES.next]: NextBtn,
-//     [BUTTON_TYPE_CLASSES.previous]: PreviousBtn,
-//     [BUTTON_TYPE_CLASSES.cancel]: SearchBtn,
-//   }[buttonType]);
+const getButton = (buttonType) =>
+  ({
+    [BUTTON_TYPE_CLASSES.search]: {
+      wrapper: PinkSquareWrapper,
+      content: Search,
+    },
+    [BUTTON_TYPE_CLASSES.next]: {
+      wrapper: BlackSquareWrapper,
+      content: WhiteTriangleSymbol,
+    },
+    [BUTTON_TYPE_CLASSES.previous]: {
+      wrapper: WhiteSquareWrapper,
+      content: BlackTriangleSymbol,
+    },
+    [BUTTON_TYPE_CLASSES.cancel]: {
+      wrapper: PinkSquareWrapper,
+      content: WhiteCrossSymbol,
+    },
+  }[buttonType]);
 
 const Button = ({ buttonType, ...otherProps }) => {
-  // const CustomBtn = getButton(buttonType);
-  //* 暫存 看能不能讓 JSX 部分給簡單化
+  const CustomBtnWrapper = getButton(buttonType).wrapper;
+  const CustomBtnContent = getButton(buttonType).content;
 
   return (
     <>
-      {buttonType === "search" && (
-        <PinkSquareWrapper {...otherProps}>
-          <Search />
-        </PinkSquareWrapper>
-      )}
-      {buttonType === "next" && (
-        <BlackSquareWrapper {...otherProps}>
-          <WhiteTriangleSymbol />
-        </BlackSquareWrapper>
-      )}
-      {buttonType === "previous" && (
-        <WhiteSquareWrapper {...otherProps}>
-          <BlackTriangleSymbol />
-        </WhiteSquareWrapper>
-      )}
+      <CustomBtnWrapper {...otherProps}>
+        <CustomBtnContent />
+      </CustomBtnWrapper>
     </>
   );
 };

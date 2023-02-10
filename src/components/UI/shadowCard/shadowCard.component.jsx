@@ -1,12 +1,17 @@
-//* who call this： banner.component.jsx
+//* who call this：
+//* 1. banner.component.jsx
+//* 2. popularEventList.component.jsx
+//* 3. popularFoodList.component.jsx
 
-import { CardOutline, Shadow } from "./shadowCard.styles";
+import { CardOutline, CardContent, Shadow } from "./shadowCard.styles";
 
-const ShadowCard = ({ children }) => {
+const ShadowCard = ({ children, $contentType }) => {
   return (
     <>
-      <CardOutline>{children}</CardOutline>
-      <Shadow />
+      <CardOutline>
+        <CardContent>{children}</CardContent>
+        <Shadow $contentType={$contentType} />
+      </CardOutline>
     </>
   );
 };

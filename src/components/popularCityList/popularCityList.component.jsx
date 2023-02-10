@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
-import ContentCard from "../UI/contentCard/contentCard.component";
-import { CityListLayout, CityCard } from "./popularCityList.styles";
+import ListBlock from "../UI/listBlock/listBlock.component";
+import NormalCard from "../UI/normalCard/normalCard.component";
+import CityCard from "../cityCard/cityCard.component";
 
+import { CityListLayout } from "./popularCityList.styles";
 import { DATA_FOR_LIST_CONTENT } from "../../dummy_data/DUMMY_DATA";
 
 const DATA_SEPARATE = {
@@ -33,13 +35,13 @@ const PopularCityList = () => {
   };
 
   return (
-    <ContentCard>
+    <ListBlock topicType="city">
       <CityListLayout>
         {cityList.map((city, index) => {
           return (
-            <CityCard key={city.id} gridArea={index}>
-              {city.tcTitle}
-            </CityCard>
+            <NormalCard key={city.id} gridArea={index}>
+              <CityCard cityTitle={city.tcTitle} />
+            </NormalCard>
           );
         })}
       </CityListLayout>
@@ -48,7 +50,7 @@ const PopularCityList = () => {
         buttonType={BUTTON_TYPE_CLASSES.next}
         onClick={onChangePage}
       />
-    </ContentCard>
+    </ListBlock>
   );
 };
 

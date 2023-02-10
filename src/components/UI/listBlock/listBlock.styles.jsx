@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardOutline = styled.div`
+export const BlockOutline = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
