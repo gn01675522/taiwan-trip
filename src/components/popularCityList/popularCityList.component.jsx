@@ -2,33 +2,52 @@ import { useState } from "react";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import ContentCard from "../UI/contentCard/contentCard.component";
-import {
-  CityListLayout,
-  CityCard,
-  BlackArrowBtn,
-} from "./popularCityList.styles";
+import { CityListLayout, CityCard } from "./popularCityList.styles";
 
-import { DATA_FOR_CONTENT } from "../../dummy_data/DUMMY_DATA";
+import { DATA_FOR_LIST_CONTENT } from "../../dummy_data/DUMMY_DATA";
 
-const testArray = [1, 2, 3, 4, 5, 6, 7];
+const DATA_SEPARATE = {
+  previous: DATA_FOR_LIST_CONTENT.slice(0, 7),
+  next: DATA_FOR_LIST_CONTENT.slice(7, DATA_FOR_LIST_CONTENT.length),
+};
+
+const previousOrNext = (boolean) => {
+  switch (boolean) {
+    case false:
+      return DATA_SEPARATE.previous;
+    case true:
+      return DATA_SEPARATE.next;
+    default:
+      throw new Error(`Unvalid data type of ${boolean}`);
+  }
+};
 
 const PopularCityList = () => {
-  const [contentPart, setContentPart] = useState(false);
+  const [isNextPage, setIsNextPage] = useState(false);
+
+  const cityList = previousOrNext(isNextPage);
+
+  const onChangePage = (event) => {
+    event.preventDefault();
+    setIsNextPage(!isNextPage);
+  };
 
   return (
     <ContentCard>
       <CityListLayout>
-        {/*DATA_FOR_CONTENT.map((city) => {
-        return <CityListLayout key={city.id}>{city.tcTitle}</CityListLayout>;
-      })*/}
-        {testArray.map((number, index) => {
-          console.log(index);
+        {cityList.map((city, index) => {
           return (
-            <CityCard key={number} divIndex={index}>{`test${number}`}</CityCard>
+            <CityCard key={city.id} gridArea={index}>
+              {city.tcTitle}
+            </CityCard>
           );
         })}
-        <Button buttonType={BUTTON_TYPE_CLASSES.next} />
       </CityListLayout>
+      <Button
+        type="button"
+        buttonType={BUTTON_TYPE_CLASSES.next}
+        onClick={onChangePage}
+      />
     </ContentCard>
   );
 };

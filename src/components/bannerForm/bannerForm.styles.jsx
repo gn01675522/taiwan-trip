@@ -9,12 +9,9 @@ export const FormContainer = styled.form`
   grid-template-areas:
     "input input input"
     "select1 select2 btn";
-  input,
-  select {
+  input {
     border-radius: 6px;
     width: 100%;
-  }
-  input {
     grid-area: input;
     padding: 8.5px 24px;
     font-size: 16px;
@@ -26,23 +23,4 @@ export const FormContainer = styled.form`
       font-family: "Noto Sans TC", sans-serif;
     }
   }
-  select {
-    position: relative;
-    padding: 8px 5px 8px 16px;
-    font-size: 16px;
-    font-weight: 400;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-family: "Noto Sans TC", sans-serif;
-  }
-`;
-
-export const SubmitButton = styled.button`
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
-  background-color: #ff1d6c;
-  grid-area: btn;
-  border: none;
 `;

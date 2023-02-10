@@ -37,7 +37,7 @@ export const SELECTED_OPTION = [
   },
 ];
 
-export const DATA_FOR_CONTENT = [
+export const DATA_FOR_LIST_CONTENT = [
   { id: "Taipei County", tcTitle: "台北市" },
   { id: "New Taipei County", tcTitle: "新北市" },
   { id: "Taoyuan County", tcTitle: "桃園市" },

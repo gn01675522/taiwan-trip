@@ -10,7 +10,7 @@ export const NavigationContainer = styled.nav`
   line-height: 104px;
   justify-content: space-between;
   background-color: white;
-  z-index: 999;
+  z-index: 998;
 `;
 
 export const NavigationLinkContainer = styled.div`

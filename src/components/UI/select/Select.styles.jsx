@@ -13,10 +13,11 @@ export const SelectWrap = styled.div`
     right: 9.5px;
     top: 50%;
     transform: translateY(-50%);
+    grid-area: ${(props) => `select${props.gridArea}`};
   }
 `;
 
-export const SelectInput = styled.select`
+export const SelectBar = styled.select`
   position: relative;
   width: 100%;
   height: 100%;

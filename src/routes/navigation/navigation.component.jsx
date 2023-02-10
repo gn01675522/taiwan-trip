@@ -2,10 +2,10 @@
 
 import { Outlet } from "react-router-dom";
 
-import { ReactComponent as TaiwanLogo } from "../../assets/taiwanLogo.svg";
-import { ReactComponent as PinkFrame } from "../../assets/pinkFrame.svg";
-import { ReactComponent as YellowFrame } from "../../assets/yellowFrame.svg";
-import { ReactComponent as GreenFrame } from "../../assets/greenFrame.svg";
+import { ReactComponent as TaiwanLogo } from "../../assets/svg/taiwanLogo.svg";
+import { ReactComponent as PinkFrame } from "../../assets/svg/pinkFrame.svg";
+import { ReactComponent as YellowFrame } from "../../assets/svg/yellowFrame.svg";
+import { ReactComponent as GreenFrame } from "../../assets/svg/greenFrame.svg";
 
 import {
   NavigationContainer,

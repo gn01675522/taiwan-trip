@@ -1,13 +1,13 @@
 //* Parent： bannerForm.component.jsx
 
-import { SelectInput, Option, SelectWrap } from "./Select.styles";
+import { SelectBar, Option, SelectWrap } from "./Select.styles";
 
-const SortSelected = ({ selected }) => {
+const SortSelected = ({ selected, gridArea }) => {
   const { selectedOption } = selected;
 
   return (
-    <SelectWrap>
-      <SelectInput>
+    <SelectWrap gridArea={gridArea}>
+      <SelectBar>
         {selectedOption.map((option) => {
           return (
             <Option id={option.id} key={option.id} name={option.id}>
@@ -15,7 +15,7 @@ const SortSelected = ({ selected }) => {
             </Option>
           );
         })}
-      </SelectInput>
+      </SelectBar>
     </SelectWrap>
   );
 };

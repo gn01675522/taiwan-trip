@@ -1,4 +1,4 @@
-import bannerImg from "../../assets/bannerImage.jpg";
+import bannerImg from "../../assets/picture/bannerImage.jpg";
 import styled from "styled-components";
 
 export const ImageWall = styled.div`

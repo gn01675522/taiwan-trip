@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardOutline = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 12px;
   outline: 1px solid red;
