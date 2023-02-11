@@ -23,12 +23,12 @@ const navOption = [
   },
   {
     title: "美食住宿",
-    link: "/",
+    link: "/food",
     frame: <YellowFrame />,
   },
   {
     title: "景點交通",
-    link: "/",
+    link: "/traffic",
     frame: <GreenFrame />,
   },
 ];
@@ -41,7 +41,7 @@ const Navigation = () => {
           <TaiwanLogo />
         </div>
         <NavigationLinkContainer>
-          {navOption.map(({ id, title, link, frame }) => {
+          {navOption.map(({ title, link, frame }) => {
             return (
               <NavLink to={link} key={title}>
                 {frame}

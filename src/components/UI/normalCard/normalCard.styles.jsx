@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NormalCardOutline = styled.div`
-  outline: 1px solid darkblue;
   width: 100%;
   height: 100%;
   background-color: white;

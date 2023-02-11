@@ -7,8 +7,4 @@ export const EventListLayout = styled.div`
   grid-gap: 47px 21px;
 `;
 
-export const EventCard = styled.div`
-  width: 100%;
-  height: 100%;
-  outline: 1px solid blue;
-`;
+

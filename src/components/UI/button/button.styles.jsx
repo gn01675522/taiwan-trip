@@ -1,4 +1,3 @@
-import { ReactComponent as Search } from "../../../assets/svg/search.svg";
 import styled from "styled-components";
 
 const BaseButtonStyle = styled.button`
@@ -30,7 +29,7 @@ export const PinkSquareWrapper = styled(BaseButtonStyle)`
   grid-area: btn;
 `;
 
-export const WhiteTriangleSymbol = styled.div`
+export const WhiteTriangularSymbol = styled.div`
   width: 0px;
   height: 0px;
   border-style: solid;
@@ -38,7 +37,7 @@ export const WhiteTriangleSymbol = styled.div`
   border-color: transparent transparent transparent white;
 `;
 
-export const BlackTriangleSymbol = styled.div`
+export const BlackTriangularSymbol = styled.div`
   width: 0px;
   height: 0px;
   border-style: solid;
@@ -46,17 +45,13 @@ export const BlackTriangleSymbol = styled.div`
   border-color: transparent black transparent transparent;
 `;
 
-export const WhiteCrossSymbol = styled.span`
-  :before {
-    width: 10px;
-    height: 2px;
-    color: white;
-    transform: rotate(45deg);
-  }
-  :after {
-    width: 10px;
-    height: 2px;
-    color: white;
-    transform: rotate(45deg);
-  }
+export const RectangularWrapper = styled(BaseButtonStyle)`
+  width: 120px;
+  height: 40px;
+  border: 1px solid #ff1d6c;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ff1d6c;
+  background-color: white;
+  box-shadow: none;
 `;

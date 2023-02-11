@@ -26,7 +26,6 @@ export const Shadow = styled.div`
   margin: 0 auto;
   text-align: center;
   ${({ $contentType }) => {
-    console.log("inside shadowCard", $contentType);
     switch ($contentType) {
       case "banner":
         return `

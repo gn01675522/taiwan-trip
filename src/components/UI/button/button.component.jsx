@@ -1,12 +1,13 @@
 import { ReactComponent as Search } from "../../../assets/svg/search.svg";
+import { ReactComponent as WhiteCross } from "../../../assets/svg/whiteCross.svg";
 
 import {
   BlackSquareWrapper,
   WhiteSquareWrapper,
   PinkSquareWrapper,
-  WhiteTriangleSymbol,
-  BlackTriangleSymbol,
-  WhiteCrossSymbol,
+  WhiteTriangularSymbol,
+  BlackTriangularSymbol,
+  RectangularWrapper,
 } from "./button.styles";
 
 export const BUTTON_TYPE_CLASSES = {
@@ -25,26 +26,29 @@ const getButton = (buttonType) =>
     },
     [BUTTON_TYPE_CLASSES.next]: {
       wrapper: BlackSquareWrapper,
-      content: WhiteTriangleSymbol,
+      content: WhiteTriangularSymbol,
     },
     [BUTTON_TYPE_CLASSES.previous]: {
       wrapper: WhiteSquareWrapper,
-      content: BlackTriangleSymbol,
+      content: BlackTriangularSymbol,
     },
     [BUTTON_TYPE_CLASSES.cancel]: {
       wrapper: PinkSquareWrapper,
-      content: WhiteCrossSymbol,
+      content: WhiteCross,
+    },
+    [BUTTON_TYPE_CLASSES.detail]: {
+      wrapper: RectangularWrapper,
     },
   }[buttonType]);
 
-const Button = ({ buttonType, ...otherProps }) => {
+const Button = ({ children, buttonType, ...otherProps }) => {
   const CustomBtnWrapper = getButton(buttonType).wrapper;
   const CustomBtnContent = getButton(buttonType).content;
 
   return (
     <>
       <CustomBtnWrapper {...otherProps}>
-        <CustomBtnContent />
+        {CustomBtnContent ? <CustomBtnContent /> : children}
       </CustomBtnWrapper>
     </>
   );

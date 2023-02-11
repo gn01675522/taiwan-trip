@@ -1,7 +1,8 @@
 import ListBlock from "../UI/listBlock/listBlock.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
+import EventCard from "../eventCard/eventCard.component";
 
-import { EventListLayout, EventCard } from "./popularEvent.styles";
+import { EventListLayout } from "./popularEvent.styles";
 
 const TEMP_ARRAY = [1, 2, 3, 4];
 
@@ -11,7 +12,7 @@ const PopularEventList = () => {
       <EventListLayout>
         {TEMP_ARRAY.map((temp) => (
           <ShadowCard key={temp} $contentType="me-list">
-            <EventCard>{temp}</EventCard>
+            <EventCard temp={temp}/>
           </ShadowCard>
         ))}
       </EventListLayout>

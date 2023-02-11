@@ -5,7 +5,6 @@ export const BlockOutline = styled.div`
   position: relative;
   flex-direction: column;
   gap: 12px;
-  outline: 1px solid red;
 `;
 
 export const ContentTitle = styled.div`
@@ -18,7 +17,6 @@ export const ContentTitle = styled.div`
   gap: 13px;
   justify-content: space-between;
   align-items: center;
-  outline: 1px solid red;
 `;
 
 export const TriangleSymbol = styled.span`
