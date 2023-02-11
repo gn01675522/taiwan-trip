@@ -12,9 +12,6 @@ const BaseButtonStyle = styled.button`
 `;
 
 export const BlackSquareWrapper = styled(BaseButtonStyle)`
-  position: absolute;
-  top: 100px;
-  right: -60px;
   background-color: #0d0b0c;
 `;
 

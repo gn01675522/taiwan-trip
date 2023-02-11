@@ -5,12 +5,12 @@ import BannerContent from "../bannerContent/bannerContent.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import { BannerOutline } from "./banner.styles";
 
-const Banner = () => {
+const Banner = ({ $imageType }) => {
   return (
     <>
       <BannerOutline>
         <ShadowCard $contentType="banner">
-          <BannerImage>
+          <BannerImage $imageType={$imageType}>
             <BannerContent />
           </BannerImage>
         </ShadowCard>

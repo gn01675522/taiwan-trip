@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const CityListContent = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 21px;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const CityListLayout = styled.div`
   display: grid;
   position: relative;
@@ -11,5 +20,3 @@ export const CityListLayout = styled.div`
     "div0 div1 div3 div4 div6"
     "div0 div2 div3 div5 div6";
 `;
-
-

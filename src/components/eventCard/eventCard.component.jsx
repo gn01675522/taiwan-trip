@@ -1,4 +1,4 @@
-import Button from "../UI/button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import { ReactComponent as PinkLocationSymbol } from "../../assets/svg/pinkLocation.svg";
 
 import {
@@ -27,7 +27,7 @@ const EventCard = ({ temp }) => {
             <PinkLocationSymbol />
             南投縣仁愛鄉
           </EventLocationInfo>
-          <Button buttonType="detail">活動詳情</Button>
+          <Button $buttonType={BUTTON_TYPE_CLASSES.detail}>活動詳情</Button>
         </EventContentFooter>
       </EventContent>
     </EventCardOutline>

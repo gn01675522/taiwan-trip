@@ -1,4 +1,5 @@
-import bannerImg from "../../assets/picture/bannerImage.jpg";
+import HomeBannerImg from "../../assets/picture/homeBannerImage.jpg";
+import FoodBannerImg from "../../assets/picture/foodBannerImg.jpg";
 import styled from "styled-components";
 
 export const ImageWall = styled.div`
@@ -6,10 +7,29 @@ export const ImageWall = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url(${bannerImg});
   background-repeat: no-repeat;
   background-position: 40% 50%;
   background-size: cover;
   justify-content: center;
   align-items: center;
+  background-image: ${({ $imageType }) => {
+    switch ($imageType) {
+      case "food":
+        return `
+        url(${FoodBannerImg})
+        `;
+      case "traffic":
+        return `
+          url()
+          `;
+      default:
+        return `
+        url(${HomeBannerImg})
+        `;
+    }
+  }};
+  /* background-image: ${(props) =>
+    props.imageType === "food"
+      ? `url(${FoodBannerImg})`
+      : `url(${HomeBannerImg})`}; */
 `;

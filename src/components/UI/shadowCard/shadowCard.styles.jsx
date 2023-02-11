@@ -33,6 +33,11 @@ export const Shadow = styled.div`
         height: 74px;
         bottom: 30px;
         `;
+      case "detail":
+        return `
+        height: 52px;
+        bottom: 20px;
+        `;
       case "large-list":
         return `
         height: 52px;

@@ -25,7 +25,7 @@ const BannerForm = () => {
       <Button
         type="submit"
         gridArea="btn"
-        buttonType={BUTTON_TYPE_CLASSES.search}
+        $buttonType={BUTTON_TYPE_CLASSES.search}
         onClick={onClickHandler}
       />
     </FormContainer>

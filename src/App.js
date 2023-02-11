@@ -6,14 +6,18 @@ import Navigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component";
 import Footer from "./components/UI/footer/footer.component";
 import Food from "./routes/food/food.component";
+import Detail from "./components/detail/detail.component";
 
 const App = () => {
+  const tempState = true;
   return (
-    <div className="App">
+    <div>
       <GlobalStyle />
+      {tempState && <Detail />}
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="detail" element={<Detail />} />
           <Route path="food" element={<Food />} />
         </Route>
       </Routes>

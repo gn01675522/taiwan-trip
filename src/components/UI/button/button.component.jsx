@@ -18,7 +18,7 @@ export const BUTTON_TYPE_CLASSES = {
   detail: "detail",
 };
 
-const getButton = (buttonType) =>
+const getButton = ($buttonType) =>
   ({
     [BUTTON_TYPE_CLASSES.search]: {
       wrapper: PinkSquareWrapper,
@@ -39,11 +39,11 @@ const getButton = (buttonType) =>
     [BUTTON_TYPE_CLASSES.detail]: {
       wrapper: RectangularWrapper,
     },
-  }[buttonType]);
+  }[$buttonType]);
 
-const Button = ({ children, buttonType, ...otherProps }) => {
-  const CustomBtnWrapper = getButton(buttonType).wrapper;
-  const CustomBtnContent = getButton(buttonType).content;
+const Button = ({ children, $buttonType, ...otherProps }) => {
+  const CustomBtnWrapper = getButton($buttonType).wrapper;
+  const CustomBtnContent = getButton($buttonType).content;
 
   return (
     <>

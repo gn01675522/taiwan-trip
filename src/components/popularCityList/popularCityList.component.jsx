@@ -5,7 +5,7 @@ import ListBlock from "../UI/listBlock/listBlock.component";
 import NormalCard from "../UI/normalCard/normalCard.component";
 import CityCard from "../cityCard/cityCard.component";
 
-import { CityListLayout } from "./popularCityList.styles";
+import { CityListContent, CityListLayout } from "./popularCityList.styles";
 import { DATA_FOR_LIST_CONTENT } from "../../dummy_data/DUMMY_DATA";
 
 const DATA_SEPARATE = {
@@ -36,20 +36,22 @@ const PopularCityList = () => {
 
   return (
     <ListBlock topicType="city">
-      <CityListLayout>
-        {cityList.map((city, index) => {
-          return (
-            <NormalCard key={city.id} gridArea={index}>
-              <CityCard cityTitle={city.tcTitle} />
-            </NormalCard>
-          );
-        })}
-      </CityListLayout>
-      <Button
-        type="button"
-        buttonType={BUTTON_TYPE_CLASSES.next}
-        onClick={onChangePage}
-      />
+      <CityListContent>
+        <CityListLayout>
+          {cityList.map((city, index) => {
+            return (
+              <NormalCard key={city.id} gridArea={index}>
+                <CityCard cityTitle={city.tcTitle} />
+              </NormalCard>
+            );
+          })}
+        </CityListLayout>
+        <Button
+          type="button"
+          $buttonType={BUTTON_TYPE_CLASSES.next}
+          onClick={onChangePage}
+        />
+      </CityListContent>
     </ListBlock>
   );
 };
