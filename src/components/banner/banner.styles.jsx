@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 export const BannerOutline = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 536px;
+  ${({ $pageType }) => {
+    switch ($pageType) {
+      case "home" || "food":
+        return `height:536px;`;
+      case "traffic":
+        return `height:170px;`;
+      default:
+        return `height: 536px;`;
+    }
+  }}
 `;

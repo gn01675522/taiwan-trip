@@ -5,14 +5,15 @@ import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import SortSelected from "../UI/select/Select.component";
 import { SELECTED_OPTION } from "../../dummy_data/DUMMY_DATA";
 
-const BannerForm = () => {
+const BannerForm = ({ $pageType }) => {
+  const exceptTraffic = $pageType !== "traffic";
   const onClickHandler = (event) => {
     event.preventDefault();
   };
 
   return (
-    <FormContainer>
-      <input type="text" placeholder="搜尋關鍵字" />
+    <FormContainer $pageType={$pageType}>
+      {exceptTraffic && <input type="text" placeholder="搜尋關鍵字" />}
       {SELECTED_OPTION.map((selectedType, index) => {
         return (
           <SortSelected
@@ -25,7 +26,7 @@ const BannerForm = () => {
       <Button
         type="submit"
         gridArea="btn"
-        $buttonType={BUTTON_TYPE_CLASSES.search}
+        buttonType={BUTTON_TYPE_CLASSES.search}
         onClick={onClickHandler}
       />
     </FormContainer>

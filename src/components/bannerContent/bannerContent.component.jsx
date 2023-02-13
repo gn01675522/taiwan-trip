@@ -9,30 +9,49 @@ import {
   TriangleSymbol,
   ISymbol,
   BannerSubtitle,
+  BannerTrafficButton,
+  TrafficButton,
 } from "./bannerContent.styles";
 
-const BannerContent = () => {
+const BannerContent = ({ $pageType }) => {
+  const exceptTraffic = $pageType !== "traffic";
   return (
-    <BannerContentLayout>
-      <BannerTitle>
-        Welc
-        <OSymbol />
-        me
-        <TaiwanText>
-          Ta
-          <SpecialLetter>
-            <TriangleSymbol />
-            <ISymbol />
-          </SpecialLetter>
-          wan
-        </TaiwanText>
-      </BannerTitle>
+    <BannerContentLayout $pageType={$pageType}>
+      {exceptTraffic && (
+        <>
+          <BannerTitle>
+            Welc
+            <OSymbol />
+            me
+            <TaiwanText>
+              Ta
+              <SpecialLetter>
+                <TriangleSymbol />
+                <ISymbol />
+              </SpecialLetter>
+              wan
+            </TaiwanText>
+          </BannerTitle>
 
-      <BannerSubtitle>
-        台北、台中、台南、屏東、宜蘭......遊遍台灣
-      </BannerSubtitle>
+          <BannerSubtitle>
+            台北、台中、台南、屏東、宜蘭......遊遍台灣
+          </BannerSubtitle>
+        </>
+      )}
 
-      <BannerForm/>
+      <BannerForm $pageType={$pageType} />
+      {$pageType === "traffic" && (
+        <>
+          <BannerTrafficButton>
+            <TrafficButton>
+              往 <span>蘭潭</span>
+            </TrafficButton>
+            <TrafficButton>
+              往 <span>港坪運動公園</span>
+            </TrafficButton>
+          </BannerTrafficButton>
+        </>
+      )}
     </BannerContentLayout>
   );
 };

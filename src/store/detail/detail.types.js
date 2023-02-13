@@ -1,0 +1,3 @@
+export const DETAIL_ACTIONS_TYPE = {
+  SET_DETAIL_MODAL_OPEN: "detail/SET_DETAIL_MODAL_OPEN",
+};

@@ -10,7 +10,7 @@ const PopularFoodList = () => {
     <ListBlock topicType="food">
       <FoodListLayout>
         {TEMP_ARRAY.map((temp) => (
-          <ShadowCard key={temp} $contentType="sm-list">
+          <ShadowCard key={temp} $contentType="sm-list" $pageType="banner">
             <FoodCard>{temp}</FoodCard>
           </ShadowCard>
         ))}

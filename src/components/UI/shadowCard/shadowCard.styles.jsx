@@ -14,6 +14,22 @@ export const CardContent = styled.div`
   align-items: center;
   background-color: white;
   z-index: 980;
+  ${({ $pageType }) => {
+    switch ($pageType) {
+      case "banner":
+        return;
+      case "traffic":
+        return `
+        height: 1000px;
+        `;
+      default:
+        throw new Error(
+          `Unrecognized type of ${$pageType}, 
+          this message is from shadowCard.styles.jsx's CardContent; 
+          Please make sure every component what import this has a props passed contentType.`
+        );
+    }
+  }}
 `;
 
 export const Shadow = styled.div`
@@ -38,6 +54,11 @@ export const Shadow = styled.div`
         height: 52px;
         bottom: 20px;
         `;
+      case "traffic":
+        return `
+        height: 52px;
+        bottom: 20px;
+        `;
       case "large-list":
         return `
         height: 52px;
@@ -56,11 +77,18 @@ export const Shadow = styled.div`
       default:
         throw new Error(
           `Unrecognized type of ${$contentType}, 
-          this message is from shadowCard.styles.jsx; 
+          this message is from shadowCard.styles.jsx's Shadow; 
           Please make sure every component what import this has a props passed contentType.`
         );
     }
   }}
 `;
-//* 透過 contentType 來擷取使用此組件之類型，
-//* 再用 switch 來根據不同 props 來 return 相對應 css 設定
+
+export const HintText = styled.span`
+  position: absolute;
+  font-size: 24px;
+  font-weight: 400;
+  color: #acacac;
+  top: 53px;
+  left: 56px;
+`;

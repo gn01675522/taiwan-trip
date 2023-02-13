@@ -48,7 +48,7 @@ const PopularCityList = () => {
         </CityListLayout>
         <Button
           type="button"
-          $buttonType={BUTTON_TYPE_CLASSES.next}
+          buttonType={BUTTON_TYPE_CLASSES.next}
           onClick={onChangePage}
         />
       </CityListContent>

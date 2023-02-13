@@ -12,8 +12,8 @@ export const ImageWall = styled.div`
   background-size: cover;
   justify-content: center;
   align-items: center;
-  background-image: ${({ $imageType }) => {
-    switch ($imageType) {
+  background-image: ${({ $pageType }) => {
+    switch ($pageType) {
       case "food":
         return `
         url(${FoodBannerImg})
@@ -28,8 +28,4 @@ export const ImageWall = styled.div`
         `;
     }
   }};
-  /* background-image: ${(props) =>
-    props.imageType === "food"
-      ? `url(${FoodBannerImg})`
-      : `url(${HomeBannerImg})`}; */
 `;

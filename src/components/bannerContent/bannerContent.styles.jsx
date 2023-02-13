@@ -3,9 +3,22 @@ import styled from "styled-components";
 export const BannerContentLayout = styled.div`
   display: grid;
   position: absolute;
-  grid-template-rows: 70px 21px auto;
+  width: 100%;
   grid-gap: 8px;
   margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+  ${({ $pageType }) => {
+    switch ($pageType) {
+      case "traffic":
+        return `
+        grid-template-rows: 40px 50px;
+        grid-gap: 41px;
+        `;
+      default:
+        return `grid-template-rows: 70px 21px auto;`;
+    }
+  }}
 `;
 
 export const BannerTitle = styled.h1`
@@ -62,4 +75,27 @@ export const ISymbol = styled.span`
 export const BannerSubtitle = styled.h5`
   line-height: 21px;
   color: white;
+`;
+
+export const BannerTrafficButton = styled.div`
+  display: grid;
+  position: relative;
+  grid-template-columns: 244px 244px;
+  grid-gap: 84px;
+  height: 50px;
+  bottom: -16px;
+`;
+export const TrafficButton = styled.div`
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  :active {
+    border-bottom: 4px solid #ff1d6c;
+  }
+  span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ff1d6c;
+  }
 `;

@@ -53,3 +53,9 @@ export const DATA_FOR_LIST_CONTENT = [
   { id: "Taitung", tcTitle: "台 東" },
   { id: "Kinmen Matsu Penghu", tcTitle: "金門媽祖.澎湖" },
 ];
+
+export const PAGE_TYPE = {
+  home: "home",
+  food: "food",
+  traffic: "traffic",
+};

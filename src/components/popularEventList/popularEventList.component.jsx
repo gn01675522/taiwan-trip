@@ -11,8 +11,8 @@ const PopularEventList = () => {
     <ListBlock topicType="event">
       <EventListLayout>
         {TEMP_ARRAY.map((temp) => (
-          <ShadowCard key={temp} $contentType="me-list">
-            <EventCard temp={temp}/>
+          <ShadowCard key={temp} $contentType="me-list" $pageType="banner">
+            <EventCard temp={temp} />
           </ShadowCard>
         ))}
       </EventListLayout>

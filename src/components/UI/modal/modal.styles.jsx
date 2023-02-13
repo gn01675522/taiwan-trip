@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const ModalOutline = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 export const Backdrop = styled.div`
   display: flex;
   position: fixed;
@@ -19,5 +26,6 @@ export const ModalBody = styled.div`
   position: fixed;
   gap: 12px;
   top: 5vh;
-  width: 676px;
+  width: 50%;
+  z-index: 1001;
 `;

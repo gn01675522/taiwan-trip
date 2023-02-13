@@ -1,5 +1,9 @@
+import { useDispatch } from "react-redux";
+
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import { ReactComponent as PinkLocationSymbol } from "../../assets/svg/pinkLocation.svg";
+
+import { setModalOpen } from "../../store/detail/detail.actions";
 
 import {
   EventCardOutline,
@@ -12,6 +16,12 @@ import {
 } from "./eventCard.styles";
 
 const EventCard = ({ temp }) => {
+  const dispatch = useDispatch();
+
+  const onShowDetail = () => {
+    dispatch(setModalOpen(true));
+  };
+
   return (
     <EventCardOutline>
       <EventImage />
@@ -27,7 +37,12 @@ const EventCard = ({ temp }) => {
             <PinkLocationSymbol />
             南投縣仁愛鄉
           </EventLocationInfo>
-          <Button $buttonType={BUTTON_TYPE_CLASSES.detail}>活動詳情</Button>
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.detail}
+            onClick={onShowDetail}
+          >
+            活動詳情
+          </Button>
         </EventContentFooter>
       </EventContent>
     </EventCardOutline>
