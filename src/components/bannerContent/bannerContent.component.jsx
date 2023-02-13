@@ -10,7 +10,7 @@ import {
   ISymbol,
   BannerSubtitle,
   BannerTrafficButton,
-  TrafficButton,
+  TrafficOption,
 } from "./bannerContent.styles";
 
 const BannerContent = ({ $pageType }) => {
@@ -43,12 +43,14 @@ const BannerContent = ({ $pageType }) => {
       {$pageType === "traffic" && (
         <>
           <BannerTrafficButton>
-            <TrafficButton>
+            <input type="radio" id="departure" name="choose" />
+            <TrafficOption htmlFor="departure">
               往 <span>蘭潭</span>
-            </TrafficButton>
-            <TrafficButton>
-              往 <span>港坪運動公園</span>
-            </TrafficButton>
+            </TrafficOption>
+            <input type="radio" id="arrival" name="choose" />
+            <TrafficOption htmlFor="arrival" >
+                往 <span>港坪運動公園</span>
+            </TrafficOption>
           </BannerTrafficButton>
         </>
       )}

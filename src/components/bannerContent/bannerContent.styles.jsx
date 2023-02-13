@@ -77,22 +77,27 @@ export const BannerSubtitle = styled.h5`
   color: white;
 `;
 
-export const BannerTrafficButton = styled.div`
+export const BannerTrafficButton = styled.fieldset`
   display: grid;
   position: relative;
   grid-template-columns: 244px 244px;
   grid-gap: 84px;
   height: 50px;
-  bottom: -16px;
+  bottom: -12px;
+  border: none;
+  input {
+    display: none;
+  }
+  input:checked + label {
+    border-bottom: 4px solid #ff1d6c;
+  }
 `;
-export const TrafficButton = styled.div`
+
+export const TrafficOption = styled.label`
   width: 100%;
   text-align: center;
   line-height: 50px;
   cursor: pointer;
-  :active {
-    border-bottom: 4px solid #ff1d6c;
-  }
   span {
     font-size: 16px;
     font-weight: 400;
