@@ -1,7 +1,8 @@
 import ListBlock from "../UI/listBlock/listBlock.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
+import FoodCard from "../foodCard/foodCard.component";
 
-import { FoodListLayout, FoodCard } from "./popularFoodList.styles";
+import { FoodListLayout} from "./popularFoodList.styles";
 
 const TEMP_ARRAY = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
