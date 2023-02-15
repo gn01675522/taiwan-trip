@@ -14,10 +14,38 @@ const BaseButtonStyle = styled.button`
 
 export const BlackSquareWrapper = styled(BaseButtonStyle)`
   background-color: #0d0b0c;
+  ${({ btnInWhere }) => {
+    if (btnInWhere) {
+      switch (btnInWhere) {
+        case "city":
+          return `
+          position: absolute;
+          right: -53px;
+          `;
+        default:
+          return;
+      }
+    }
+    return;
+  }}
 `;
 
 export const WhiteSquareWrapper = styled(BaseButtonStyle)`
   background-color: #ffffff;
+  ${({ btnInWhere }) => {
+    if (btnInWhere) {
+      switch (btnInWhere) {
+        case "city":
+          return `
+          position: absolute;
+          left: -53px;
+          `;
+        default:
+          return;
+      }
+    }
+    return;
+  }}
 `;
 
 export const PinkSquareWrapper = styled(BaseButtonStyle)`

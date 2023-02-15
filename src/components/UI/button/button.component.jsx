@@ -41,13 +41,13 @@ const getButton = (buttonType) =>
     },
   }[buttonType]);
 
-const Button = ({ children, buttonType, ...otherProps }) => {
+const Button = ({ children, buttonType, btnInWhere, ...otherProps }) => {
   const CustomBtnWrapper = getButton(buttonType).wrapper;
   const CustomBtnContent = getButton(buttonType).content;
 
   return (
     <>
-      <CustomBtnWrapper {...otherProps}>
+      <CustomBtnWrapper btnInWhere={btnInWhere} {...otherProps}>
         {CustomBtnContent ? <CustomBtnContent /> : children}
       </CustomBtnWrapper>
     </>

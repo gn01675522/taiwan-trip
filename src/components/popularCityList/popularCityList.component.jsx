@@ -37,6 +37,14 @@ const PopularCityList = () => {
   return (
     <ListBlock topicType="city">
       <CityListContent>
+        {isNextPage && (
+          <Button
+            type="button"
+            btnInWhere="city"
+            buttonType={BUTTON_TYPE_CLASSES.previous}
+            onClick={onChangePage}
+          />
+        )}
         <CityListLayout>
           {cityList.map((city, index) => {
             return (
@@ -46,11 +54,14 @@ const PopularCityList = () => {
             );
           })}
         </CityListLayout>
-        <Button
-          type="button"
-          buttonType={BUTTON_TYPE_CLASSES.next}
-          onClick={onChangePage}
-        />
+        {!isNextPage && (
+          <Button
+            type="button"
+            btnInWhere="city"
+            buttonType={BUTTON_TYPE_CLASSES.next}
+            onClick={onChangePage}
+          />
+        )}
       </CityListContent>
     </ListBlock>
   );
