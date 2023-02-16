@@ -37,23 +37,6 @@ export const SELECTED_OPTION = [
   },
 ];
 
-export const DATA_FOR_LIST_CONTENT = [
-  { id: "Taipei County", tcTitle: "台北市" },
-  { id: "New Taipei County", tcTitle: "新北市" },
-  { id: "Taoyuan County", tcTitle: "桃園市" },
-  { id: "Hsinchu County", tcTitle: "新竹市" },
-  { id: "Taichung", tcTitle: "台 中" },
-  { id: "Nantou", tcTitle: "南 投" },
-  { id: "Chiayi", tcTitle: "嘉 義" },
-  { id: "Tainan", tcTitle: "台 南" },
-  { id: "Kaohsiung", tcTitle: "高 雄" },
-  { id: "Pingtung", tcTitle: "屏 東" },
-  { id: "Yilan", tcTitle: "宜 蘭" },
-  { id: "Hualien", tcTitle: "花 蓮" },
-  { id: "Taitung", tcTitle: "台 東" },
-  { id: "Kinmen Matsu Penghu", tcTitle: "金門媽祖.澎湖" },
-];
-
 export const PAGE_TYPE = {
   home: "home",
   food: "food",

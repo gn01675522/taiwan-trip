@@ -1,12 +1,20 @@
 import { ReactComponent as WhiteMapSymbol } from "../../assets/svg/whiteMapSymbol.svg";
 
-import { CityCardOutline } from "./cityCard.styles";
+import {
+  CityCardOutline,
+  BlurBackground,
+  CardContent,
+} from "./cityCard.styles";
 
-const CityCard = ({ cityTitle }) => {
+const CityCard = ({ cityTitle, cityImg }) => {
   return (
-    <CityCardOutline>
-      <WhiteMapSymbol />
-      {cityTitle}
+    <CityCardOutline cityImg={cityImg}>
+      <BlurBackground>
+        <CardContent>
+          <WhiteMapSymbol />
+          {cityTitle}
+        </CardContent>
+      </BlurBackground>
     </CityCardOutline>
   );
 };

@@ -13,7 +13,7 @@ export const CityListLayout = styled.div`
   display: grid;
   position: relative;
   width: 100%;
-  grid-template-rows: repeat(2, 106px);
+  grid-template-rows: repeat(2, 120px);
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px 13px;
   grid-template-areas:

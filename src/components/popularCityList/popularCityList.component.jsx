@@ -6,11 +6,11 @@ import NormalCard from "../UI/normalCard/normalCard.component";
 import CityCard from "../cityCard/cityCard.component";
 
 import { CityListContent, CityListLayout } from "./popularCityList.styles";
-import { DATA_FOR_LIST_CONTENT } from "../../dummy_data/DUMMY_DATA";
+import { DATA_FOR_CITY_LIST } from "../../dummy_data/CITY_LIST_DATA";
 
 const DATA_SEPARATE = {
-  previous: DATA_FOR_LIST_CONTENT.slice(0, 7),
-  next: DATA_FOR_LIST_CONTENT.slice(7, DATA_FOR_LIST_CONTENT.length),
+  previous: DATA_FOR_CITY_LIST.slice(0, 7),
+  next: DATA_FOR_CITY_LIST.slice(7, DATA_FOR_CITY_LIST.length),
 };
 
 const previousOrNext = (boolean) => {
@@ -49,7 +49,7 @@ const PopularCityList = () => {
           {cityList.map((city, index) => {
             return (
               <NormalCard key={city.id} gridArea={index}>
-                <CityCard cityTitle={city.tcTitle} />
+                <CityCard cityTitle={city.tcTitle} cityImg={city.img} />
               </NormalCard>
             );
           })}
