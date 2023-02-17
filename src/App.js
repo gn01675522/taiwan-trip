@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
@@ -13,20 +12,12 @@ import { selectModalOpen } from "./store/detail/detail.selector";
 
 import { GlobalStyle } from "./global.styles";
 
+import { getAuthToken } from "./API/getApiAuthToken";
+
 const App = () => {
-  // const [fetchState, setFetchState] = useState([]);
   const modalIsOpen = useSelector(selectModalOpen);
+  getAuthToken();
 
-  // useEffect(() => {
-  //   fetch("https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant", {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setFetchState(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
-
-  // console.log(fetchState);
   return (
     <div>
       <GlobalStyle />

@@ -7,10 +7,17 @@ export const EventCardOutline = styled.div`
   height: 100%;
 `;
 
-export const EventImage = styled.div`
+export const EventImage = styled.img`
   width: 38%;
   height: 100%;
-  background-color: purple;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: ${({ imgUrl }) => {
+    return `
+    url(${imgUrl})
+    `;
+  }};
 `;
 
 export const EventContent = styled.div`
@@ -28,7 +35,13 @@ export const EventContentHeader = styled.h5`
 `;
 
 export const EventContentBody = styled.div`
+  display: -webkit-box;
   font-size: 14px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
 `;
 
 export const EventContentFooter = styled.div`

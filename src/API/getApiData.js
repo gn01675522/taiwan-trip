@@ -17,3 +17,8 @@ export const getCityList = async () => {
     console.log("inside getApiData", err);
   }
 };
+//* 暫存
+//* 取得指定縣市景點資料 /v2/Tourism/ScenicSpot/{City}
+//* 取得指定縣市餐飲資料 /v2/Tourism/Restaurant/{City}
+//* 取得指定縣市住宿資料 /v2/Tourism/Hotel/{City}
+//* 取得指定縣市活動資料 /v2/Tourism/Activity/{City}

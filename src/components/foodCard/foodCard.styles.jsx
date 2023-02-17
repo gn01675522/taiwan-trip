@@ -26,6 +26,7 @@ export const FoodArea = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
+  gap: 5px;
   font-size: 12px;
   font-weight: 300;
   color: #007350;

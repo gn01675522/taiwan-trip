@@ -1,20 +1,30 @@
+import { useContext } from "react";
+
 import ListBlock from "../UI/listBlock/listBlock.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import EventCard from "../eventCard/eventCard.component";
 
 import { EventListLayout } from "./popularEvent.styles";
-
-const TEMP_ARRAY = [1, 2, 3, 4];
+import { EventContext } from "../../contexts/event.context";
 
 const PopularEventList = () => {
+  const { popularEvent } = useContext(EventContext);
+
   return (
     <ListBlock topicType="event">
       <EventListLayout>
-        {TEMP_ARRAY.map((temp) => (
-          <ShadowCard key={temp} $contentType="me-list" $pageType="banner">
-            <EventCard temp={temp} />
-          </ShadowCard>
-        ))}
+        {popularEvent.map((event) => {
+          const { ActivityID } = event;
+          return (
+            <ShadowCard
+              key={ActivityID}
+              $contentType="me-list"
+              $pageType="banner"
+            >
+              <EventCard eventDetail={event} />
+            </ShadowCard>
+          );
+        })}
       </EventListLayout>
     </ListBlock>
   );
