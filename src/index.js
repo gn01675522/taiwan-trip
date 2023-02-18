@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { EventProvider } from "./contexts/event.context";
 import { FoodProvider } from "./contexts/food.context";
+import { HotelProvider } from "./contexts/hotel.context";
 
 import App from "./App";
 
@@ -16,7 +17,9 @@ root.render(
       <BrowserRouter>
         <EventProvider>
           <FoodProvider>
-            <App />
+            <HotelProvider>
+              <App />
+            </HotelProvider>
           </FoodProvider>
         </EventProvider>
       </BrowserRouter>

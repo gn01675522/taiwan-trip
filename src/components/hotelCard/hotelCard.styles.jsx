@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FoodCardOutline = styled.div`
+export const HotelCardOutline = styled.div`
   display: grid;
   grid-template-rows: 137px 42px 16px;
   grid-gap: 10px;
@@ -8,7 +8,7 @@ export const FoodCardOutline = styled.div`
   height: 100%;
 `;
 
-export const FoodImage = styled.img`
+export const HotelImage = styled.img`
   width: 100%;
   height: 100%;
   ${({ imageUrl }) => {
@@ -24,7 +24,7 @@ export const FoodImage = styled.img`
   }}
 `;
 
-export const FoodLocation = styled.div`
+export const HotelLocation = styled.div`
   width: 100%;
   height: 100%;
   font-size: 14px;
@@ -32,7 +32,7 @@ export const FoodLocation = styled.div`
   color: #0d0b0c;
 `;
 
-export const FoodArea = styled.div`
+export const HotelArea = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;

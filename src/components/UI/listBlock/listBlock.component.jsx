@@ -14,6 +14,7 @@ const TOPIC_TYPE_CLASSES = {
   city: "city",
   event: "event",
   food: "food",
+  hotel: "hotel",
 };
 
 const getTopic = (topicType) =>
@@ -21,6 +22,7 @@ const getTopic = (topicType) =>
     [TOPIC_TYPE_CLASSES.city]: { symbol: TriangleSymbol, topic: "熱門城市" },
     [TOPIC_TYPE_CLASSES.event]: { symbol: TriangleSymbol, topic: "熱門活動" },
     [TOPIC_TYPE_CLASSES.food]: { symbol: SquareSymbol, topic: "熱門美食" },
+    [TOPIC_TYPE_CLASSES.hotel]: { symbol: SquareSymbol, topic: "熱門住宿" },
   }[topicType]);
 
 const ListBlock = ({ children, topicType }) => {

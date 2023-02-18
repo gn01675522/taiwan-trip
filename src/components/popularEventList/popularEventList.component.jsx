@@ -10,6 +10,8 @@ import { EventContext } from "../../contexts/event.context";
 const PopularEventList = () => {
   const { popularEvent } = useContext(EventContext);
 
+  console.log('inside popularEvent',popularEvent)
+
   return (
     <ListBlock topicType="event">
       <EventListLayout>

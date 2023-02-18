@@ -8,14 +8,12 @@ import {
 } from "./foodCard.styles";
 
 const FoodCard = ({ foodDetail }) => {
-  console.log(foodDetail);
-  const { RestaurantName, Address } = foodDetail;
-  const reduceAddress = Address.slice(0,6)
-  console.log(Address.length)
+  const { RestaurantName, Address, Picture } = foodDetail;
+  const reduceAddress = Address.slice(0, 6);
 
   return (
     <FoodCardOutline>
-      <FoodImage />
+      <FoodImage imageUrl={Picture.PictureUrl1}/>
       <FoodLocation>{RestaurantName}</FoodLocation>
       <FoodArea>
         <PinkLocation />

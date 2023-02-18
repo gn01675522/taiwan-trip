@@ -14,15 +14,17 @@ const PopularFoodList = () => {
   return (
     <ListBlock topicType="food">
       <FoodListLayout>
-        {popularFood.map((food) => (
-          <ShadowCard
-            key={food.RestaurantID}
-            $contentType="sm-list"
-            $pageType="banner"
-          >
-            <FoodCard foodDetail={food} />
-          </ShadowCard>
-        ))}
+        {popularFood.map((food) => {
+          return (
+            <ShadowCard
+              key={food.RestaurantID}
+              $contentType="sm-list"
+              $pageType="banner"
+            >
+              <FoodCard foodDetail={food} />
+            </ShadowCard>
+          );
+        })}
       </FoodListLayout>
     </ListBlock>
   );

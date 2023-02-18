@@ -12,11 +12,8 @@ import { selectModalOpen } from "./store/detail/detail.selector";
 
 import { GlobalStyle } from "./global.styles";
 
-import { getAuthToken } from "./API/getApiAuthToken";
-
 const App = () => {
   const modalIsOpen = useSelector(selectModalOpen);
-  getAuthToken();
 
   return (
     <div>
