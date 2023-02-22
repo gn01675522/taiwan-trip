@@ -7,7 +7,7 @@ export const selectBusRoutes = createSelector(
   (routes) => routes.busRoutes
 );
 
-export const selectIsLoading = createSelector(
+export const selectBusIsLoading = createSelector(
   [selectBusRoutesReducer],
   (routes) => routes.isLoading
 );

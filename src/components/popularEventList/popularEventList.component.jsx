@@ -1,15 +1,15 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 import ListBlock from "../UI/listBlock/listBlock.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import EventCard from "../eventCard/eventCard.component";
 
 import { EventListLayout } from "./popularEvent.styles";
-import { EventContext } from "../../contexts/event.context";
+
+import { selectEventList } from "../../store/event/event.selector";
 
 const PopularEventList = () => {
-  const { popularEvent } = useContext(EventContext);
-  console.log(popularEvent);
+  const popularEvent = useSelector(selectEventList);
 
   return (
     <ListBlock topicType="event">

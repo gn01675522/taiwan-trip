@@ -15,3 +15,19 @@ export const getTDXBusRoutes = async () => {
     console.log(error);
   }
 };
+
+export const getTDXEventList = async () => {
+  try {
+    const response = await fetch(
+      "https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity/Taipei?%24top=4&%24format=JSON",
+      {
+        method: "GET",
+        headers: getAuthToken(),
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

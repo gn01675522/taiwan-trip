@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { EventProvider } from "./contexts/event.context";
 import { FoodProvider } from "./contexts/food.context";
 import { HotelProvider } from "./contexts/hotel.context";
 import { SelectProvider } from "./contexts/select.context";
@@ -17,13 +16,11 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <SelectProvider>
-          <EventProvider>
-            <FoodProvider>
-              <HotelProvider>
-                <App />
-              </HotelProvider>
-            </FoodProvider>
-          </EventProvider>
+          <FoodProvider>
+            <HotelProvider>
+              <App />
+            </HotelProvider>
+          </FoodProvider>
         </SelectProvider>
       </BrowserRouter>
     </Provider>
