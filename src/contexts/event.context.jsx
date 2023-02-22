@@ -31,3 +31,15 @@ export const EventProvider = ({ children }) => {
     <EventContext.Provider value={value}>{children}</EventContext.Provider>
   );
 };
+
+// 資料架構，請於各
+//  Title： 活動、景點、餐廳或飯店名稱
+//  Address： 活動、景點、餐廳或飯店地址
+//  Description： 活動、景點、餐廳或飯店描述
+//  Location： 活動、景點、餐廳或飯店所在區域
+//  Picture： 活動、景點、餐廳或飯店圖片
+//  Phone： 活動、景點、餐廳或飯店聯絡方式
+//  Charge： 活動、景點、餐廳或飯店花費
+//  Cycle： 活動、景點、餐廳或飯店營業週期
+//  StartTime： 活動、景點、餐廳或飯店營業起始時間
+//  EndTime： 活動、景點、餐廳或飯店營業結束時間

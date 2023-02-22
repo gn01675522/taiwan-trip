@@ -1,6 +1,6 @@
 //* Parent： App.js
 
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 import { ReactComponent as TaiwanLogo } from "../../assets/svg/taiwanLogo.svg";
 import { ReactComponent as PinkFrame } from "../../assets/svg/pinkFrame.svg";
@@ -37,9 +37,9 @@ const Navigation = () => {
   return (
     <>
       <NavigationContainer>
-        <div>
+        <Link to="/">
           <TaiwanLogo />
-        </div>
+        </Link>
         <NavigationLinkContainer>
           {navOption.map(({ title, link, frame }) => {
             return (

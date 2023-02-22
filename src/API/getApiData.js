@@ -1,24 +1,17 @@
-import axios from "axios";
 import { getAuthToken } from "./getApiAuthToken";
 
-let apiUrl = "https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant";
-// "https://tdx.transportdata.tw/api/basic//v2/Tourism/ScenicSpot";
-// "https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/Taoyuan?%24top=30&%24format=JSON";
-
-export const getCityList = async () => {
+export const getTDXBusRoutes = async () => {
   try {
-    let tokenData = await getAuthToken();
-    let res = await axios.get(apiUrl, {
-      headers: tokenData,
-    });
-    // console.log(res.data);
-    return res.data;
-  } catch (err) {
-    console.log("inside getApiData", err);
+    const response = await fetch(
+      "https://tdx.transportdata.tw/api/basic/v2/Bus/StopOfRoute/City/Chiayi/%E5%8F%B0%E7%81%A3%E5%A5%BD%E8%A1%8C%E5%85%89%E6%9E%97%E6%88%91%E5%98%89%E7%B7%9A%28%E9%BB%83%E7%B7%9A%29?%24top=30&%24format=JSON",
+      {
+        method: "GET",
+        headers: getAuthToken(),
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 };
-//* 暫存
-//* 取得指定縣市景點資料 /v2/Tourism/ScenicSpot/{City}
-//* 取得指定縣市餐飲資料 /v2/Tourism/Restaurant/{City}
-//* 取得指定縣市住宿資料 /v2/Tourism/Hotel/{City}
-//* 取得指定縣市活動資料 /v2/Tourism/Activity/{City}

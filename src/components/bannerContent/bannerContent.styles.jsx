@@ -7,7 +7,6 @@ export const BannerContentLayout = styled.div`
   grid-gap: 8px;
   margin: 0 auto;
   justify-content: center;
-  justify-items: center;
   ${({ $pageType }) => {
     switch ($pageType) {
       case "traffic":
@@ -40,6 +39,17 @@ export const OSymbol = styled.span`
   border: 7px solid #ff1d6c;
   border-radius: 50%;
   top: 5px;
+`;
+
+export const SquareSymbol = styled.span`
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 7px solid #ff1d6c;
+  margin-left: 3px;
+  margin-right: 10px;
+  top: 3px;
 `;
 
 export const TaiwanText = styled.span`

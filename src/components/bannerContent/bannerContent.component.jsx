@@ -4,6 +4,7 @@ import {
   BannerContentLayout,
   BannerTitle,
   OSymbol,
+  SquareSymbol,
   TaiwanText,
   SpecialLetter,
   TriangleSymbol,
@@ -15,6 +16,7 @@ import {
 
 const BannerContent = ({ $pageType }) => {
   const exceptTraffic = $pageType !== "traffic";
+
   return (
     <BannerContentLayout $pageType={$pageType}>
       {exceptTraffic && (
@@ -22,9 +24,10 @@ const BannerContent = ({ $pageType }) => {
           <BannerTitle>
             Welc
             <OSymbol />
-            me
+            me t<SquareSymbol />
+            
             <TaiwanText>
-              Ta
+               Ta
               <SpecialLetter>
                 <TriangleSymbol />
                 <ISymbol />
@@ -48,8 +51,8 @@ const BannerContent = ({ $pageType }) => {
               往 <span>蘭潭</span>
             </TrafficOption>
             <input type="radio" id="arrival" name="choose" />
-            <TrafficOption htmlFor="arrival" >
-                往 <span>港坪運動公園</span>
+            <TrafficOption htmlFor="arrival">
+              往 <span>港坪運動公園</span>
             </TrafficOption>
           </BannerTrafficButton>
         </>

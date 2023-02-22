@@ -6,6 +6,7 @@ import { store } from "./store/store";
 import { EventProvider } from "./contexts/event.context";
 import { FoodProvider } from "./contexts/food.context";
 import { HotelProvider } from "./contexts/hotel.context";
+import { SelectProvider } from "./contexts/select.context";
 
 import App from "./App";
 
@@ -15,13 +16,15 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <EventProvider>
-          <FoodProvider>
-            <HotelProvider>
-              <App />
-            </HotelProvider>
-          </FoodProvider>
-        </EventProvider>
+        <SelectProvider>
+          <EventProvider>
+            <FoodProvider>
+              <HotelProvider>
+                <App />
+              </HotelProvider>
+            </FoodProvider>
+          </EventProvider>
+        </SelectProvider>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

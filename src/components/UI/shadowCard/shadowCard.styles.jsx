@@ -22,6 +22,18 @@ export const CardContent = styled.div`
         return `
         height: 1000px;
         `;
+      case "event":
+        return `
+        padding: 16px;
+        `;
+      case "food":
+        return `
+        padding: 12px;
+        `;
+      case "hotel":
+        return `
+        padding: 12px;
+        `;
       default:
         throw new Error(
           `Unrecognized type of ${$pageType}, 

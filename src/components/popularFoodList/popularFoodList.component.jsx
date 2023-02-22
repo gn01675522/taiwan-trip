@@ -19,7 +19,7 @@ const PopularFoodList = () => {
             <ShadowCard
               key={food.RestaurantID}
               $contentType="sm-list"
-              $pageType="banner"
+              $pageType="food"
             >
               <FoodCard foodDetail={food} />
             </ShadowCard>

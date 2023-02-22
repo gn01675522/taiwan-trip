@@ -11,8 +11,6 @@ import { HotelContext } from "../../contexts/hotel.context";
 const PopularHotelList = () => {
   const { popularHotel } = useContext(HotelContext);
 
-  console.log("hotel", popularHotel);
-
   return (
     <ListBlock topicType="hotel">
       <HotelListLayout>
@@ -21,7 +19,7 @@ const PopularHotelList = () => {
             <ShadowCard
               key={hotel.HotelID}
               $contentType="sm-list"
-              $pageType="banner"
+              $pageType="hotel"
             >
               <HotelCard hotelDetail={hotel} />
             </ShadowCard>

@@ -20,7 +20,7 @@ export const ContainerOutlineInTraffic = styled(baseOutline)`
   display: block;
   padding: 81px 163px 84px 163px;
   :before {
-    content: "*每隔5秒自動更新";
+    content: "*每隔15秒自動更新";
     display: block;
     position: relative;
     font-size: 16px;

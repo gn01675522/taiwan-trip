@@ -4,7 +4,6 @@ export const FormContainer = styled.form`
   display: grid;
   grid-gap: 8px;
   width: 100%;
-  justify-content: center;
   ${({ $pageType }) => {
     switch ($pageType) {
       case "traffic":

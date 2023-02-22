@@ -9,20 +9,14 @@ import { EventContext } from "../../contexts/event.context";
 
 const PopularEventList = () => {
   const { popularEvent } = useContext(EventContext);
-
-  console.log('inside popularEvent',popularEvent)
+  console.log(popularEvent);
 
   return (
     <ListBlock topicType="event">
       <EventListLayout>
-        {popularEvent.map((event) => {
-          const { ActivityID } = event;
+        {popularEvent.map((event, index) => {
           return (
-            <ShadowCard
-              key={ActivityID}
-              $contentType="me-list"
-              $pageType="banner"
-            >
+            <ShadowCard key={index} $contentType="me-list" $pageType="event">
               <EventCard eventDetail={event} />
             </ShadowCard>
           );

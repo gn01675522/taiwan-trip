@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import { ReactComponent as PinkLocationSymbol } from "../../assets/svg/pinkLocation.svg";
 
-import { setModalOpen } from "../../store/detail/detail.actions";
+import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 import {
   EventCardOutline,
@@ -16,18 +16,43 @@ import {
 } from "./eventCard.styles";
 
 const EventCard = ({ eventDetail }) => {
+  const {
+    ActivityName: Title,
+    Address,
+    Description,
+    Location,
+    Picture,
+    Phone,
+    Charge,
+    Cycle,
+    StartTime,
+    EndTime,
+  } = eventDetail;
   const dispatch = useDispatch();
-  const { ActivityName, Description, Location, Picture } = eventDetail;
 
   const onShowDetail = () => {
     dispatch(setModalOpen(true));
+    dispatch(
+      setModalData({
+        Title,
+        Address,
+        Description,
+        Location,
+        Picture,
+        Phone,
+        Charge,
+        Cycle,
+        StartTime,
+        EndTime,
+      })
+    );
   };
 
   return (
     <EventCardOutline>
       <EventImage imgUrl={Picture.PictureUrl1} />
       <EventContent>
-        <EventContentHeader>{ActivityName}</EventContentHeader>
+        <EventContentHeader>{Title}</EventContentHeader>
         <EventContentBody>{Description}</EventContentBody>
         <EventContentFooter>
           <EventLocationInfo>

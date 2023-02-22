@@ -21,7 +21,7 @@ export const getAuthToken = async () => {
       }
     );
     const token = await response.data.access_token;
-    return token;
+    return { authorization: `Bearer ${token}` };
   } catch (error) {
     console.log(error);
   }

@@ -3,7 +3,14 @@ import styled from "styled-components";
 export const DetailPhoto = styled.div`
   width: 100%;
   height: 356px;
-  background-color: purple;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: ${({ img }) => {
+    return `
+     url(${img})
+     `;
+  }};
 `;
 
 export const ButtonBlock = styled.div`
@@ -19,6 +26,7 @@ export const EventTitleBlock = styled.div`
   height: 26px;
   line-height: 26px;
   font-size: 18px;
+  font-weight: 600;
   color: #0d0b0c;
 `;
 

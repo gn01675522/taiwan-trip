@@ -32,16 +32,18 @@ export const EventContentHeader = styled.h5`
   line-height: 23px;
   font-size: 16px;
   font-weight: 400;
+  color: #0d0b0c;
 `;
 
 export const EventContentBody = styled.div`
   display: -webkit-box;
   font-size: 14px;
+  color: #acacac;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 7;
 `;
 
 export const EventContentFooter = styled.div`

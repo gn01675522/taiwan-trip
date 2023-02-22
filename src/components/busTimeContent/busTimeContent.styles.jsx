@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Outline = styled.div`
-  outline: 1px solid red;
   display: grid;
   grid-template-columns: repeat(2, 299px);
-  grid-template-rows: repeat(12, 44px);
+  grid-template-rows: repeat(auto-fit, 44px);
   grid-auto-flow: column;
   grid-gap: 32px 96px;
   width: 100%;
@@ -13,7 +12,6 @@ export const Outline = styled.div`
 `;
 
 export const BusTimeTable = styled.div`
-  outline: 1px solid red;
   display: flex;
   gap: 33px;
   width: 100%;
@@ -22,12 +20,15 @@ export const BusTimeTable = styled.div`
 
 export const BusTime = styled.div`
   width: 200px;
-  height: 100%;
-  outline: 1px solid #0d0b0c;
+  line-height: 44px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0d0b0c;
+  outline: 2px solid #0d0b0c;
   border-radius: 7px;
+  text-align: center;
 `;
 export const BusName = styled.div`
-  outline: 1px solid purple;
   width: 100%;
   height: 100%;
   line-height: 44px;
