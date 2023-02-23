@@ -10,12 +10,14 @@ import PopularFoodList from "../../components/popularFoodList/popularFoodList.co
 import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 
 import { fetchEventListAsync } from "../../store/event/event.actions";
+import { fetchFoodListAsync } from "../../store/food/food.actions";
 
 const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchEventListAsync());
+    dispatch(fetchFoodListAsync());
   }, []);
 
   return (

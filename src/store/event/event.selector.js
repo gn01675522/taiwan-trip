@@ -1,13 +1,13 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-const selectEventListReducer = (state) => state.event;
+const selectEventReducer = (state) => state.event;
 
 export const selectEventList = createSelector(
-  [selectEventListReducer],
+  [selectEventReducer],
   (event) => event.eventList
 );
 
 export const selectEventIsLoading = createSelector(
-  [selectEventListReducer],
+  [selectEventReducer],
   (event) => event.isLoading
 );

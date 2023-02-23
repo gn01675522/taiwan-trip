@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 
 import ListBlock from "../UI/listBlock/listBlock.component";
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
@@ -6,10 +6,10 @@ import FoodCard from "../foodCard/foodCard.component";
 
 import { FoodListLayout } from "./popularFoodList.styles";
 
-import { FoodContext } from "../../contexts/food.context";
+import { selectFoodList } from "../../store/food/food.selector";
 
 const PopularFoodList = () => {
-  const { popularFood } = useContext(FoodContext);
+  const popularFood = useSelector(selectFoodList);
 
   return (
     <ListBlock topicType="food">
