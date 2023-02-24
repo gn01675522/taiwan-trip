@@ -46,7 +46,13 @@ const FoodCard = ({ foodDetail }) => {
   return (
     <ShadowCard $contentType="sm-list" $pageType="food" onClick={onShowDetail}>
       <FoodCardOutline>
-        <FoodImage imageUrl={Picture.PictureUrl1} />
+        <FoodImage
+          imageUrl={
+            Picture
+              ? Picture.PictureUrl1
+              : "../../assets/picture/cantFindImg.jpg"
+          }
+        />
         <FoodLocation>{Title}</FoodLocation>
         <FoodArea>
           <PinkLocation />

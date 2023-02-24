@@ -3,6 +3,14 @@ import styled from "styled-components";
 export const CardOutline = styled.div`
   width: 100%;
   height: 100%;
+  ${({ $pageType }) => {
+    switch ($pageType) {
+      case "event":
+        return;
+      default:
+        return `cursor: pointer;`;
+    }
+  }}
 `;
 export const CardContent = styled.div`
   position: relative;

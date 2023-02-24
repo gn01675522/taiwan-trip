@@ -4,6 +4,7 @@ import { eventReducer } from "./event/event.reducer";
 import { busReducer } from "./bus/bus.reducer";
 import { foodReducer } from "./food/food.reducer";
 import { hotelReducer } from "./hotel/hotel.reducer";
+import { scenicSpotReducer } from "./scenicSpot/scenicSpot.reducer";
 
 export const rootReducer = combineReducers({
   detail: detailReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   food: foodReducer,
   hotel: hotelReducer,
   bus: busReducer,
+  scenicSpot: scenicSpotReducer,
 });

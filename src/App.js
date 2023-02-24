@@ -7,6 +7,7 @@ import Footer from "./components/UI/footer/footer.component";
 import Food from "./routes/food/food.component";
 import Traffic from "./routes/traffic/traffic.component";
 import Detail from "./components/UI/detail/detail.component";
+import ScenicSpot from "./routes/scenicSpot/scenicSpot.component";
 
 import { selectModalOpen } from "./store/detail/detail.selector";
 
@@ -22,8 +23,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="scenicSpot/*" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
-          <Route path="food" element={<Food />} />
+          <Route path="foodAndHotel" element={<Food />} />
           <Route path="traffic" element={<Traffic />} />
         </Route>
       </Routes>

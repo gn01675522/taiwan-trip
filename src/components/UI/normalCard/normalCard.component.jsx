@@ -1,7 +1,11 @@
 import { NormalCardOutline } from "./normalCard.styles";
 
-const NormalCard = ({ children, gridArea }) => {
-  return <NormalCardOutline gridArea={gridArea}>{children}</NormalCardOutline>;
+const NormalCard = ({ children, gridArea, ...otherProps }) => {
+  return (
+    <NormalCardOutline gridArea={gridArea} {...otherProps}>
+      {children}
+    </NormalCardOutline>
+  );
 };
 
 export default NormalCard;

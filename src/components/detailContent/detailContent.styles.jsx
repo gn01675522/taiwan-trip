@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import cantFindImg from "../../assets/picture/cantFindImg.jpg";
 
 export const DetailPhoto = styled.div`
   width: 100%;
@@ -6,8 +7,8 @@ export const DetailPhoto = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  ${({ img }) =>
-    img ? `background-image: url(${img});` : `background-color: purple;`}
+  background-image: ${({ img }) =>
+    img ? `url(${img});` : `url(${cantFindImg});`};
 `;
 
 export const ButtonBlock = styled.div`

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as WhiteMapSymbol } from "../../assets/svg/whiteMapSymbol.svg";
+
+import NormalCard from "../UI/normalCard/normalCard.component";
 
 import {
   CityCardOutline,
@@ -6,16 +9,23 @@ import {
   CardContent,
 } from "./cityCard.styles";
 
-const CityCard = ({ cityTitle, cityImg }) => {
+const CityCard = ({ cityList, gridArea }) => {
+  const navigate = useNavigate();
+  const { tcTitle, img, route } = cityList;
+
+  const onNavigateHandler = () => navigate(route);
+
   return (
-    <CityCardOutline cityImg={cityImg}>
-      <BlurBackground>
-        <CardContent>
-          <WhiteMapSymbol />
-          {cityTitle}
-        </CardContent>
-      </BlurBackground>
-    </CityCardOutline>
+    <NormalCard gridArea={gridArea} onClick={onNavigateHandler}>
+      <CityCardOutline cityImg={img}>
+        <BlurBackground>
+          <CardContent>
+            <WhiteMapSymbol />
+            {tcTitle}
+          </CardContent>
+        </BlurBackground>
+      </CityCardOutline>
+    </NormalCard>
   );
 };
 

@@ -63,3 +63,19 @@ export const getTDXHotelList = async () => {
     console.log(error);
   }
 };
+
+export const getTDXScenicSpotList = async () => {
+  try {
+    const response = await fetch(
+      "https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/Taipei?%24top=20&%24format=JSON",
+      {
+        method: "GET",
+        headers: getAuthToken(),
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

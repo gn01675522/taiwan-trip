@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import cantFindImg from "../../assets/picture/cantFindImg.jpg";
 
 export const EventCardOutline = styled.div`
   display: flex;
@@ -13,11 +14,8 @@ export const EventImage = styled.img`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: ${({ imgUrl }) => {
-    return `
-    url(${imgUrl})
-    `;
-  }};
+  background-image: ${({ imgUrl }) =>
+    imgUrl ? `url(${imgUrl})` : `url(${cantFindImg})`};
 `;
 
 export const EventContent = styled.div`

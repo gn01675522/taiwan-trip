@@ -1,4 +1,4 @@
-//* who call this：
+//* who use this：
 //* 1. banner.component.jsx
 //* 2. popularEventList.component.jsx
 //* 3. popularFoodList.component.jsx
@@ -16,7 +16,7 @@ const ShadowCard = ({ children, $contentType, $pageType, ...otherProps }) => {
   const tempState = true;
   return (
     <>
-      <CardOutline $contentType={$contentType} {...otherProps}>
+      <CardOutline $pageType={$pageType} {...otherProps}>
         <CardContent $pageType={$pageType}>
           {tempState ? children : <HintText>請選擇公車路線</HintText>}
         </CardContent>

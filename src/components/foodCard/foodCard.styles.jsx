@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import cantFindImg from "../../assets/picture/cantFindImg.jpg";
 
 export const FoodCardOutline = styled.div`
   display: grid;
@@ -11,17 +12,11 @@ export const FoodCardOutline = styled.div`
 export const FoodImage = styled.img`
   width: 100%;
   height: 100%;
-  ${({ imageUrl }) => {
-    if (imageUrl) {
-      return `
-        background-image: url(${imageUrl});
-        background-size: cover;
-        background-position: center center;
-        backgroud-repeat: no-repeat;
-      `;
-    }
-    return `background-color: purple;`;
-  }}
+  background-image: ${({ imageUrl }) =>
+    imageUrl ? `url(${imageUrl})` : `url(${cantFindImg})`};
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 `;
 
 export const FoodLocation = styled.div`

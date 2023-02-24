@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import ListBlock from "../UI/listBlock/listBlock.component";
-import NormalCard from "../UI/normalCard/normalCard.component";
 import CityCard from "../cityCard/cityCard.component";
 
 import { CityListContent, CityListLayout } from "./popularCityList.styles";
@@ -47,11 +46,7 @@ const PopularCityList = () => {
         )}
         <CityListLayout>
           {cityList.map((city, index) => {
-            return (
-              <NormalCard key={city.id} gridArea={index}>
-                <CityCard cityTitle={city.tcTitle} cityImg={city.img} />
-              </NormalCard>
-            );
+            return <CityCard key={city.id} gridArea={index} cityList={city} />;
           })}
         </CityListLayout>
         {!isNextPage && (

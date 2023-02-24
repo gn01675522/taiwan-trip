@@ -41,4 +41,5 @@ export const PAGE_TYPE = {
   home: "home",
   food: "food",
   traffic: "traffic",
+  scenicSpot: "scenicSpot",
 };

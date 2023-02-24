@@ -23,7 +23,7 @@ const navOption = [
   },
   {
     title: "美食住宿",
-    link: "/food",
+    link: "/foodAndHotel",
     frame: <YellowFrame />,
   },
   {

@@ -16,6 +16,7 @@ const getPage = (pageType) =>
     [PAGE_TYPE.home]: ContainerOutlineInHome,
     [PAGE_TYPE.food]: ContainerOutlineInFood,
     [PAGE_TYPE.traffic]: ContainerOutlineInTraffic,
+    [PAGE_TYPE.scenicSpot]: ContainerOutlineInHome,
   }[pageType]);
 
 const Container = ({ children, pageType }) => {

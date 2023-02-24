@@ -6,6 +6,7 @@ import { BannerOutline } from "./banner.styles";
 
 const Banner = ({ pageType }) => {
   const exceptTraffic = pageType !== "traffic";
+
   return (
     <>
       <BannerOutline $pageType={pageType}>
