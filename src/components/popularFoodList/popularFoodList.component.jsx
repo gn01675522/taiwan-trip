@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
 import ListBlock from "../UI/listBlock/listBlock.component";
-import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import FoodCard from "../foodCard/foodCard.component";
 
 import { FoodListLayout } from "./popularFoodList.styles";
@@ -14,17 +13,9 @@ const PopularFoodList = () => {
   return (
     <ListBlock topicType="food">
       <FoodListLayout>
-        {popularFood.map((food) => {
-          return (
-            <ShadowCard
-              key={food.RestaurantID}
-              $contentType="sm-list"
-              $pageType="food"
-            >
-              <FoodCard foodDetail={food} />
-            </ShadowCard>
-          );
-        })}
+        {popularFood.map((food) => (
+          <FoodCard key={food.RestaurantID} foodDetail={food} />
+        ))}
       </FoodListLayout>
     </ListBlock>
   );

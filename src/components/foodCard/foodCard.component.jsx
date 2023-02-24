@@ -1,4 +1,8 @@
+import { useDispatch } from "react-redux";
+
 import { ReactComponent as PinkLocation } from "../../assets/svg/pinkLocation.svg";
+
+import ShadowCard from "../UI/shadowCard/shadowCard.component";
 
 import {
   FoodCardOutline,
@@ -7,19 +11,49 @@ import {
   FoodArea,
 } from "./foodCard.styles";
 
+import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
+
 const FoodCard = ({ foodDetail }) => {
-  const { RestaurantName, Address, Picture } = foodDetail;
+  const dispatch = useDispatch();
+  const {
+    RestaurantName: Title,
+    Address,
+    Description,
+    City: Location,
+    Picture,
+    Phone,
+    OpenTime: Cycle,
+  } = foodDetail;
   const reduceAddress = Address.slice(0, 6);
 
+  console.log(foodDetail.opentTime);
+
+  const onShowDetail = () => {
+    dispatch(
+      setModalData({
+        Title,
+        Address,
+        Description,
+        Location,
+        Picture,
+        Phone,
+        Cycle,
+      })
+    );
+    dispatch(setModalOpen(true));
+  };
+
   return (
-    <FoodCardOutline>
-      <FoodImage imageUrl={Picture.PictureUrl1}/>
-      <FoodLocation>{RestaurantName}</FoodLocation>
-      <FoodArea>
-        <PinkLocation />
-        {reduceAddress}
-      </FoodArea>
-    </FoodCardOutline>
+    <ShadowCard $contentType="sm-list" $pageType="food" onClick={onShowDetail}>
+      <FoodCardOutline>
+        <FoodImage imageUrl={Picture.PictureUrl1} />
+        <FoodLocation>{Title}</FoodLocation>
+        <FoodArea>
+          <PinkLocation />
+          {reduceAddress}
+        </FoodArea>
+      </FoodCardOutline>
+    </ShadowCard>
   );
 };
 

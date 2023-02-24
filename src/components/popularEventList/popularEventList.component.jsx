@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
 import ListBlock from "../UI/listBlock/listBlock.component";
-import ShadowCard from "../UI/shadowCard/shadowCard.component";
 import EventCard from "../eventCard/eventCard.component";
 
 import { EventListLayout } from "./popularEvent.styles";
@@ -14,13 +13,9 @@ const PopularEventList = () => {
   return (
     <ListBlock topicType="event">
       <EventListLayout>
-        {popularEvent.map((event, index) => {
-          return (
-            <ShadowCard key={index} $contentType="me-list" $pageType="event">
-              <EventCard eventDetail={event} />
-            </ShadowCard>
-          );
-        })}
+        {popularEvent.map((event, index) => (
+          <EventCard key={index} eventDetail={event} />
+        ))}
       </EventListLayout>
     </ListBlock>
   );

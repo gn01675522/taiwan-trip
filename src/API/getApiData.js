@@ -35,7 +35,7 @@ export const getTDXEventList = async () => {
 export const getTDXFoodList = async () => {
   try {
     const response = await fetch(
-      "https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/NantouCounty?%24top=10&%24format=JSON",
+      "https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/NewTaipei?%24top=10&%24format=JSON",
       {
         method: "GET",
         headers: getAuthToken(),

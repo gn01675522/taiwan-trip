@@ -6,11 +6,8 @@ export const DetailPhoto = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: ${({ img }) => {
-    return `
-     url(${img})
-     `;
-  }};
+  ${({ img }) =>
+    img ? `background-image: url(${img});` : `background-color: purple;`}
 `;
 
 export const ButtonBlock = styled.div`

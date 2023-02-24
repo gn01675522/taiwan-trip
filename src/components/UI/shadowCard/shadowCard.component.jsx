@@ -5,15 +5,20 @@
 //* 4. modal.component.jsx
 //* 5. traffic.component.jsx
 
-import { CardOutline, CardContent, Shadow, HintText } from "./shadowCard.styles";
+import {
+  CardOutline,
+  CardContent,
+  Shadow,
+  HintText,
+} from "./shadowCard.styles";
 
-const ShadowCard = ({ children, $contentType, $pageType }) => {
+const ShadowCard = ({ children, $contentType, $pageType, ...otherProps }) => {
   const tempState = true;
   return (
     <>
-      <CardOutline $contentType={$contentType}>
+      <CardOutline $contentType={$contentType} {...otherProps}>
         <CardContent $pageType={$pageType}>
-        {tempState ? children : <HintText>請選擇公車路線</HintText>}
+          {tempState ? children : <HintText>請選擇公車路線</HintText>}
         </CardContent>
         <Shadow $contentType={$contentType} />
       </CardOutline>
