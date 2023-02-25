@@ -5,16 +5,16 @@ import FoodCard from "../foodCard/foodCard.component";
 
 import { FoodListLayout } from "./popularFoodList.styles";
 
-import { selectFoodList } from "../../store/food/food.selector";
+import { selectFoodListMap } from "../../store/food/food.selector";
 
 const PopularFoodList = () => {
-  const popularFood = useSelector(selectFoodList);
+  const popularFood = useSelector(selectFoodListMap);
 
   return (
     <ListBlock topicType="food">
       <FoodListLayout>
         {popularFood.map((food) => (
-          <FoodCard key={food.RestaurantID} foodDetail={food} />
+          <FoodCard key={food.Id} foodDetail={food} />
         ))}
       </FoodListLayout>
     </ListBlock>

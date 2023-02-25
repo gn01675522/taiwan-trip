@@ -39,6 +39,8 @@ const DetailContent = () => {
 
   console.log(StartTime, EndTime);
 
+  // `${startTime} 至 ${endTime}`
+
   return (
     <>
       <DetailPhoto img={Picture.PictureUrl1} />
@@ -51,7 +53,7 @@ const DetailContent = () => {
       <EventInfoBlock>
         <EventBusinessHoursAndCharge>
           <Clock />
-          {Cycle ? Cycle : `${startTime} 至 ${endTime}`}
+          {Cycle ? Cycle : `來源資料無提供`}
         </EventBusinessHoursAndCharge>
         <EventBusinessHoursAndCharge>
           <Ticket />

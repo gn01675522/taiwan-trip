@@ -5,12 +5,12 @@ import ScenicSpotCard from "../scenicSpotCard/scenicSpotCard.component";
 
 import { ScenicSpotListLayout } from "./scenicSpotList.styles";
 
-import { selectScenicSpotList } from "../../store/scenicSpot/scenicSpot.selector";
+import { selectScenicSpotListMap } from "../../store/scenicSpot/scenicSpot.selector";
 
 const ScenicSpotList = () => {
-  const scenicSpotList = useSelector(selectScenicSpotList);
+  const scenicSpotList = useSelector(selectScenicSpotListMap);
   return (
-    <ListBlock topicType="event">
+    <ListBlock topicType="city">
       <ScenicSpotListLayout>
         {scenicSpotList.map((scenicSpot, index) => (
           <ScenicSpotCard key={index} scenicSpotDetail={scenicSpot} />

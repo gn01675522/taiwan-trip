@@ -14,29 +14,12 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const HotelCard = ({ hotelDetail }) => {
   const dispatch = useDispatch();
-  const {
-    HotelName: Title,
-    Address,
-    Description,
-    City: Location,
-    Picture,
-    Phone,
-    OpenTime: Cycle,
-  } = hotelDetail;
+  const { Title, Address, Picture } = hotelDetail;
+
   const reduceAddress = Address.slice(0, 6);
 
   const onShowDetail = () => {
-    dispatch(
-      setModalData({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Cycle,
-      })
-    );
+    dispatch(setModalData(hotelDetail));
     dispatch(setModalOpen(true));
   };
 

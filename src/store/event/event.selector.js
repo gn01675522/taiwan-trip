@@ -7,6 +7,38 @@ export const selectEventList = createSelector(
   (event) => event.eventList
 );
 
+export const selectEventListMap = createSelector(
+  [selectEventList],
+  (eventList) =>
+    eventList.reduce((acc, event) => {
+      const {
+        ActivityName: Title,
+        Address,
+        Description,
+        Location,
+        Picture,
+        Phone,
+        Charge,
+        Cycle,
+        StartTime,
+        EndTime,
+      } = event;
+      acc.push({
+        Title,
+        Address,
+        Description,
+        Location,
+        Picture,
+        Phone,
+        Charge,
+        Cycle,
+        StartTime,
+        EndTime,
+      });
+      return acc;
+    }, [])
+);
+
 export const selectEventIsLoading = createSelector(
   [selectEventReducer],
   (event) => event.isLoading

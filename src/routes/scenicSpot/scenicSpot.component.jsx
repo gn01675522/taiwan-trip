@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import Banner from "../../components/banner/banner.component";
@@ -11,11 +12,12 @@ import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 import { fetchScenicSpotAsync } from "../../store/scenicSpot/scenicSpot.actions.js";
 
 const ScenicSpot = () => {
+  const { county } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchScenicSpotAsync());
-  }, []);
+    dispatch(fetchScenicSpotAsync(county));
+  }, [county]);
 
   return (
     <>

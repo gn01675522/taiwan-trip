@@ -17,7 +17,9 @@ const Modal = ({ children }) => {
     <ModalOutline>
       <Backdrop onClick={onShowModal} />
       <ModalBody>
-        <ShadowCard $contentType="detail" $pageType="banner">{children}</ShadowCard>
+        <ShadowCard $contentType="detail" $pageType="banner">
+          {children}
+        </ShadowCard>
         <Button buttonType={BUTTON_TYPE_CLASSES.cancel} onClick={onShowModal} />
       </ModalBody>
     </ModalOutline>

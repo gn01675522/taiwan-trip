@@ -5,10 +5,10 @@ import HotelCard from "../hotelCard/hotelCard.component";
 
 import { HotelListLayout } from "./popularHotelList.styles";
 
-import { selectHotelList } from "../../store/hotel/hotel.selector.js";
+import { selectHotelListMap } from "../../store/hotel/hotel.selector.js";
 
 const PopularHotelList = () => {
-  const popularHotel = useSelector(selectHotelList);
+  const popularHotel = useSelector(selectHotelListMap);
 
   return (
     <ListBlock topicType="hotel">

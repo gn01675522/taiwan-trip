@@ -14,44 +14,19 @@ import {
 import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const ScenicSpotCard = ({ scenicSpotDetail }) => {
-  console.log(scenicSpotDetail);
   const dispatch = useDispatch();
-  const {
-    ScenicSpotName: Title,
-    Address,
-    DescriptionDetail: Description,
-    City: Location,
-    Picture,
-    Phone,
-    OpenTime: Cycle,
-  } = scenicSpotDetail;
+  const { Title, Location, Picture } = scenicSpotDetail;
   // const reduceAddress = Address.slice(0, 6);
 
-  // const onShowDetail = () => {
-  //   dispatch(
-  //     setModalData({
-  //       Title,
-  //       Address,
-  //       Description,
-  //       Location,
-  //       Picture,
-  //       Phone,
-  //       Cycle,
-  //     })
-  //   );
-  //   dispatch(setModalOpen(true));
-  // };
+  const onShowDetail = () => {
+    dispatch(setModalData(scenicSpotDetail));
+    dispatch(setModalOpen(true));
+  };
 
   return (
-    <ShadowCard $contentType="sm-list" $pageType="food">
+    <ShadowCard $contentType="sm-list" $pageType="food" onClick={onShowDetail}>
       <ScenicSpotCardOutline>
-        <ScenicSpotImage
-          imageUrl={
-            Picture
-              ? Picture.PictureUrl1
-              : "../../assets/picture/cantFindImg.jpg"
-          }
-        />
+        <ScenicSpotImage imageUrl={Picture.PictureUrl1} />
         <ScenicSpotLocation>{Title}</ScenicSpotLocation>
         <ScenicSpotArea>
           <PinkLocation />

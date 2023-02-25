@@ -17,11 +17,11 @@ export const fetchScenicSpotSuccess = (scenicSpotList) =>
 export const fetchScenicSpotFailed = (error) =>
   createAction(FETCH_SCENIC_SPOT_FAILED, error);
 
-export const fetchScenicSpotAsync = () => {
+export const fetchScenicSpotAsync = (county) => {
   return async (dispatch) => {
     dispatch(fetchScenicSpotStart());
     try {
-      const scenicSpotList = await getTDXScenicSpotList();
+      const scenicSpotList = await getTDXScenicSpotList(county);
       dispatch(fetchScenicSpotSuccess(scenicSpotList));
     } catch (error) {
       dispatch(FETCH_SCENIC_SPOT_FAILED, error);

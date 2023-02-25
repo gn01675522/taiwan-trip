@@ -15,31 +15,11 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const FoodCard = ({ foodDetail }) => {
   const dispatch = useDispatch();
-  const {
-    RestaurantName: Title,
-    Address,
-    Description,
-    City: Location,
-    Picture,
-    Phone,
-    OpenTime: Cycle,
-  } = foodDetail;
+  const { Title, Address, Picture } = foodDetail;
   const reduceAddress = Address.slice(0, 6);
 
-  console.log(foodDetail.opentTime);
-
   const onShowDetail = () => {
-    dispatch(
-      setModalData({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Cycle,
-      })
-    );
+    dispatch(setModalData(foodDetail));
     dispatch(setModalOpen(true));
   };
 

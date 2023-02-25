@@ -5,10 +5,10 @@ import EventCard from "../eventCard/eventCard.component";
 
 import { EventListLayout } from "./popularEvent.styles";
 
-import { selectEventList } from "../../store/event/event.selector";
+import { selectEventListMap } from "../../store/event/event.selector";
 
 const PopularEventList = () => {
-  const popularEvent = useSelector(selectEventList);
+  const popularEvent = useSelector(selectEventListMap);
 
   return (
     <ListBlock topicType="event">

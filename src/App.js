@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
@@ -14,16 +15,21 @@ import { selectModalOpen } from "./store/detail/detail.selector";
 import { GlobalStyle } from "./global.styles";
 
 const App = () => {
-  const modalIsOpen = useSelector(selectModalOpen);
+  const isModalOpen = useSelector(selectModalOpen);
+  const htmlBody = document.querySelector("body");
+
+  useEffect(() => {
+    htmlBody.style.overflow = isModalOpen ? "hidden" : "auto";
+  }, [isModalOpen]);
 
   return (
     <div>
       <GlobalStyle />
-      {modalIsOpen && <Detail />}
+      {isModalOpen && <Detail />}
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="scenicSpot/*" element={<ScenicSpot />} />
+          <Route path="scenicSpot/:county" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<Food />} />
           <Route path="traffic" element={<Traffic />} />

@@ -19,34 +19,10 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const EventCard = ({ eventDetail }) => {
   const dispatch = useDispatch();
-  const {
-    ActivityName: Title,
-    Address,
-    Description,
-    Location,
-    Picture,
-    Phone,
-    Charge,
-    Cycle,
-    StartTime,
-    EndTime,
-  } = eventDetail;
+  const { Title, Description, Location, Picture } = eventDetail;
 
   const onShowDetail = () => {
-    dispatch(
-      setModalData({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Charge,
-        Cycle,
-        StartTime,
-        EndTime,
-      })
-    );
+    dispatch(setModalData(eventDetail));
     dispatch(setModalOpen(true));
   };
 

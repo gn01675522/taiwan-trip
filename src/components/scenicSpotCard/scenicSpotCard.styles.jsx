@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import cantFindImg from "../../assets/picture/cantFindImg.jpg";
 
 export const ScenicSpotCardOutline = styled.div`
   display: grid;
@@ -11,17 +12,11 @@ export const ScenicSpotCardOutline = styled.div`
 export const ScenicSpotImage = styled.img`
   width: 100%;
   height: 100%;
-  ${({ imageUrl }) => {
-    if (imageUrl) {
-      return `
-        background-image: url(${imageUrl});
-        background-size: cover;
-        background-position: center center;
-        backgroud-repeat: no-repeat;
-      `;
-    }
-    return `background-color: purple;`;
-  }}
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: ${({ imageUrl }) =>
+    imageUrl ? `url(${imageUrl})` : `url(${cantFindImg})`};
 `;
 
 export const ScenicSpotLocation = styled.div`
