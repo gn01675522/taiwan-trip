@@ -14,9 +14,9 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const HotelCard = ({ hotelDetail }) => {
   const dispatch = useDispatch();
-  const { Title, Address, Picture } = hotelDetail;
+  const { title, address, picture } = hotelDetail;
 
-  const reduceAddress = Address.slice(0, 6);
+  const reduceAddress = address.slice(0, 6);
 
   const onShowDetail = () => {
     dispatch(setModalData(hotelDetail));
@@ -26,8 +26,8 @@ const HotelCard = ({ hotelDetail }) => {
   return (
     <ShadowCard $contentType="sm-list" $pageType="hotel" onClick={onShowDetail}>
       <HotelCardOutline>
-        <HotelImage imageUrl={Picture.PictureUrl1} />
-        <HotelLocation>{Title}</HotelLocation>
+        <HotelImage imageUrl={picture.PictureUrl1} />
+        <HotelLocation>{title}</HotelLocation>
         <HotelArea>
           <PinkLocation />
           {reduceAddress}

@@ -1,4 +1,4 @@
-//* who call this：
+//* which use this：
 //*   1. popularCityList.component.jsx
 //*   2. popularEventList.component.jsx
 //*   3. popularFoodList.component.jsx

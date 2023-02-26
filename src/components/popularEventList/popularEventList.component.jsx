@@ -13,8 +13,8 @@ const PopularEventList = () => {
   return (
     <ListBlock topicType="event">
       <EventListLayout>
-        {popularEvent.map((event, index) => (
-          <EventCard key={index} eventDetail={event} />
+        {popularEvent.map((event) => (
+          <EventCard key={event.id} eventDetail={event} />
         ))}
       </EventListLayout>
     </ListBlock>

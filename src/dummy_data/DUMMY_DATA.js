@@ -1,4 +1,5 @@
-//* who call this： bannerForm.component.jsx
+//* which use this：
+//* bannerForm.component.jsx
 
 export const SELECTED_OPTION = [
   {

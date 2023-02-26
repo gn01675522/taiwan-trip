@@ -19,7 +19,6 @@ export const fetchHotelListAsync = () => {
     dispatch(fetchHotelListStart());
     try {
       const hotelList = await getTDXHotelList();
-      console.log(hotelList);
       dispatch(fetchHotelListSuccess(hotelList));
     } catch (error) {
       dispatch(fetchHotelListFailed(error));

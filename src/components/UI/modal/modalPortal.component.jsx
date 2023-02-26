@@ -1,3 +1,6 @@
+//* which use this：
+//* modal.component.jsx
+
 import { createPortal } from "react-dom";
 
 import Modal from "./modal.component";

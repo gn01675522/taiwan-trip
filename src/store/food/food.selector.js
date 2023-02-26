@@ -10,25 +10,26 @@ export const selectFoodList = createSelector(
 export const selectFoodListMap = createSelector([selectFoodList], (foodList) =>
   foodList.reduce((acc, food) => {
     const {
-      RestaurantID: Id,
-      RestaurantName: Title,
-      Address,
-      Description,
-      Location,
-      Picture,
-      Phone,
-      OpenTime: Cycle,
+      RestaurantID: id,
+      RestaurantName: title,
+      Address: address,
+      Description: description,
+      Picture: picture,
+      Phone: phone,
+      OpenTime: during,
     } = food;
 
+    const location = address.slice(0, 6);
+
     acc.push({
-      Id,
-      Title,
-      Address,
-      Description,
-      Location,
-      Picture,
-      Phone,
-      Cycle,
+      id,
+      title,
+      address,
+      description,
+      location,
+      picture,
+      phone,
+      during,
     });
 
     return acc;

@@ -12,23 +12,28 @@ export const selectScenicSpotListMap = createSelector(
   (scenicSpots) =>
     scenicSpots.reduce((acc, scenicSpot) => {
       const {
-        ScenicSpotName: Title,
-        Address,
-        DescriptionDetail: Description,
-        City: Location,
-        Picture,
-        Phone,
-        OpenTime: Cycle,
+        ScenicSpotID: id,
+        ScenicSpotName: title,
+        Address: address,
+        DescriptionDetail: description,
+        City: location,
+        Picture: picture,
+        Phone: phone,
+        OpenTime,
       } = scenicSpot;
 
+      const during =
+        OpenTime === "開放空間" ? OpenTime.concat("，無時間限制") : OpenTime;
+
       acc.push({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Cycle,
+        id,
+        title,
+        address,
+        description,
+        location,
+        picture,
+        phone,
+        during,
       });
       return acc;
     }, [])

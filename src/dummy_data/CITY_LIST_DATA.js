@@ -50,8 +50,18 @@ export const DATA_FOR_CITY_LIST = [
     img: nantou,
     route: "scenicSpot/NantouCounty",
   },
-  { id: "Chiayi", tcTitle: "嘉 義", img: chaiyi, route: "scenicSpot/Chiayi" },
-  { id: "Tainan", tcTitle: "台 南", img: tainan, route: "scenicSpot/Tainan" },
+  {
+    id: "Chiayi",
+    tcTitle: "嘉 義",
+    img: chaiyi,
+    route: "scenicSpot/Chiayi",
+  },
+  {
+    id: "Tainan",
+    tcTitle: "台 南",
+    img: tainan,
+    route: "scenicSpot/Tainan",
+  },
   {
     id: "Kaohsiung",
     tcTitle: "高 雄",

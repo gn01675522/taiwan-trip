@@ -25,6 +25,7 @@ export const ModalBody = styled.div`
   display: flex;
   position: fixed;
   width: 50%;
+  height: auto;
   gap: 12px;
   top: 5vh;
   z-index: 1001;

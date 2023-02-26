@@ -12,23 +12,26 @@ export const selectHotelListMap = createSelector(
   (hotelList) =>
     hotelList.reduce((acc, hotel) => {
       const {
-        HotelName: Title,
-        Address,
-        Description,
-        City: Location,
-        Picture,
-        Phone,
-        OpenTime: Cycle,
+        HotelID: id,
+        HotelName: title,
+        Address: address,
+        Description: description,
+        Picture: picture,
+        Phone: phone,
+        OpenTime: during,
       } = hotel;
 
+      const location = address.slice(0, 6);
+
       acc.push({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Cycle,
+        id,
+        title,
+        address,
+        description,
+        location,
+        picture,
+        phone,
+        during,
       });
 
       return acc;

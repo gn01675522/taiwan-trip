@@ -14,7 +14,7 @@ const PopularHotelList = () => {
     <ListBlock topicType="hotel">
       <HotelListLayout>
         {popularHotel.map((hotel) => (
-          <HotelCard key={hotel.HotelID} hotelDetail={hotel} />
+          <HotelCard key={hotel.id} hotelDetail={hotel} />
         ))}
       </HotelListLayout>
     </ListBlock>

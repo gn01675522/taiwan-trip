@@ -19,7 +19,7 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const EventCard = ({ eventDetail }) => {
   const dispatch = useDispatch();
-  const { Title, Description, Location, Picture } = eventDetail;
+  const { title, description, location, picture } = eventDetail;
 
   const onShowDetail = () => {
     dispatch(setModalData(eventDetail));
@@ -29,14 +29,14 @@ const EventCard = ({ eventDetail }) => {
   return (
     <ShadowCard $contentType="me-list" $pageType="event">
       <EventCardOutline>
-        <EventImage imgUrl={Picture.PictureUrl1} />
+        <EventImage imgUrl={picture.PictureUrl1} />
         <EventContent>
-          <EventContentHeader>{Title}</EventContentHeader>
-          <EventContentBody>{Description}</EventContentBody>
+          <EventContentHeader>{title}</EventContentHeader>
+          <EventContentBody>{description}</EventContentBody>
           <EventContentFooter>
             <EventLocationInfo>
               <PinkLocationSymbol />
-              {Location}
+              {location}
             </EventLocationInfo>
             <Button
               buttonType={BUTTON_TYPE_CLASSES.detail}

@@ -12,28 +12,38 @@ export const selectEventListMap = createSelector(
   (eventList) =>
     eventList.reduce((acc, event) => {
       const {
-        ActivityName: Title,
+        ActivityID: id,
+        ActivityName: title,
         Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Charge,
+        Description: description,
+        Location: location,
+        Picture: picture,
+        Phone: phone,
+        Charge: charge,
         Cycle,
         StartTime,
         EndTime,
       } = event;
+
+      const startTime = StartTime ? StartTime.slice(0, 10) : "";
+      const endTime = EndTime ? EndTime.slice(0, 10) : "";
+
+      const during = Cycle ? Cycle : `${startTime} 至 ${endTime}`;
+
+      const address = location.concat(Address);
+
       acc.push({
-        Title,
-        Address,
-        Description,
-        Location,
-        Picture,
-        Phone,
-        Charge,
-        Cycle,
-        StartTime,
-        EndTime,
+        id,
+        title,
+        address,
+        description,
+        location,
+        picture,
+        phone,
+        charge,
+        during,
+        startTime,
+        endTime,
       });
       return acc;
     }, [])

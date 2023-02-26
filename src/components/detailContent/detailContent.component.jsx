@@ -1,3 +1,6 @@
+//* parent component：
+//* detail.component.jsx
+
 import { useSelector } from "react-redux";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
@@ -13,65 +16,49 @@ import {
   EventTitleBlock,
   EventContentBlock,
   EventInfoBlock,
-  EventBusinessHoursAndCharge,
   EventLocationBlock,
-  EventLocationAndTel,
+  EventInfoContent,
 } from "./detailContent.styles";
 
 import { selectModalData } from "../../store/detail/detail.selector";
 
 const DetailContent = () => {
-  const {
-    Title,
-    Address,
-    Description,
-    Location,
-    Picture,
-    Phone,
-    Charge,
-    Cycle,
-    StartTime,
-    EndTime,
-  } = useSelector(selectModalData);
-
-  const startTime = StartTime ? StartTime.slice(0, 10) : "";
-  const endTime = EndTime ? EndTime.slice(0, 10) : "";
-
-  console.log(StartTime, EndTime);
-
-  // `${startTime} 至 ${endTime}`
+  const { title, address, description, picture, phone, charge, during } =
+    useSelector(selectModalData);
 
   return (
     <>
-      <DetailPhoto img={Picture.PictureUrl1} />
+      <DetailPhoto img={picture.PictureUrl1} />
       <ButtonBlock>
         <Button buttonType={BUTTON_TYPE_CLASSES.previous} />
         <Button buttonType={BUTTON_TYPE_CLASSES.next} />
       </ButtonBlock>
-      <EventTitleBlock>{Title}</EventTitleBlock>
-      <EventContentBlock>{Description}</EventContentBlock>
+      <EventTitleBlock>{title}</EventTitleBlock>
+      <EventContentBlock>{description}</EventContentBlock>
       <EventInfoBlock>
-        <EventBusinessHoursAndCharge>
+        <EventInfoContent>
           <Clock />
-          {Cycle ? Cycle : `來源資料無提供`}
-        </EventBusinessHoursAndCharge>
-        <EventBusinessHoursAndCharge>
+          {during ? during : `資料來源無提供營業時間`}
+        </EventInfoContent>
+        <EventInfoContent>
           <Ticket />
-          {Charge ? Charge : "資料來源無提供票價"}
-        </EventBusinessHoursAndCharge>
+          {charge ? charge : "資料來源無提供收費標準"}
+        </EventInfoContent>
       </EventInfoBlock>
       <EventLocationBlock>
-        <EventLocationAndTel>
+        <EventInfoContent>
           <PinkLocation />
-          {Location + Address}
-        </EventLocationAndTel>
-        <EventLocationAndTel>
+          {address ? address : "資料來源無提供地址"}
+        </EventInfoContent>
+        <EventInfoContent>
           <Tel />
-          {Phone ? Phone : "資料來源無提供聯絡方式"}
-        </EventLocationAndTel>
+          {phone ? phone : "資料來源無提供聯絡方式"}
+        </EventInfoContent>
       </EventLocationBlock>
     </>
   );
 };
 
 export default DetailContent;
+
+//* scenic spot 有的資料會沒有地址，看能不能透過座標來反推地址

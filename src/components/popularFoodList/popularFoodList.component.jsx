@@ -14,7 +14,7 @@ const PopularFoodList = () => {
     <ListBlock topicType="food">
       <FoodListLayout>
         {popularFood.map((food) => (
-          <FoodCard key={food.Id} foodDetail={food} />
+          <FoodCard key={food.id} foodDetail={food} />
         ))}
       </FoodListLayout>
     </ListBlock>

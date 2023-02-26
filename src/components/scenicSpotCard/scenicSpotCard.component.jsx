@@ -15,7 +15,7 @@ import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
 const ScenicSpotCard = ({ scenicSpotDetail }) => {
   const dispatch = useDispatch();
-  const { Title, Location, Picture } = scenicSpotDetail;
+  const { title, location, picture } = scenicSpotDetail;
   // const reduceAddress = Address.slice(0, 6);
 
   const onShowDetail = () => {
@@ -26,11 +26,11 @@ const ScenicSpotCard = ({ scenicSpotDetail }) => {
   return (
     <ShadowCard $contentType="sm-list" $pageType="food" onClick={onShowDetail}>
       <ScenicSpotCardOutline>
-        <ScenicSpotImage imageUrl={Picture.PictureUrl1} />
-        <ScenicSpotLocation>{Title}</ScenicSpotLocation>
+        <ScenicSpotImage imageUrl={picture.PictureUrl1} />
+        <ScenicSpotLocation>{title}</ScenicSpotLocation>
         <ScenicSpotArea>
           <PinkLocation />
-          {Location}
+          {location}
         </ScenicSpotArea>
       </ScenicSpotCardOutline>
     </ShadowCard>

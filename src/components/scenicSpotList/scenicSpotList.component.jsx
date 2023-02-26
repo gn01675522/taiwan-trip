@@ -12,8 +12,8 @@ const ScenicSpotList = () => {
   return (
     <ListBlock topicType="city">
       <ScenicSpotListLayout>
-        {scenicSpotList.map((scenicSpot, index) => (
-          <ScenicSpotCard key={index} scenicSpotDetail={scenicSpot} />
+        {scenicSpotList.map((scenicSpot) => (
+          <ScenicSpotCard key={scenicSpot.id} scenicSpotDetail={scenicSpot} />
         ))}
       </ScenicSpotListLayout>
     </ListBlock>

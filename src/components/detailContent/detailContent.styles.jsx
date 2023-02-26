@@ -39,27 +39,24 @@ export const EventInfoBlock = styled.div`
   display: grid;
   grid-template-columns: 58% 34%;
   width: 100%;
-  height: 22px;
   grid-gap: 41px;
   justify-content: space-between;
 `;
 
-export const EventBusinessHoursAndCharge = styled.div`
+export const EventLocationBlock = styled(EventInfoBlock)`
+  height: fit-content;
+`;
+
+export const EventInfoContent = styled.div`
   display: flex;
   gap: 10px;
   width: 100%;
+  height: fit-content;
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
   text-align: center;
   align-items: center;
   color: #0d0b0c;
-`;
-
-export const EventLocationBlock = styled(EventInfoBlock)`
-  height: 32px;
-`;
-
-export const EventLocationAndTel = styled(EventBusinessHoursAndCharge)`
-  line-height: 32px;
+  text-align: start;
 `;
