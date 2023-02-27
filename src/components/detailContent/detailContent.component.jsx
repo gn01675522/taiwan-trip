@@ -38,7 +38,7 @@ const DetailContent = () => {
       <EventInfoBlock>
         <EventInfoContent>
           <Clock />
-          {during ? during : `資料來源無提供營業時間`}
+          {during ? during : `請參考說明或官網`}
         </EventInfoContent>
         <EventInfoContent>
           <Ticket />

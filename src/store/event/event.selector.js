@@ -14,9 +14,10 @@ export const selectEventListMap = createSelector(
       const {
         ActivityID: id,
         ActivityName: title,
+        City,
         Address,
         Description: description,
-        Location: location,
+        Location,
         Picture: picture,
         Phone: phone,
         Charge: charge,
@@ -30,7 +31,13 @@ export const selectEventListMap = createSelector(
 
       const during = Cycle ? Cycle : `${startTime} 至 ${endTime}`;
 
-      const address = location.concat(Address);
+      const address =
+        Location === "to see the official site"
+          ? Address
+          : Location.concat(Address);
+
+      const location =
+        Location === "to see the official site" ? City : Location;
 
       acc.push({
         id,
@@ -53,3 +60,5 @@ export const selectEventIsLoading = createSelector(
   [selectEventReducer],
   (event) => event.isLoading
 );
+
+//* ? Address.slice(0, 6)

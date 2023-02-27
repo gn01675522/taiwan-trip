@@ -22,7 +22,6 @@ export const FoodImage = styled.img`
 export const FoodLocation = styled.div`
   width: 100%;
   height: 100%;
-  line-height: 42px;
   font-size: 14px;
   font-weight: 400;
   color: #0d0b0c;
