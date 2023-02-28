@@ -13,7 +13,7 @@ const CityCard = ({ cityList, gridArea }) => {
   const navigate = useNavigate();
   const { tcTitle, img, route } = cityList;
 
-  const onNavigateHandler = () => navigate(route);
+  const onNavigateHandler = () => navigate(`scenicSpot/${route}`);
 
   return (
     <NormalCard gridArea={gridArea} onClick={onNavigateHandler}>

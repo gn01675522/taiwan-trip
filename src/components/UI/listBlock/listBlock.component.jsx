@@ -12,6 +12,7 @@ import {
 
 const TOPIC_TYPE_CLASSES = {
   city: "city",
+  scenicSpot: "scenicSpot",
   event: "event",
   food: "food",
   hotel: "hotel",
@@ -20,9 +21,13 @@ const TOPIC_TYPE_CLASSES = {
 const getTopic = (topicType) =>
   ({
     [TOPIC_TYPE_CLASSES.city]: { symbol: TriangleSymbol, topic: "熱門城市" },
+    [TOPIC_TYPE_CLASSES.scenicSpot]: {
+      symbol: TriangleSymbol,
+      topic: "熱門城市",
+    }, // 這邊要使用動態改變，先暫時寫死
     [TOPIC_TYPE_CLASSES.event]: { symbol: TriangleSymbol, topic: "熱門活動" },
-    [TOPIC_TYPE_CLASSES.food]: { symbol: SquareSymbol, topic: "熱門美食" },
-    [TOPIC_TYPE_CLASSES.hotel]: { symbol: SquareSymbol, topic: "熱門住宿" },
+    [TOPIC_TYPE_CLASSES.food]: { symbol: SquareSymbol, topic: "熱門餐飲" },
+    [TOPIC_TYPE_CLASSES.hotel]: { symbol: SquareSymbol, topic: "推薦住宿" },
   }[topicType]);
 
 const ListBlock = ({ children, topicType }) => {

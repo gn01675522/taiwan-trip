@@ -1,4 +1,5 @@
 import { getAuthToken } from "./getApiAuthToken";
+import { createRandomNum } from "../utils/api/api.utils";
 
 export const getTDXBusRoutes = async () => {
   const token = await getAuthToken();
@@ -20,10 +21,11 @@ export const getTDXBusRoutes = async () => {
 
 export const getTDXEventList = async (county) => {
   const token = await getAuthToken();
-  const randomNumber = Math.floor(Math.random() * 819) + 1;
+  const skipNum = createRandomNum(819);
   const apiUrl = county
-    ? ""
-    : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=4&%24skip=${randomNumber}&%24format=JSON`;
+    ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity/${county}?%24top=20&%24format=JSON`
+    : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=4&%24skip=${skipNum}&%24format=JSON`;
+  console.log(apiUrl);
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -38,11 +40,11 @@ export const getTDXEventList = async (county) => {
 
 export const getTDXFoodList = async () => {
   const token = await getAuthToken();
-  const randomNumber = Math.floor(Math.random() * 5143) + 1;
+  const skipNum = createRandomNum(5113);
 
   try {
     const response = await fetch(
-      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${randomNumber}&%24format=JSON`,
+      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${skipNum}&%24format=JSON`,
       {
         method: "GET",
         headers: token,
@@ -57,10 +59,10 @@ export const getTDXFoodList = async () => {
 
 export const getTDXHotelList = async () => {
   const token = await getAuthToken();
-  const randomNumber = Math.floor(Math.random() * 13231) + 1;
+  const skipNum = createRandomNum(13231);
   try {
     const response = await fetch(
-      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${randomNumber}&%24format=JSON`,
+      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${skipNum}&%24format=JSON`,
       {
         method: "GET",
         headers: token,

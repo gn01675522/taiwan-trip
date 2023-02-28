@@ -11,7 +11,7 @@ import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 import { fetchFoodListAsync } from "../../store/food/food.actions";
 import { fetchHotelListAsync } from "../../store/hotel/hotel.actions";
 
-const Food = () => {
+const FoodAndHotel = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const Food = () => {
   );
 };
 
-export default Food;
+export default FoodAndHotel;

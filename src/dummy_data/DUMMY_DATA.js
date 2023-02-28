@@ -1,11 +1,48 @@
 //* which use this：
 //* bannerForm.component.jsx
 
-export const SELECTED_OPTION = [
+export const HOME_SELECTED_OPTION = [
   {
     category: "categories",
     selectedOption: [
-      { id: "category", tcTitle: "類別" },
+      { id: "default", tcTitle: "類別" },
+      { id: "scenicSpot", tcTitle: "景點" },
+      { id: "event", tcTitle: "活動" },
+    ],
+  },
+  {
+    category: "counties",
+    selectedOption: [
+      { id: "default", tcTitle: "不分縣市" },
+      { id: "Taipei", tcTitle: "臺 北 市" },
+      { id: "NewTaipei", tcTitle: "新 北 市" },
+      { id: "Taoyuan", tcTitle: "桃 園 市" },
+      { id: "Taichung", tcTitle: "台 中 市" },
+      { id: "Tainan", tcTitle: "台 南 市" },
+      { id: "Kaohsiung", tcTitle: "高 雄 市" },
+      { id: "Keelung", tcTitle: "基 隆 市" },
+      { id: "Hsinchu", tcTitle: "新 竹 市" },
+      { id: "HsinchuCounty", tcTitle: "新 竹 縣" },
+      { id: "MiaoliCounty", tcTitle: "苗 栗 縣" },
+      { id: "ChanghuaCounty", tcTitle: "彰 化 縣" },
+      { id: "NantouCounty", tcTitle: "南 投 縣" },
+      { id: "YunlinCounty", tcTitle: "雲 林 縣" },
+      { id: "ChiayiCounty", tcTitle: "嘉 義 縣" },
+      { id: "Chiayi", tcTitle: "嘉 義 市" },
+      { id: "PingtungCounty", tcTitle: "屏 東 縣" },
+      { id: "YilanCounty", tcTitle: "宜 蘭 縣" },
+      { id: "HualienCounty", tcTitle: "花 蓮 縣" },
+      { id: "TaitungCounty", tcTitle: "台 東 縣" },
+      { id: "KinmenCounty", tcTitle: "金 門 縣" },
+    ],
+  },
+];
+
+export const FOOD_SELECTED_OPTION = [
+  {
+    category: "categories",
+    selectedOption: [
+      { id: "default", tcTitle: "類別" },
       { id: "food", tcTitle: "美食" },
       { id: "stay", tcTitle: "住宿" },
     ],
@@ -13,30 +50,68 @@ export const SELECTED_OPTION = [
   {
     category: "counties",
     selectedOption: [
-      { id: "no choose", tcTitle: "不分縣市" },
-      { id: "Taipei City", tcTitle: "臺 北 市" },
-      { id: "New Taipei City", tcTitle: "新 北 市" },
-      { id: "Taoyuan City", tcTitle: "桃 園 市" },
-      { id: "Taichung City", tcTitle: "台 中 市" },
-      { id: "Tainan City", tcTitle: "台 南 市" },
-      { id: "Kaohsiung City", tcTitle: "高 雄 市" },
-      { id: "Keelung City", tcTitle: "基 隆 市" },
-      { id: "Hsinchu City", tcTitle: "新 竹 市" },
-      { id: "Hsinchu County", tcTitle: "新 竹 縣" },
-      { id: "Miaoli County", tcTitle: "苗 栗 縣" },
-      { id: "Changhua County", tcTitle: "彰 化 縣" },
-      { id: "Nantou County", tcTitle: "南 投 縣" },
-      { id: "Yunlin County", tcTitle: "雲 林 縣" },
-      { id: "Chiayi County", tcTitle: "嘉 義 縣" },
-      { id: "Chiayi City", tcTitle: "嘉 義 市" },
-      { id: "Pingtung County", tcTitle: "屏 東 縣" },
-      { id: "Yilan County", tcTitle: "宜 蘭 縣" },
-      { id: "Hualien County", tcTitle: "花 蓮 縣" },
-      { id: "Taitung County", tcTitle: "台 東 縣" },
-      { id: "Kinmen County", tcTitle: "金 門 縣" },
+      { id: "default", tcTitle: "不分縣市" },
+      { id: "Taipei", tcTitle: "臺 北 市" },
+      { id: "NewTaipei", tcTitle: "新 北 市" },
+      { id: "Taoyuan", tcTitle: "桃 園 市" },
+      { id: "Taichung", tcTitle: "台 中 市" },
+      { id: "Tainan", tcTitle: "台 南 市" },
+      { id: "Kaohsiung", tcTitle: "高 雄 市" },
+      { id: "Keelung", tcTitle: "基 隆 市" },
+      { id: "Hsinchu", tcTitle: "新 竹 市" },
+      { id: "HsinchuCounty", tcTitle: "新 竹 縣" },
+      { id: "MiaoliCounty", tcTitle: "苗 栗 縣" },
+      { id: "ChanghuaCounty", tcTitle: "彰 化 縣" },
+      { id: "NantouCounty", tcTitle: "南 投 縣" },
+      { id: "YunlinCounty", tcTitle: "雲 林 縣" },
+      { id: "ChiayiCounty", tcTitle: "嘉 義 縣" },
+      { id: "Chiayi", tcTitle: "嘉 義 市" },
+      { id: "PingtungCounty", tcTitle: "屏 東 縣" },
+      { id: "YilanCounty", tcTitle: "宜 蘭 縣" },
+      { id: "HualienCounty", tcTitle: "花 蓮 縣" },
+      { id: "TaitungCounty", tcTitle: "台 東 縣" },
+      { id: "KinmenCounty", tcTitle: "金 門 縣" },
     ],
   },
 ];
+
+export const TRAFFIC_SELECTED_OPTION = [
+  {
+    category: "counties",
+    selectedOption: [
+      { id: "default", tcTitle: "選擇縣市" },
+      { id: "Taipei", tcTitle: "臺 北 市" },
+      { id: "NewTaipei", tcTitle: "新 北 市" },
+      { id: "Taoyuan", tcTitle: "桃 園 市" },
+      { id: "Taichung", tcTitle: "台 中 市" },
+      { id: "Tainan", tcTitle: "台 南 市" },
+      { id: "Kaohsiung", tcTitle: "高 雄 市" },
+      { id: "Keelung", tcTitle: "基 隆 市" },
+      { id: "Hsinchu", tcTitle: "新 竹 市" },
+      { id: "HsinchuCounty", tcTitle: "新 竹 縣" },
+      { id: "MiaoliCounty", tcTitle: "苗 栗 縣" },
+      { id: "ChanghuaCounty", tcTitle: "彰 化 縣" },
+      { id: "NantouCounty", tcTitle: "南 投 縣" },
+      { id: "YunlinCounty", tcTitle: "雲 林 縣" },
+      { id: "ChiayiCounty", tcTitle: "嘉 義 縣" },
+      { id: "Chiayi", tcTitle: "嘉 義 市" },
+      { id: "PingtungCounty", tcTitle: "屏 東 縣" },
+      { id: "YilanCounty", tcTitle: "宜 蘭 縣" },
+      { id: "HualienCounty", tcTitle: "花 蓮 縣" },
+      { id: "TaitungCounty", tcTitle: "台 東 縣" },
+      { id: "KinmenCounty", tcTitle: "金 門 縣" },
+    ],
+  },
+  {
+    category: "route",
+    selectedOption: [
+      { id: "default", tcTitle: "選擇路線" },
+      { id: "food", tcTitle: "暫存" },
+      { id: "stay", tcTitle: "暫存" },
+    ],
+  },
+];
+// 交通部分尚未開啟建構，故先以固定資料做測試
 
 export const PAGE_TYPE = {
   home: "home",

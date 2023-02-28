@@ -14,11 +14,11 @@ export const fetchEventListSuccess = (eventList) =>
 export const fetchEventListFailed = (error) =>
   createAction(FETCH_EVENT_FAILED, error);
 
-export const fetchEventListAsync = () => {
+export const fetchEventListAsync = (county) => {
   return async (dispatch) => {
     dispatch(fetchEventListStart());
     try {
-      const eventList = await getTDXEventList();
+      const eventList = await getTDXEventList(county);
       dispatch(fetchEventListSuccess(eventList));
     } catch (error) {
       dispatch(fetchEventListFailed(error));

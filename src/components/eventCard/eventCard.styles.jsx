@@ -27,7 +27,6 @@ export const EventContent = styled.div`
 `;
 
 export const EventContentHeader = styled.h5`
-  line-height: 23px;
   font-size: 16px;
   font-weight: 400;
   color: #0d0b0c;
