@@ -44,7 +44,7 @@ export const FOOD_SELECTED_OPTION = [
     selectedOption: [
       { id: "default", tcTitle: "類別" },
       { id: "food", tcTitle: "美食" },
-      { id: "stay", tcTitle: "住宿" },
+      { id: "hotel", tcTitle: "住宿" },
     ],
   },
   {

@@ -10,6 +10,8 @@ import Traffic from "./routes/traffic/traffic.component";
 import Detail from "./components/UI/detail/detail.component";
 import ScenicSpot from "./routes/scenicSpot/scenicSpot.component";
 import Event from "./routes/event/event.component";
+import Food from "./routes/food/food.component";
+import Hotel from "./routes/hotel/hotel.component";
 
 import { selectModalOpen } from "./store/detail/detail.selector";
 
@@ -31,8 +33,8 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="event/:county" element={<Event />} />
-          <Route path="hotel/:county" />
-          <Route path="food/:county" />
+          <Route path="hotel/:county" element={<Hotel />} />
+          <Route path="food/:county" element={<Food />} />
           <Route path="scenicSpot/:county" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<FoodAndHotel />} />

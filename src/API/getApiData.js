@@ -25,7 +25,6 @@ export const getTDXEventList = async (county) => {
   const apiUrl = county
     ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity/${county}?%24top=20&%24format=JSON`
     : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=4&%24skip=${skipNum}&%24format=JSON`;
-  console.log(apiUrl);
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -38,18 +37,18 @@ export const getTDXEventList = async (county) => {
   }
 };
 
-export const getTDXFoodList = async () => {
+export const getTDXFoodList = async (county) => {
   const token = await getAuthToken();
   const skipNum = createRandomNum(5113);
+  const apiUrl = county
+    ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/${county}?%24top=20&%24format=JSON`
+    : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${skipNum}&%24format=JSON`;
 
   try {
-    const response = await fetch(
-      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${skipNum}&%24format=JSON`,
-      {
-        method: "GET",
-        headers: token,
-      }
-    );
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: token,
+    });
     const data = await response.json();
     return data;
   } catch (error) {
@@ -57,17 +56,17 @@ export const getTDXFoodList = async () => {
   }
 };
 
-export const getTDXHotelList = async () => {
+export const getTDXHotelList = async (county) => {
   const token = await getAuthToken();
   const skipNum = createRandomNum(13231);
+  const apiUrl = county
+    ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel/${county}?%24top=20&%24format=JSON`
+    : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${skipNum}&%24format=JSON`;
   try {
-    const response = await fetch(
-      `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${skipNum}&%24format=JSON`,
-      {
-        method: "GET",
-        headers: token,
-      }
-    );
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: token,
+    });
     const data = await response.json();
     return data;
   } catch (error) {

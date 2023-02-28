@@ -14,11 +14,11 @@ export const fetchFoodListSuccess = (foodList) =>
 export const fetchFoodListFailed = (error) =>
   createAction(FETCH_FOOD_FAILED, error);
 
-export const fetchFoodListAsync = () => {
+export const fetchFoodListAsync = (county) => {
   return async (dispatch) => {
     dispatch(fetchFoodListStart());
     try {
-      const foodList = await getTDXFoodList();
+      const foodList = await getTDXFoodList(county);
       dispatch(fetchFoodListSuccess(foodList));
     } catch (error) {
       dispatch(fetchFoodListFailed());
