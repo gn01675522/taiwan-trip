@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const parameter = {
   grant_type: "client_credentials",
   client_id: process.env.REACT_APP_TDX_CLIENT_ID || "",
@@ -11,16 +9,15 @@ const auth_url =
 
 export const getAuthToken = async () => {
   try {
-    const response = await axios.post(
-      auth_url,
-      new URLSearchParams(parameter),
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      }
-    );
-    const token = await response.data.access_token;
+    const response = await fetch(auth_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(parameter),
+    });
+    const data = await response.json();
+    const token = await data.access_token;
     return { authorization: `Bearer ${token}` };
   } catch (error) {
     console.log(error);
