@@ -22,4 +22,4 @@ const EventList = () => {
 
 export default EventList;
 
-//* 暫時使用 scenicSpot Card，未來要將所有給整合在一起
+//todo 暫時使用 scenicSpot Card，未來要將所有給整合在一起

@@ -14,11 +14,11 @@ export const fetchHotelListSuccess = (hotelList) =>
 export const fetchHotelListFailed = (error) =>
   createAction(FETCH_HOTEL_FAILED, error);
 
-export const fetchHotelListAsync = (county) => {
+export const fetchHotelListAsync = (keyword, county) => {
   return async (dispatch) => {
     dispatch(fetchHotelListStart());
     try {
-      const hotelList = await getTDXHotelList(county);
+      const hotelList = await getTDXHotelList(keyword, county);
       dispatch(fetchHotelListSuccess(hotelList));
     } catch (error) {
       dispatch(fetchHotelListFailed(error));

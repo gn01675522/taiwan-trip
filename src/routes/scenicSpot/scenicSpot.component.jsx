@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Banner from "../../components/banner/banner.component";
 import Container from "../../components/UI/container/container.component";
@@ -10,14 +10,16 @@ import ScenicSpotList from "../../components/scenicSpotList/scenicSpotList.compo
 import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 
 import { fetchScenicSpotAsync } from "../../store/scenicSpot/scenicSpot.actions.js";
+import { selectSearchKeyword } from "../../store/search/search.selector";
 
 const ScenicSpot = () => {
   const { county } = useParams();
   const dispatch = useDispatch();
+  const keyword = useSelector(selectSearchKeyword);
 
   useEffect(() => {
-    dispatch(fetchScenicSpotAsync(county));
-  }, [county]);
+    dispatch(fetchScenicSpotAsync(keyword, county));
+  }, [county, keyword]);
 
   return (
     <>

@@ -34,7 +34,9 @@ export const selectEventListMap = createSelector(
       const address =
         Location === "to see the official site"
           ? Address
-          : Location.concat(Address);
+          : Address
+          ? Location.concat(Address)
+          : Location;
 
       const location =
         Location === "to see the official site" ? City : Location;

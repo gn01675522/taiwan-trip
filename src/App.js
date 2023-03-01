@@ -32,13 +32,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="event/:county" element={<Event />} />
+          <Route path="event/:county/*" element={<Event />} />
           <Route path="hotel/:county" element={<Hotel />} />
           <Route path="food/:county" element={<Food />} />
           <Route path="scenicSpot/:county" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<FoodAndHotel />} />
-          <Route path="traffic" element={<Traffic />} />
+          {/*<Route path="traffic" element={<Traffic />} />*/}
         </Route>
       </Routes>
       <Footer />
@@ -47,3 +47,5 @@ const App = () => {
 };
 
 export default App;
+
+//todo traffic 尚未完成，暫不開放

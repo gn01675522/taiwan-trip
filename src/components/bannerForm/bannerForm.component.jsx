@@ -1,15 +1,20 @@
 //* Parent： banner.component.jsx
 
 import { useRef } from "react";
+import { useDispatch} from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 import { FormContainer } from "./bannerForm.styles";
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
-import SortSelected from "../UI/select/Select.component";
+import Selected from "../UI/select/Select.component";
+
 import {
   HOME_SELECTED_OPTION,
   FOOD_SELECTED_OPTION,
   TRAFFIC_SELECTED_OPTION,
 } from "../../dummy_data/DUMMY_DATA";
+
+import { setSearchKeyword } from "../../store/search/search.actions";
 
 const SELECT_TYPE_CLASSES = {
   home: "home",
@@ -29,15 +34,19 @@ const getSelectType = (pageType) =>
   }[pageType]);
 
 const BannerForm = ({ $pageType }) => {
-  const selectType = getSelectType($pageType);
-  const exceptTraffic = $pageType !== "traffic";
+  const dispatch = useDispatch();
   const inputRef = useRef();
   const selectRefs = useRef([]);
   const navigate = useNavigate();
 
+  const selectType = getSelectType($pageType);
+  const exceptTraffic = $pageType !== "traffic";
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const [path, pathParam] = selectRefs.current;
+
+    dispatch(setSearchKeyword(inputRef.current.value));
     navigate(`/${path.value}/${pathParam.value}`);
   };
 
@@ -48,11 +57,10 @@ const BannerForm = ({ $pageType }) => {
       )}
       {selectType.map((selectedType, index) => {
         return (
-          <SortSelected
+          <Selected
             ref={selectRefs}
             index={index}
             key={selectedType.category}
-            category={selectedType.category}
             gridArea={index}
             selected={selectedType}
           />

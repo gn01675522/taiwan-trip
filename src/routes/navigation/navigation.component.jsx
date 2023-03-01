@@ -26,11 +26,11 @@ const navOption = [
     link: "/foodAndHotel",
     frame: <YellowFrame />,
   },
-  {
-    title: "景點交通",
-    link: "/traffic",
-    frame: <GreenFrame />,
-  },
+  // {
+  //   title: "景點交通",
+  //   link: "/traffic",
+  //   frame: <GreenFrame />,
+  // },
 ];
 
 const Navigation = () => {
@@ -58,3 +58,5 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+//todo traffic 尚未完成，暫不開放

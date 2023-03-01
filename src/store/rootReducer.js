@@ -5,6 +5,7 @@ import { busReducer } from "./bus/bus.reducer";
 import { foodReducer } from "./food/food.reducer";
 import { hotelReducer } from "./hotel/hotel.reducer";
 import { scenicSpotReducer } from "./scenicSpot/scenicSpot.reducer";
+import { searchReducer } from "./search/search.reducer";
 
 export const rootReducer = combineReducers({
   detail: detailReducer,
@@ -13,4 +14,5 @@ export const rootReducer = combineReducers({
   hotel: hotelReducer,
   bus: busReducer,
   scenicSpot: scenicSpotReducer,
+  search: searchReducer,
 });

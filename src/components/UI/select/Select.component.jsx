@@ -3,16 +3,21 @@
 import { forwardRef } from "react";
 import { SelectBar, Option, SelectWrap } from "./Select.styles";
 
-const SortSelected = forwardRef(
-  ({ selected, gridArea, index, category }, ref) => {
-    const { selectedOption } = selected;
+const Selected = forwardRef(
+  ({ selected, gridArea, index, ...otherProps }, ref) => {
+    const { category, selectedOption, required } = selected;
 
     return (
       <SelectWrap gridArea={gridArea}>
-        <SelectBar ref={(prop) => (ref.current[index] = prop)} title={category}>
+        <SelectBar
+          ref={(prop) => (ref.current[index] = prop)}
+          title={category}
+          required
+          {...otherProps}
+        >
           {selectedOption.map((option) => {
             return (
-              <Option id={option.id} key={option.id} value={option.id}>
+              <Option id={option.id} key={option.id} value={option.value}>
                 {option.tcTitle}
               </Option>
             );
@@ -23,6 +28,6 @@ const SortSelected = forwardRef(
   }
 );
 
-export default SortSelected;
+export default Selected;
 
-//* 差 option hover 顏色
+//todo 差 option hover 顏色；以及針對什麼都沒選擇時，到底要 fetch 什麼 api；
