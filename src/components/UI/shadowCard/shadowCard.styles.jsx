@@ -5,7 +5,7 @@ export const CardOutline = styled.div`
   height: 100%;
   ${({ $pageType }) => {
     switch ($pageType) {
-      case "event":
+      case "event" && "banner":
         return;
       default:
         return `cursor: pointer;`;
@@ -30,6 +30,10 @@ export const CardContent = styled.div`
         return `
         height: 1000px;
         `;
+      case "hotEvent":
+        return `
+        padding: 16px;
+        `;
       case "event":
         return `
         padding: 16px;
@@ -39,6 +43,10 @@ export const CardContent = styled.div`
         padding: 12px;
         `;
       case "hotel":
+        return `
+        padding: 12px;
+        `;
+      case "scenicSpot":
         return `
         padding: 12px;
         `;

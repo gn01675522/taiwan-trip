@@ -120,7 +120,9 @@ export const TRAFFIC_SELECTED_OPTION = [
 
 export const PAGE_TYPE = {
   home: "home",
+  event: "event",
   food: "food",
+  hotel: "hotel",
   traffic: "traffic",
   scenicSpot: "scenicSpot",
 };

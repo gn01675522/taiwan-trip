@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import cantFindImg from "../../assets/picture/cantFindImg.jpg";
 
-export const FoodCardOutline = styled.div`
+export const ContentCardOutline = styled.div`
   display: grid;
   grid-template-rows: 137px 42px 16px;
   grid-gap: 10px;
@@ -9,7 +9,7 @@ export const FoodCardOutline = styled.div`
   height: 100%;
 `;
 
-export const FoodImage = styled.img`
+export const ContentImage = styled.img`
   width: 100%;
   height: 100%;
   background-image: ${({ imageUrl }) =>
@@ -19,7 +19,7 @@ export const FoodImage = styled.img`
   background-repeat: no-repeat;
 `;
 
-export const FoodLocation = styled.div`
+export const ContentTitle = styled.div`
   width: 100%;
   height: 100%;
   font-size: 14px;
@@ -27,7 +27,7 @@ export const FoodLocation = styled.div`
   color: #0d0b0c;
 `;
 
-export const FoodArea = styled.div`
+export const ContentLocation = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;

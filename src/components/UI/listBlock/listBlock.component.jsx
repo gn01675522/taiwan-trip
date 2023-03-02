@@ -1,7 +1,6 @@
 //* which use this：
 //*   1. popularCityList.component.jsx
-//*   2. popularEventList.component.jsx
-//*   3. popularFoodList.component.jsx
+//*   2. listContent.component.jsx
 
 import {
   BlockOutline,
@@ -13,6 +12,7 @@ import {
 const TOPIC_TYPE_CLASSES = {
   city: "city",
   scenicSpot: "scenicSpot",
+  hotEvent: "hotEvent",
   event: "event",
   food: "food",
   hotel: "hotel",
@@ -24,8 +24,12 @@ const getTopic = (topicType) =>
     [TOPIC_TYPE_CLASSES.scenicSpot]: {
       symbol: TriangleSymbol,
       topic: "熱門城市",
-    }, // 這邊要使用動態改變，先暫時寫死
+    }, // 這邊想要使用動態改變，先暫時寫死
     [TOPIC_TYPE_CLASSES.event]: { symbol: TriangleSymbol, topic: "熱門活動" },
+    [TOPIC_TYPE_CLASSES.hotEvent]: {
+      symbol: TriangleSymbol,
+      topic: "熱門活動",
+    },
     [TOPIC_TYPE_CLASSES.food]: { symbol: SquareSymbol, topic: "熱門餐飲" },
     [TOPIC_TYPE_CLASSES.hotel]: { symbol: SquareSymbol, topic: "推薦住宿" },
   }[topicType]);

@@ -1,6 +1,6 @@
-import BannerImage from "../bannerImage/bannerImage.component";
-import BannerContent from "../bannerContent/bannerContent.component";
-import ShadowCard from "../UI/shadowCard/shadowCard.component";
+import BannerImage from "../../bannerImage/bannerImage.component";
+import BannerContent from "../../bannerContent/bannerContent.component";
+import ShadowCard from "../shadowCard/shadowCard.component";
 
 import { BannerOutline } from "./banner.styles";
 

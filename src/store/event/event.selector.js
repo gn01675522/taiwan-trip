@@ -32,9 +32,9 @@ export const selectEventListMap = createSelector(
       const during = Cycle ? Cycle : `${startTime} 至 ${endTime}`;
 
       const address =
-        Location === "to see the official site"
+        Location === "to see the official site" && Address
           ? Address
-          : Address
+          : Location !== "to see the official site" && Address
           ? Location.concat(Address)
           : Location;
 

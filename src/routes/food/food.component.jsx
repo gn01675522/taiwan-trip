@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import Banner from "../../components/banner/banner.component";
+import Banner from "../../components/UI/banner/banner.component";
 import Container from "../../components/UI/container/container.component";
 
-import FoodList from "../../components/foodList/foodList.component";
+import ListContent from "../../components/listContent/listContent.component";
 
 import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 
@@ -25,7 +25,7 @@ const Food = () => {
     <>
       <Banner pageType={PAGE_TYPE.food} />
       <Container pageType={PAGE_TYPE.food}>
-        <FoodList />
+        <ListContent topic="food" />
       </Container>
     </>
   );

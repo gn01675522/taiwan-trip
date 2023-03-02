@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import Banner from "../../components/banner/banner.component";
+import Banner from "../../components/UI/banner/banner.component";
 import Container from "../../components/UI/container/container.component";
 import ShadowCard from "../../components/UI/shadowCard/shadowCard.component";
 import BusTimeContent from "../../components/busTimeContent/busTimeContent.component";

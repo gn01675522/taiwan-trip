@@ -1,3 +1,6 @@
+//* which use this：
+//* 1. listContent.component.jsx
+
 import { useDispatch } from "react-redux";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
@@ -13,16 +16,16 @@ import {
   EventContentBody,
   EventContentFooter,
   EventLocationInfo,
-} from "./eventCard.styles";
+} from "./largeEventCard.styles";
 
 import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
-const EventCard = ({ eventDetail }) => {
+const LargeEventCard = ({ dataDetail }) => {
   const dispatch = useDispatch();
-  const { title, description, location, picture } = eventDetail;
+  const { title, description, location, picture } = dataDetail;
 
   const onShowDetail = () => {
-    dispatch(setModalData(eventDetail));
+    dispatch(setModalData(dataDetail));
     dispatch(setModalOpen(true));
   };
 
@@ -51,4 +54,4 @@ const EventCard = ({ eventDetail }) => {
   );
 };
 
-export default EventCard;
+export default LargeEventCard;

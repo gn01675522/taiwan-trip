@@ -5,42 +5,45 @@ import { ReactComponent as PinkLocation } from "../../assets/svg/pinkLocation.sv
 import ShadowCard from "../UI/shadowCard/shadowCard.component";
 
 import {
-  FoodCardOutline,
-  FoodImage,
-  FoodLocation,
-  FoodArea,
-} from "./foodCard.styles";
+  ContentCardOutline,
+  ContentImage,
+  ContentTitle,
+  ContentLocation,
+} from "./contentCard.styles";
 
 import { setModalData, setModalOpen } from "../../store/detail/detail.actions";
 
-const FoodCard = ({ foodDetail }) => {
+const ContentCard = ({ dataDetail, topicType }) => {
   const dispatch = useDispatch();
-  const { title, address, picture } = foodDetail;
-  const reduceAddress = address.slice(0, 6);
+  const { title, location, picture } = dataDetail;
 
   const onShowDetail = () => {
-    dispatch(setModalData(foodDetail));
+    dispatch(setModalData(dataDetail));
     dispatch(setModalOpen(true));
   };
 
   return (
-    <ShadowCard $contentType="sm-list" $pageType="food" onClick={onShowDetail}>
-      <FoodCardOutline>
-        <FoodImage
+    <ShadowCard
+      $contentType="sm-list"
+      $pageType={topicType}
+      onClick={onShowDetail}
+    >
+      <ContentCardOutline>
+        <ContentImage
           imageUrl={
             picture
               ? picture.PictureUrl1
               : "../../assets/picture/cantFindImg.jpg"
           }
         />
-        <FoodLocation>{title}</FoodLocation>
-        <FoodArea>
+        <ContentTitle>{title}</ContentTitle>
+        <ContentLocation>
           <PinkLocation />
-          {reduceAddress}
-        </FoodArea>
-      </FoodCardOutline>
+          {location}
+        </ContentLocation>
+      </ContentCardOutline>
     </ShadowCard>
   );
 };
 
-export default FoodCard;
+export default ContentCard;

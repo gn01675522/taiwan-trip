@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import Banner from "../../components/banner/banner.component";
+import Banner from "../../components/UI/banner/banner.component";
 import Container from "../../components/UI/container/container.component";
 
-import ScenicSpotList from "../../components/scenicSpotList/scenicSpotList.component";
+import ListContent from "../../components/listContent/listContent.component";
 
 import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
 
@@ -25,7 +25,7 @@ const ScenicSpot = () => {
     <>
       <Banner pageType={PAGE_TYPE.scenicSpot} />
       <Container pageType={PAGE_TYPE.scenicSpot}>
-        <ScenicSpotList />
+        <ListContent topic="scenicSpot" />
       </Container>
     </>
   );
