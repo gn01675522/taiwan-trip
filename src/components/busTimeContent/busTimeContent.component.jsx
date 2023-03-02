@@ -1,3 +1,6 @@
+//* which use this：
+//* 1. traffic.component.jsx
+
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 // import { trafficRoutes } from "../../dummy_data/traffic_routes";

@@ -1,3 +1,6 @@
+//* which use this：
+//* 1. popularCityList.component.jsx
+
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as WhiteMapSymbol } from "../../assets/svg/whiteMapSymbol.svg";
 

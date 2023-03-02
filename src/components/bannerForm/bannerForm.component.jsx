@@ -1,7 +1,8 @@
-//* Parent： banner.component.jsx
+//* which use this：
+//* 1. banner.component.jsx
 
 import { useRef } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { FormContainer } from "./bannerForm.styles";

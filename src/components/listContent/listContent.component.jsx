@@ -1,3 +1,11 @@
+//* which use this：
+//* 1. home.component.jsx
+//* 2. event.component.jsx
+//* 3. food.component.jsx
+//* 4. foodAndHotel.component.jsx
+//* 5. hotel.component.jsx
+//* 6. scenicSpot.component.jsx
+
 import { useSelector } from "react-redux";
 
 import ListBlock from "../UI/listBlock/listBlock.component";
@@ -28,12 +36,12 @@ const getContent = (topic) =>
     [CONTENT_CLASSES.scenicSpot]: selectScenicSpotListMap,
   }[topic]);
 
-const ListContent = ({ topic }) => {
+const ListContent = ({ topic, county }) => {
   const contentType = getContent(topic);
   const contentData = useSelector(contentType);
 
   return (
-    <ListBlock topicType={topic}>
+    <ListBlock topicType={topic} county={county}>
       <ListContentLayout topicType={topic}>
         {contentData.map((data) =>
           topic === "hotEvent" ? (

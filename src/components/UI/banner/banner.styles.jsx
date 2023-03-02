@@ -7,7 +7,8 @@ export const BannerOutline = styled.div`
   width: 100%;
   ${({ $pageType }) => {
     switch ($pageType) {
-      case "home" || "food":
+      case "home":
+      case "food":
         return `height:536px;`;
       case "traffic":
         return `height:170px;`;

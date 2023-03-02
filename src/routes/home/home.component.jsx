@@ -1,3 +1,6 @@
+//* parent element：
+//* 1. App.js
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 

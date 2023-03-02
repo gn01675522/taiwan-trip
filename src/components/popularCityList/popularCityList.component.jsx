@@ -1,4 +1,8 @@
+//* which use this：
+//* 1. home.component.jsx
+
 import { useState } from "react";
+import { useParams } from "react-router";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import ListBlock from "../UI/listBlock/listBlock.component";

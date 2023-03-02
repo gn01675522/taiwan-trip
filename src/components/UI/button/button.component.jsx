@@ -1,3 +1,10 @@
+//* who use this：
+//* 1. bannerForm.component.jsx
+//* 2. detailContent.component.jsx
+//* 3. largeEventCard.component.jsx
+//* 4. popularCityList.component.jsx
+//* 5. modal.component.jsx
+
 import { ReactComponent as Search } from "../../../assets/svg/search.svg";
 import { ReactComponent as WhiteCross } from "../../../assets/svg/whiteCross.svg";
 

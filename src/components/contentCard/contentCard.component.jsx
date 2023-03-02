@@ -1,3 +1,6 @@
+//* which use this：
+//* 1. listContent.component.jsx
+
 import { useDispatch } from "react-redux";
 
 import { ReactComponent as PinkLocation } from "../../assets/svg/pinkLocation.svg";

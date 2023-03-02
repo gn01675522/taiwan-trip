@@ -28,27 +28,18 @@ export const CardContent = styled.div`
         return;
       case "traffic":
         return `
-        height: 1000px;
+          height: 1000px;
         `;
       case "hotEvent":
-        return `
-        padding: 16px;
-        `;
       case "event":
         return `
-        padding: 16px;
+          padding: 16px;
         `;
       case "food":
-        return `
-        padding: 12px;
-        `;
       case "hotel":
-        return `
-        padding: 12px;
-        `;
       case "scenicSpot":
         return `
-        padding: 12px;
+          padding: 12px;
         `;
       default:
         throw new Error(
@@ -78,10 +69,6 @@ export const Shadow = styled.div`
         bottom: 30px;
         `;
       case "detail":
-        return `
-        height: 52px;
-        bottom: 20px;
-        `;
       case "traffic":
         return `
         height: 52px;

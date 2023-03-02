@@ -1,3 +1,6 @@
+//* parent element：
+//* 1. App.js
+
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +28,7 @@ const Hotel = () => {
     <>
       <Banner pageType={PAGE_TYPE.food} />
       <Container pageType={PAGE_TYPE.food}>
-        <ListContent topic="hotel" />
+        <ListContent topic="hotel" county={county} />
       </Container>
     </>
   );

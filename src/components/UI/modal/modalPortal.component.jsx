@@ -1,5 +1,5 @@
 //* which use this：
-//* modal.component.jsx
+//* 1. detail.component.jsx
 
 import { createPortal } from "react-dom";
 

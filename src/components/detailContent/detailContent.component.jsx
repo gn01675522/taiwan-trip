@@ -1,5 +1,5 @@
-//* parent component：
-//* detail.component.jsx
+//* which use this：
+//* 1. detail.component.jsx
 
 import { useSelector } from "react-redux";
 

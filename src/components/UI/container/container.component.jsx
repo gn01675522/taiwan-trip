@@ -1,7 +1,11 @@
-//* Parent：
+//* which use this：
 //* 1. home.component.jsx
 //* 2. food.component.jsx
 //* 3. traffic.component.jsx
+//* 4. foodAndHotel.component.jsx
+//* 5. event.component.jsx
+//* 6. scenicSpot.component.jsx
+//* 7. hotel.component.jsx
 
 import {
   ContainerOutlineInHome,

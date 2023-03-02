@@ -1,4 +1,5 @@
-//* Parent：banner.component.jsx
+//* which use this：
+//* 1. banner.component.jsx
 
 import { ImageWall } from "./bannerImage.styles";
 

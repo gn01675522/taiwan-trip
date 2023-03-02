@@ -10,27 +10,22 @@ export const ListContentLayout = styled.div`
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 47px 21px;
         `;
-      case "event":
-        return `
-          display: grid;
-          grid-template-rows: repeat(2, 269px);
-          grid-template-columns: repeat(5, 1fr);
-          grid-gap: 35px 9px;
-        `;
-      case "food":
+      case "hotFood":
         return `
           display: grid;
           grid-template-rows: repeat(2, 269px);
           grid-template-columns: repeat(5, 1fr);
           grid-gap: 35px 9px;
           `;
+      case "event":
+      case "food":
       case "hotel":
         return `
           display: grid;
           grid-template-rows: repeat(2, 269px);
           grid-template-columns: repeat(5, 1fr);
           grid-gap: 35px 9px;
-          `;
+        `;
       case "scenicSpot":
         return `
           display: grid;

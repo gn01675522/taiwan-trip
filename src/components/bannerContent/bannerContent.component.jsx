@@ -1,3 +1,6 @@
+//* whitch use this：
+//* 1. banner.component.jsx
+
 import BannerForm from "../bannerForm/bannerForm.component";
 
 import {
@@ -25,9 +28,8 @@ const BannerContent = ({ $pageType }) => {
             Welc
             <OSymbol />
             me t<SquareSymbol />
-            
             <TaiwanText>
-               Ta
+              Ta
               <SpecialLetter>
                 <TriangleSymbol />
                 <ISymbol />

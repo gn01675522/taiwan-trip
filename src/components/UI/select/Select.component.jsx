@@ -1,4 +1,5 @@
-//* Parent： bannerForm.component.jsx
+//* which use this：
+//* 1. bannerForm.component.jsx
 
 import { forwardRef } from "react";
 import { SelectBar, Option, SelectWrap } from "./Select.styles";

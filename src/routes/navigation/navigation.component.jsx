@@ -1,4 +1,5 @@
-//* Parent： App.js
+//* parent element：
+//* 1. App.js
 
 import { Outlet, Link } from "react-router-dom";
 

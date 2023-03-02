@@ -13,27 +13,29 @@ import hualien from "../assets/picture/hualien.jpg";
 import taitung from "../assets/picture/taitung.jpg";
 import kinmenMatsuPenghu from "../assets/picture/kinmenMatsuPenghu.jpg";
 
+//* 這個資料是拿來給首頁 popularCityList 用的
+
 export const DATA_FOR_CITY_LIST = [
   {
-    id: "Taipei County",
+    id: "Taipei",
     tcTitle: "台北市",
     img: taipei,
     route: "Taipei",
   },
   {
-    id: "New Taipei County",
+    id: "NewTaipei",
     tcTitle: "新北市",
     img: newTaipei,
     route: "NewTaipei",
   },
   {
-    id: "Taoyuan County",
+    id: "Taoyuan",
     tcTitle: "桃園市",
     img: taoyuan,
     route: "Taoyuan",
   },
   {
-    id: "Hsinchu County",
+    id: "Hsinchu",
     tcTitle: "新竹市",
     img: hsinchu,
     route: "Hsinchu",
@@ -45,7 +47,7 @@ export const DATA_FOR_CITY_LIST = [
     route: "Taichung",
   },
   {
-    id: "Nantou",
+    id: "NantouCounty",
     tcTitle: "南 投",
     img: nantou,
     route: "NantouCounty",
@@ -75,25 +77,25 @@ export const DATA_FOR_CITY_LIST = [
     route: "PingtungCounty",
   },
   {
-    id: "Yilan",
+    id: "YilanCounty",
     tcTitle: "宜 蘭",
     img: yilan,
     route: "YilanCounty",
   },
   {
-    id: "Hualien",
+    id: "HualienCounty",
     tcTitle: "花 蓮",
     img: hualien,
     route: "HualienCounty",
   },
   {
-    id: "Taitung",
+    id: "TaitungCounty",
     tcTitle: "台 東",
     img: taitung,
     route: "TaitungCounty",
   },
   {
-    id: "Kinmen Matsu Penghu",
+    id: "Off-Island",
     tcTitle: "金門媽祖.澎湖",
     img: kinmenMatsuPenghu,
     route: "Off-Island",

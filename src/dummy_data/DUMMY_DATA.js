@@ -118,6 +118,29 @@ export const TRAFFIC_SELECTED_OPTION = [
 ];
 // 交通部分尚未開啟建構，故先以固定資料做測試
 
+export const CITY_LIST = [
+  { enTitle: "Taipei", tcTitle: "臺北市" },
+  { enTitle: "NewTaipei", tcTitle: "新北市" },
+  { enTitle: "Taoyuan", tcTitle: "桃園市" },
+  { enTitle: "Taichung", tcTitle: "台中市" },
+  { enTitle: "Tainan", tcTitle: "台南市" },
+  { enTitle: "Kaohsiung", tcTitle: "高雄市" },
+  { enTitle: "Keelung", tcTitle: "基隆市" },
+  { enTitle: "Hsinchu", tcTitle: "新竹市" },
+  { enTitle: "HsinchuCounty", tcTitle: "新竹縣" },
+  { enTitle: "MiaoliCounty", tcTitle: "苗栗縣" },
+  { enTitle: "ChanghuaCounty", tcTitle: "彰化縣" },
+  { enTitle: "NantouCounty", tcTitle: "南投縣" },
+  { enTitle: "YunlinCounty", tcTitle: "雲林縣" },
+  { enTitle: "ChiayiCounty", tcTitle: "嘉義縣" },
+  { enTitle: "Chiayi", tcTitle: "嘉義市" },
+  { enTitle: "PingtungCounty", tcTitle: "屏東縣" },
+  { enTitle: "YilanCounty", tcTitle: "宜蘭縣" },
+  { enTitle: "HualienCounty", tcTitle: "花蓮縣" },
+  { enTitle: "TaitungCounty", tcTitle: "台東縣" },
+  { enTitle: "KinmenCounty", tcTitle: "金門縣" },
+];
+
 export const PAGE_TYPE = {
   home: "home",
   event: "event",

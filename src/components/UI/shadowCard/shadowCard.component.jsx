@@ -1,6 +1,7 @@
 //* which use this：
-//* 1. banner.component.jsx
-//* 2. istContent.component.jsx
+//* 1. contentCard.component.jsx
+//* 2. largeEventCard.component.jsx
+//* 3. banner.component.jsx
 //* 4. modal.component.jsx
 //* 5. traffic.component.jsx
 

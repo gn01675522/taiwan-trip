@@ -7,11 +7,10 @@ export const BlockOutline = styled.div`
   gap: 12px;
 `;
 
-export const ContentTitle = styled.div`
+export const ContentTitle = styled.span`
   display: flex;
-  width: 114px;
+  width: max-content;
   height: 29px;
-  line-height: 29px;
   font-size: 20px;
   font-weight: 400;
   gap: 13px;
