@@ -16,3 +16,4 @@ export const rootReducer = combineReducers({
   scenicSpot: scenicSpotReducer,
   search: searchReducer,
 });
+//todo 看能不能把各類別的 fetch 資料整合在一起

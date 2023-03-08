@@ -1,4 +1,6 @@
 //* /v2/Bus/StopOfRoute/City/{City}/{RouteName} 資料來源
+//* 此頁資訊為 TDX 所抓，目的為測試用
+
 export const trafficRoutes = [
   {
     RouteUID: "CYI0715",

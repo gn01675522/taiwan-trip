@@ -50,6 +50,7 @@ const BannerForm = ({ $pageType }) => {
     dispatch(setSearchKeyword(inputRef.current.value));
     navigate(`/${path.value}/${pathParam.value}`);
   };
+  //* 點擊搜尋後將 ref 的資訊傳至 reducer 裡面，並根據選擇的類別及城市切換到相對應的路由
 
   return (
     <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>

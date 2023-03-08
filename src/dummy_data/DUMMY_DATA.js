@@ -1,5 +1,20 @@
+export const PAGE_TYPE = {
+  home: "home",
+  event: "event",
+  food: "food",
+  hotel: "hotel",
+  traffic: "traffic",
+  scenicSpot: "scenicSpot",
+};
 //* which use this：
-//* bannerForm.component.jsx
+//* 1. container.component.jsx
+//* 2. event.component.jsx
+//* 3. food.component.jsx
+//* 4. foodAndHotel.component.jsx
+//* 5. home.component.jsx
+//* 6. hotel.component.jsx
+//* 7. scenicSpotComponent.jsx
+//* 8. traffic.component.jsx
 
 export const HOME_SELECTED_OPTION = [
   {
@@ -39,6 +54,7 @@ export const HOME_SELECTED_OPTION = [
     required: false,
   },
 ];
+//* which use this： bannerForm.component.jsx
 
 export const FOOD_SELECTED_OPTION = [
   {
@@ -77,6 +93,7 @@ export const FOOD_SELECTED_OPTION = [
     ],
   },
 ];
+//* which use this： bannerForm.component.jsx
 
 export const TRAFFIC_SELECTED_OPTION = [
   {
@@ -116,9 +133,10 @@ export const TRAFFIC_SELECTED_OPTION = [
     required: true,
   },
 ];
+//* which use this： bannerForm.component.jsx
 // 交通部分尚未開啟建構，故先以固定資料做測試
 
-export const CITY_LIST = [
+export const CITY_TITLE_EN_TO_TC = [
   { enTitle: "Taipei", tcTitle: "臺北市" },
   { enTitle: "NewTaipei", tcTitle: "新北市" },
   { enTitle: "Taoyuan", tcTitle: "桃園市" },
@@ -141,11 +159,6 @@ export const CITY_LIST = [
   { enTitle: "KinmenCounty", tcTitle: "金門縣" },
 ];
 
-export const PAGE_TYPE = {
-  home: "home",
-  event: "event",
-  food: "food",
-  hotel: "hotel",
-  traffic: "traffic",
-  scenicSpot: "scenicSpot",
-};
+//* which use this：
+//* 1. component.utils.js
+//* 資料目的為做英文與繁體轉換

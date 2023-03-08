@@ -23,3 +23,4 @@ export const getAuthToken = async () => {
     console.log(error);
   }
 };
+//* 取得 api token

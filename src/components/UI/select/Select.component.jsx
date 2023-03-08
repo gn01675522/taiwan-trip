@@ -6,7 +6,7 @@ import { SelectBar, Option, SelectWrap } from "./Select.styles";
 
 const Selected = forwardRef(
   ({ selected, gridArea, index, ...otherProps }, ref) => {
-    const { category, selectedOption, required } = selected;
+    const { category, selectedOption } = selected;
 
     return (
       <SelectWrap gridArea={gridArea}>

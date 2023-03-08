@@ -24,6 +24,7 @@ const ContentCard = ({ dataDetail, topicType }) => {
     dispatch(setModalData(dataDetail));
     dispatch(setModalOpen(true));
   };
+  //* 點開 modal 時，先傳入各筆資料的 detail，再開啟 modal
 
   return (
     <ShadowCard

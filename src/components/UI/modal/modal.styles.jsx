@@ -26,4 +26,3 @@ export const ModalBody = styled.div`
   top: 5vh;
   z-index: 1001;
 `;
-//* 讓 modal 出現滾動條

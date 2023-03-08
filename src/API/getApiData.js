@@ -1,5 +1,6 @@
 import { getAuthToken } from "./getApiAuthToken";
 import { createRandomNum } from "../utils/api/api.utils";
+//* 引入取得的 api token 資料，及隨機取得亂數的 utils
 
 export const getTDXBusRoutes = async () => {
   const token = await getAuthToken();
@@ -16,8 +17,10 @@ export const getTDXBusRoutes = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
+//* 取得公車路線資料，目前為 api 路由寫死嘉義市，待後續開發再進行修改
 
 export const getTDXEventList = async (keyword, county) => {
   const token = await getAuthToken();
@@ -40,8 +43,10 @@ export const getTDXEventList = async (keyword, county) => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
+//* 取得活動資料；根據傳入的關鍵字及縣市來決定要使用哪個路由
 
 export const getTDXFoodList = async (keyword, county) => {
   const token = await getAuthToken();
@@ -64,8 +69,10 @@ export const getTDXFoodList = async (keyword, county) => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
+//* 取得餐飲資料；根據傳入的關鍵字及縣市來決定要使用哪個路由
 
 export const getTDXHotelList = async (keyword, county) => {
   const token = await getAuthToken();
@@ -87,8 +94,10 @@ export const getTDXHotelList = async (keyword, county) => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
+//* 取得旅館資料；根據傳入的關鍵字及縣市來決定要使用哪個路由
 
 export const getTDXScenicSpotList = async (keyword, county) => {
   const token = await getAuthToken();
@@ -110,8 +119,7 @@ export const getTDXScenicSpotList = async (keyword, county) => {
     return data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
-
-// https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains%28ScenicSpotName%2C%27%E7%B4%AB%27%29&%24top=3&%24format=JSON
-// `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'四季')&%24top=3&%24format=JSON` 搜尋
+//* 取得景點資料；根據傳入的關鍵字及縣市來決定要使用哪個路由

@@ -40,6 +40,7 @@ React.js
 4.  redux-thunk
 5.  react-router
 6.  dotenv (dependency)
+7.  lottie-web
 
 ### 其它
 

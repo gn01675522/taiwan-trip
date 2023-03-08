@@ -39,8 +39,3 @@ const BusTimeContent = () => {
 };
 
 export default BusTimeContent;
-
-//* 先抓到正確的站別及順序
-//* 抓到各站別正確的時間資訊
-//* 這邊站別順序抓到了，剩下時間還沒辦法接上去
-//* 因為實際縣市公車時間與 api 不同，先搞其他的之後再回來做

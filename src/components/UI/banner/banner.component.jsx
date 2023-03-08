@@ -15,6 +15,8 @@ import { BannerOutline } from "./banner.styles";
 
 const Banner = ({ pageType }) => {
   const exceptTraffic = pageType !== "traffic";
+  //* 由於公車路線的內容並無 banner 圖片，且 pageType 為
+  //* styled component 的 props，故將其作為判斷機制。
 
   return (
     <>
