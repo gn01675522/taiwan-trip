@@ -1,17 +1,25 @@
 import styled from "styled-components";
 
+const screenWide = {
+  mobile: "260px",
+  pad: "768px",
+  pc: "1024px",
+};
+
 export const CardOutline = styled.div`
   width: 100%;
   height: 100%;
   ${({ $pageType }) => {
     switch ($pageType) {
-      case "event" && "banner":
+      case "banner":
+      case "event":
         return;
       default:
         return `cursor: pointer;`;
     }
   }}
 `;
+
 export const CardContent = styled.div`
   position: relative;
   display: flex;
@@ -43,9 +51,9 @@ export const CardContent = styled.div`
         `;
       default:
         throw new Error(
-          `Unrecognized type of ${$pageType}, 
-          this message is from shadowCard.styles.jsx's CardContent; 
-          Please make sure every component what import this has a props passed contentType.`
+          `Unrecognized type of ${$pageType},
+        this message is from shadowCard.styles.jsx's CardContent;
+        Please make sure every component what import this has a props passed contentType.`
         );
     }
   }}
@@ -74,20 +82,23 @@ export const Shadow = styled.div`
         height: 52px;
         bottom: 20px;
         `;
-      case "large-list":
-        return `
-        height: 52px;
-        bottom: 25px;
-        `;
-      case "me-list":
+      case "hotEvent":
         return `
         height: 45px;
         bottom: 18px;
         `;
-      case "sm-list":
+      case "modal":
         return `
         height: 24px;
         bottom: 5px;
+        `;
+      case "nav":
+        return `
+        @media screen and (max-width: ${screenWide.pc}) {
+          width: 97%;
+          height: 52px;
+          bottom: 45px;
+        }
         `;
       default:
         throw new Error(

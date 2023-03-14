@@ -30,7 +30,7 @@ const LargeEventCard = ({ dataDetail }) => {
   };
 
   return (
-    <ShadowCard $contentType="me-list" $pageType="event">
+    <ShadowCard $contentType="hotEvent" $pageType="event">
       <EventCardOutline>
         <EventImage imgUrl={picture.PictureUrl1} />
         <EventContent>
