@@ -16,4 +16,5 @@ export const BannerOutline = styled.div`
         return `height: 536px;`;
     }
   }}
+  
 `;
