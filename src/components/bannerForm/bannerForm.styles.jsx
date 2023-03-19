@@ -37,22 +37,7 @@ export const FormContainer = styled.form`
           grid-template-areas: "select1 select2 btn";
         `;
       default:
-<<<<<<< HEAD
         return;
-=======
-        return `
-          @media screen and (max-width: ${pc}) {
-            width: 429px;
-          }
-          @media screen and (max-width: ${pad}) {
-            width: 100%;
-            grid-template-rows: 40px;
-            grid-template-areas:
-              "select1 select2 btn";
-            justify-content: center;
-          }
-        `;
->>>>>>> 73a4e75223032dc30051c85183b71a5f8297f62b
     }
   }}
   @media screen and (max-width: ${pc}) {
