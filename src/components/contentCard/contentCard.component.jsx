@@ -28,7 +28,7 @@ const ContentCard = ({ dataDetail, topicType }) => {
 
   return (
     <ShadowCard
-      $contentType="modal"
+      $contentType={topicType}
       $pageType={topicType}
       onClick={onShowDetail}
     >

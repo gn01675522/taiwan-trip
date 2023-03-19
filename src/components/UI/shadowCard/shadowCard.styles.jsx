@@ -1,18 +1,18 @@
 import styled from "styled-components";
+import { screenWide } from "../../../dummy_data/DUMMY_DATA";
+import { Shadow } from "../svgToComponent/svgToComponent.styles";
 
-const screenWide = {
-  mobile: "260px",
-  pad: "768px",
-  pc: "1024px",
-};
+const { pad, pc } = screenWide;
 
 export const CardOutline = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   ${({ $pageType }) => {
     switch ($pageType) {
       case "banner":
       case "event":
+      case "nav":
         return;
       default:
         return `cursor: pointer;`;
@@ -33,6 +33,7 @@ export const CardContent = styled.div`
   ${({ $pageType }) => {
     switch ($pageType) {
       case "banner":
+      case "nav":
         return;
       case "traffic":
         return `
@@ -59,53 +60,42 @@ export const CardContent = styled.div`
   }}
 `;
 
-export const Shadow = styled.div`
-  position: relative;
-  width: 95%;
-  background: url("data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3NCIgdmlld0JveD0iMCAwIDEyODAgNzQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIG9wYWNpdHk9IjAuMyIgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZl8xM182MTE4KSI+CjxwYXRoIGQ9Ik0xMjg2IDExVjYzTDYwNi4yNjUgMTFIMTI4NloiIGZpbGw9IiMwRDBCMEMiLz4KPC9nPgo8ZyBvcGFjaXR5PSIwLjMiIGZpbHRlcj0idXJsKCNmaWx0ZXIxX2ZfMTNfNjExOCkiPgo8cGF0aCBkPSJNLTYuMDAwMTIgMTFWNjNMNjczLjczNSAxMUgtNi4wMDAxMloiIGZpbGw9IiMwRDBCMEMiLz4KPC9nPgo8ZGVmcz4KPGZpbHRlciBpZD0iZmlsdGVyMF9mXzEzXzYxMTgiIHg9IjU5NS4yNjUiIHk9IjAiIHdpZHRoPSI3MDEuNzM1IiBoZWlnaHQ9Ijc0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9InNoYXBlIi8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjUuNSIgcmVzdWx0PSJlZmZlY3QxX2ZvcmVncm91bmRCbHVyXzEzXzYxMTgiLz4KPC9maWx0ZXI+CjxmaWx0ZXIgaWQ9ImZpbHRlcjFfZl8xM182MTE4IiB4PSItMTciIHk9IjAiIHdpZHRoPSI3MDEuNzM1IiBoZWlnaHQ9Ijc0IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9InNoYXBlIi8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjUuNSIgcmVzdWx0PSJlZmZlY3QxX2ZvcmVncm91bmRCbHVyXzEzXzYxMTgiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg==");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-  text-align: center;
+export const BottomShadow = styled(Shadow)`
+  width: 97%;
+  margin: 0 1.5%;
+  height: 45px;
+  bottom: -18px;
+  z-index: 979;
   ${({ $contentType }) => {
     switch ($contentType) {
       case "banner":
         return `
-        width: 100%;
-        height: 74px;
-        bottom: 30px;
+          width: 100%;
+          height: 74px;
+          margin: 0;
+          bottom: -35px;
+          @media screen and (max-width: ${pc}) {
+            display: none;
+          }
         `;
       case "detail":
       case "traffic":
         return `
-        height: 52px;
-        bottom: 20px;
+          height: 52px;
+          bottom: -30px;
         `;
       case "hotEvent":
         return `
-        height: 45px;
-        bottom: 18px;
+          height: 45px;
+          bottom: -20px;
         `;
-      case "modal":
+      case "food":
         return `
-        height: 24px;
-        bottom: 5px;
-        `;
-      case "nav":
-        return `
-        @media screen and (max-width: ${screenWide.pc}) {
-          width: 97%;
-          height: 52px;
-          bottom: 45px;
-        }
+          height: 24px;
+          bottom: -15px;
         `;
       default:
-        throw new Error(
-          `Unrecognized type of ${$contentType}, 
-          this message is from shadowCard.styles.jsx's Shadow; 
-          Please make sure every component what import this has a props passed contentType.`
-        );
+        return;
     }
   }}
 `;

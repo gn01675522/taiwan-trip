@@ -29,6 +29,8 @@ export const SelectBar = styled.select`
   -moz-appearance: none;
   appearance: none;
   font-family: "Noto Sans TC", sans-serif;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(13, 11, 12, 0.2);
 `;
 
 export const Option = styled.option`

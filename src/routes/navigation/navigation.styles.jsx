@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as TaiwanLogo } from "../../assets/svg/taiwanLogo.svg";
-import { ReactComponent as PinkFrame } from "../../assets/svg/pinkFrame.svg";
-import { ReactComponent as YellowFrame } from "../../assets/svg/yellowFrame.svg";
-import { ReactComponent as GreenFrame } from "../../assets/svg/greenFrame.svg";
+import { Link } from "react-router-dom";
+import { Shadow } from "../../components/UI/svgToComponent/svgToComponent.styles";
+import { screenWide } from "../../dummy_data/DUMMY_DATA";
+import Button from "../../components/UI/button/button.component";
 
-const screenWide = {
-  pad: "768px",
-  pc: "1024px",
+const { pad, pc } = screenWide;
+
+const navigationHeight = {
+  mobile: "120px",
+  pad: "84px",
+  pc: "104px",
 };
 
 export const HomeLink = styled(Link)`
@@ -15,77 +17,45 @@ export const HomeLink = styled(Link)`
   line-height: 0;
 `;
 
-export const TaiwanSymbol = styled(TaiwanLogo)`
-  width: 99px;
-  height: 57px;
-  @media screen and (max-width: ${screenWide.pc}) {
-    width: 86px;
-    height: 50px;
-  }
-  @media screen and (max-width: ${screenWide.pad}) {
-    width: 90px;
-    height: 52px;
-  }
-`;
-
-export const PinkSymbol = styled(PinkFrame)`
-  width: 34px;
-  height: 34px;
-  @media screen and (max-width: ${screenWide.pad}) {
+export const ButtonInMobile = styled(Button)`
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 38px;
+  right: 19px;
+  @media screen and (min-width: ${pad}) {
     display: none;
   }
 `;
 
-export const YellowSymbol = styled(YellowFrame)`
-  width: 34px;
-  height: 34px;
-  @media screen and (max-width: ${screenWide.pad}) {
-    display: none;
-  }
-`;
-
-export const GreenSymbol = styled(GreenFrame)`
-  width: 34px;
-  height: 34px;
-  @media screen and (max-width: ${screenWide.pad}) {
-    display: none;
-  }
-`;
-
-export const NavigationContainer = styled.nav`
+export const NavigationContainer = styled.div`
   display: flex;
   position: fixed;
   padding: 18px 6rem;
   width: 100%;
-  height: 104px;
+  height: ${navigationHeight.pc};
   justify-content: space-between;
   background-color: white;
-  z-index: 998;
-  @media screen and (max-width: ${screenWide.pc}) {
+  z-index: 999;
+  @media screen and (max-width: ${pc}) {
     padding: 17px 40px;
-    height: 84px;
+    height: ${navigationHeight.pad};
   }
-  @media screen and (max-width: ${screenWide.pad}) {
+  @media screen and (max-width: ${pad}) {
     flex-direction: column;
     gap: 13px;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: ${navigationHeight.mobile};
     padding: 15px 18px 0 18px;
   }
-`;
-
-export const TaiwanLogos = styled(Link)`
-  background-image: url(${TaiwanLogo});
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 export const NavigationLinkContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 27px;
-  @media screen and (max-width: ${screenWide.pad}) {
+  @media screen and (max-width: ${pad}) {
     display: flex;
     width: 100%;
     height: 40px;
@@ -114,7 +84,7 @@ export const LinkTitle = styled.span`
     color: ${color};
     `;
   }}
-  @media screen and (max-width: ${screenWide.pad}) {
+  @media screen and (max-width: ${pad}) {
     text-decoration: none;
     ${({ currentPage }) => {
       return currentPage ? `color: #FF1D6C;` : `color: #acacac;`;
@@ -122,8 +92,27 @@ export const LinkTitle = styled.span`
   }
 `;
 
+export const BottomShadow = styled(Shadow)`
+  width: 97%;
+  margin: 0 1.5%;
+  top: 40px;
+  z-index: 990;
+  @media screen and (min-width: ${pc}) {
+    display: none;
+  }
+  @media screen and (max-width: ${pad}) {
+    display: none;
+  }
+`;
+
 export const Blocker = styled.div`
   display: block;
   width: 100%;
   height: 104px;
+  @media screen and (max-width: ${pc}) {
+    height: 84px;
+  }
+  @media screen and (max-width: ${pad}) {
+    height: 120px;
+  }
 `;

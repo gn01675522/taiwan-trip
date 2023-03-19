@@ -1,6 +1,9 @@
+import styled from "styled-components";
 import HomeBannerImg from "../../assets/picture/homeBannerImage.jpg";
 import FoodBannerImg from "../../assets/picture/foodBannerImg.jpg";
-import styled from "styled-components";
+import { screenWide } from "../../dummy_data/DUMMY_DATA";
+
+const { pc } = screenWide;
 
 export const ImageWall = styled.div`
   display: flex;
