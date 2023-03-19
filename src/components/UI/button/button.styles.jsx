@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { ReactComponent as Search } from "../../../assets/svg/search.svg";
+
+import { screenWide } from "../../../dummy_data/DUMMY_DATA";
+
+const { pad } = screenWide;
 
 const BaseButtonStyle = styled.button`
   display: flex;
@@ -81,3 +86,13 @@ export const RectangularWrapper = styled(BaseButtonStyle)`
   background-color: white;
   box-shadow: none;
 `;
+
+export const SearchSymbol = styled(Search)`
+  @media screen and (max-width: ${pad}) {
+    content: "送出";
+  }
+`;
+
+export const SearchType = {
+  
+}

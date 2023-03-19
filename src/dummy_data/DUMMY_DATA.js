@@ -164,7 +164,7 @@ export const CITY_TITLE_EN_TO_TC = [
 //* 資料目的為做英文與繁體轉換
 
 export const screenWide = {
-  mobile: "260px",
   pad: "768px",
   pc: "1024px",
 };
+// 用來定義 RWD 尺寸

@@ -5,8 +5,8 @@
 //* 4. popularCityList.component.jsx
 //* 5. modal.component.jsx
 
-import { ReactComponent as Search } from "../../../assets/svg/search.svg";
 import { ReactComponent as WhiteCross } from "../../../assets/svg/whiteCross.svg";
+import { ReactComponent as Search } from "../../../assets/svg/search.svg";
 
 import {
   BlackSquareWrapper,
@@ -15,6 +15,7 @@ import {
   WhiteTriangularSymbol,
   BlackTriangularSymbol,
   RectangularWrapper,
+  SearchSymbol,
 } from "./button.styles";
 
 export const BUTTON_TYPE_CLASSES = {

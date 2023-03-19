@@ -8,7 +8,7 @@
 import {
   CardOutline,
   CardContent,
-  Shadow,
+  BottomShadow,
   HintText,
 } from "./shadowCard.styles";
 
@@ -20,7 +20,7 @@ const ShadowCard = ({ children, $contentType, $pageType, ...otherProps }) => {
         <CardContent $pageType={$pageType}>
           {tempState ? children : <HintText>請選擇公車路線</HintText>}
         </CardContent>
-        <Shadow $contentType={$contentType} />
+        <BottomShadow $contentType={$contentType} />
       </CardOutline>
     </>
   );

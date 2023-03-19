@@ -12,6 +12,7 @@ import ScenicSpot from "./routes/scenicSpot/scenicSpot.component";
 import Event from "./routes/event/event.component";
 import Food from "./routes/food/food.component";
 import Hotel from "./routes/hotel/hotel.component";
+import Search from "./routes/search/search.component";
 
 import { selectModalOpen } from "./store/detail/detail.selector";
 
@@ -38,8 +39,9 @@ const App = () => {
           <Route path="scenicSpot/:county" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<FoodAndHotel />} />
-          {/*<Route path="traffic" element={<Traffic />} />*/}
+          <Route path="traffic" element={<Traffic />} />
         </Route>
+        <Route path="search" element={<Search />} />
       </Routes>
       <Footer />
     </>

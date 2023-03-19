@@ -3,7 +3,7 @@ import styled from "styled-components";
 const baseOutline = styled.div`
   display: grid;
   grid-gap: 60px;
-  background-color: #e5e5e5;
+  background-color: #f6f7fb;
 `;
 
 export const ContainerOutlineInHome = styled(baseOutline)`

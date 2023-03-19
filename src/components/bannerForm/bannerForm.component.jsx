@@ -1,6 +1,7 @@
 //* which use this：
-//* 1. banner.component.jsx
+//* 1. bannerContent.component.jsx
 
+import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -35,6 +36,7 @@ const getSelectType = (pageType) =>
   }[pageType]);
 
 const BannerForm = ({ $pageType }) => {
+  const [isPcScreen, setIsPcScreen] = useState(window.innerWidth);
   const dispatch = useDispatch();
   const inputRef = useRef();
   const selectRefs = useRef([]);
@@ -46,34 +48,52 @@ const BannerForm = ({ $pageType }) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const [path, pathParam] = selectRefs.current;
-
-    dispatch(setSearchKeyword(inputRef.current.value));
-    navigate(`/${path.value}/${pathParam.value}`);
+    if (isPcScreen <= 768) {
+      navigate(`/${path.value}/${pathParam.value}`);
+    } else {
+      dispatch(setSearchKeyword(inputRef.current.value));
+      navigate(`/${path.value}/${pathParam.value}`);
+    }
   };
   //* 點擊搜尋後將 ref 的資訊傳至 reducer 裡面，並根據選擇的類別及城市切換到相對應的路由
 
+  useEffect(() => {
+    const screenWideChange = () => {
+      setIsPcScreen(window.innerWidth);
+    };
+
+    window.addEventListener("resize", screenWideChange);
+
+    return () => {
+      window.removeEventListener("resize", screenWideChange);
+    };
+  }, [isPcScreen]);
+  // 偵測螢幕尺寸，以判斷是否顯示 input
+
   return (
-    <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>
-      {exceptTraffic && (
-        <input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
-      )}
-      {selectType.map((selectedType, index) => {
-        return (
-          <Selected
-            ref={selectRefs}
-            index={index}
-            key={selectedType.category}
-            gridArea={index}
-            selected={selectedType}
-          />
-        );
-      })}
-      <Button
-        type="submit"
-        gridArea="btn"
-        buttonType={BUTTON_TYPE_CLASSES.search}
-      />
-    </FormContainer>
+    <>
+      <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>
+        {exceptTraffic && isPcScreen > 768 && (
+          <input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
+        )}
+        {selectType.map((selectedType, index) => {
+          return (
+            <Selected
+              ref={selectRefs}
+              index={index}
+              key={selectedType.category}
+              gridArea={index}
+              selected={selectedType}
+            />
+          );
+        })}
+        <Button
+          type="submit"
+          gridArea="btn"
+          buttonType={BUTTON_TYPE_CLASSES.search}
+        />
+      </FormContainer>
+    </>
   );
 };
 

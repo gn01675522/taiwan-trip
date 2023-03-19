@@ -1,45 +1,53 @@
 //* parent element：
 //* 1. App.js
 
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { Shadow } from "../../components/UI/shadowCard/shadowCard.styles";
+import {
+  TaiwanSymbol,
+  PinkCircleSymbol,
+  YellowCircleSymbol,
+  GreenCircleSymbol,
+} from "../../components/UI/svgToComponent/svgToComponent.styles";
+
+import Button, {
+  BUTTON_TYPE_CLASSES,
+} from "../../components/UI/button/button.component";
 
 import {
   HomeLink,
+  ButtonInMobile,
   NavigationContainer,
   NavigationLinkContainer,
   NavLink,
   LinkTitle,
   Blocker,
-  TaiwanSymbol,
-  PinkSymbol,
-  YellowSymbol,
-  GreenSymbol,
+  BottomShadow,
 } from "./navigation.styles";
 
 const navOption = [
   {
     title: "台灣景點",
     link: "/",
-    frame: <PinkSymbol />,
+    frame: <PinkCircleSymbol />,
     color: "#ff1d6c",
   },
   {
     title: "美食住宿",
     link: "/foodAndHotel",
-    frame: <YellowSymbol />,
+    frame: <YellowCircleSymbol />,
     color: "#ffb72c",
   },
-  // {
-  //   title: "景點交通",
-  //   link: "/traffic",
-  //   frame: <GreenSymbol />,
-  //   color: "#007350",
-  // },
+  {
+    title: "景點交通",
+    link: "/traffic",
+    frame: <GreenCircleSymbol />,
+    color: "#007350",
+  },
 ];
 
 const Navigation = () => {
+  const navigate = useNavigate();
   const route = useLocation().pathname.slice(1);
 
   const areLinksEqual = (link) => {
@@ -71,8 +79,12 @@ const Navigation = () => {
     }
   };
 
-  // 手機尺寸需要針對不同頁面來改變 nav 連結顏色，
-  // 上面的函式是拿來比對 route 及 連結 link 是否相同。
+  const onClickToSearch = () => {
+    navigate("/search");
+  };
+
+  // 手機尺寸畫面需要針對不同頁面來改變 nav 連結顏色，
+  // 上面的函式是拿來比對 route 及 連結的 link 是否為同類型頁面。
   // 比較 route 和 link 如果符合那麼就直接 true，以便加入 currentPage
 
   return (
@@ -81,6 +93,10 @@ const Navigation = () => {
         <HomeLink to="/">
           <TaiwanSymbol />
         </HomeLink>
+        <ButtonInMobile
+          buttonType={BUTTON_TYPE_CLASSES.search}
+          onClick={onClickToSearch}
+        />
         <NavigationLinkContainer>
           {navOption.map(({ title, link, frame, color }) => {
             const isMatchRoute = areLinksEqual(link);
@@ -100,8 +116,8 @@ const Navigation = () => {
           })}
         </NavigationLinkContainer>
       </NavigationContainer>
+      <BottomShadow />
       <Blocker />
-      <Shadow $contentType="nav" />
       <Outlet />
     </>
   );
