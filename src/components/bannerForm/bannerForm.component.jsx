@@ -73,7 +73,11 @@ const BannerForm = ({ $pageType }) => {
   return (
     <>
       <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>
+<<<<<<< HEAD
         {exceptTraffic && isPcScreen > 768 && (
+=======
+        {exceptTraffic && isPcScreen > 748 && (
+>>>>>>> 73a4e75223032dc30051c85183b71a5f8297f62b
           <input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
         )}
         {selectType.map((selectedType, index) => {
