@@ -9,7 +9,7 @@ export const getTDXBusRoutes = async () => {
       `https://tdx.transportdata.tw/api/basic/v2/Bus/StopOfRoute/City/Chiayi/%E5%8F%B0%E7%81%A3%E5%A5%BD%E8%A1%8C%E5%85%89%E6%9E%97%E6%88%91%E5%98%89%E7%B7%9A%28%E9%BB%83%E7%B7%9A%29?%24top=30&%24format=JSON`,
       {
         method: "GET",
-        headers: token === undefined ? undefined : token,
+        headers: token,
       }
     );
     const data = await response.json();
@@ -37,7 +37,7 @@ export const getTDXEventList = async (keyword, county) => {
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
-      headers: token === undefined ? undefined : token,
+      headers: token,
     });
     const data = await response.json();
     return data;
@@ -63,7 +63,7 @@ export const getTDXFoodList = async (keyword, county) => {
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
-      headers: token === undefined ? undefined : token,
+      headers: token,
     });
     const data = await response.json();
     return data;
@@ -88,7 +88,7 @@ export const getTDXHotelList = async (keyword, county) => {
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
-      headers: token === undefined ? undefined : token,
+      headers: token,
     });
     const data = await response.json();
     return data;
@@ -113,7 +113,7 @@ export const getTDXScenicSpotList = async (keyword, county) => {
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
-      headers: token === undefined ? undefined : token,
+      headers: token,
     });
     const data = await response.json();
     return data;

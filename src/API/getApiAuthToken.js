@@ -18,7 +18,10 @@ export const getAuthToken = async () => {
     });
     const data = await response.json();
     const token = await data.access_token;
-    return { authorization: `Bearer ${token}` };
+    if (token) {
+      return { authorization: `Bearer ${token}` };
+    }
+    return { authorization: undefined };
   } catch (error) {
     console.log(error);
   }
