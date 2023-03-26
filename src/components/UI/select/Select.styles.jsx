@@ -13,7 +13,6 @@ export const SelectWrap = styled.div`
     right: 9.5px;
     top: 50%;
     transform: translateY(-50%);
-    grid-area: ${(props) => `select${props.gridArea}`};
   }
 `;
 

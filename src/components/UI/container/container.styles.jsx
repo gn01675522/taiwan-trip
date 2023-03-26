@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import { screenWide } from "../../../dummy_data/DUMMY_DATA";
+
+const { pad, pc } = screenWide;
+
 const baseOutline = styled.div`
   display: grid;
   grid-gap: 60px;
@@ -9,6 +13,12 @@ const baseOutline = styled.div`
 export const ContainerOutlineInHome = styled(baseOutline)`
   grid-template-rows: repeat(3, auto);
   padding: 65px 109px 60px 109px;
+  @media screen and (max-width: ${pc}) {
+    padding: 0 65px 40px 65px;
+  }
+  @media screen and (max-width: ${pad}) {
+    padding: 35px 26px 40px 26px;
+  }
 `;
 
 export const ContainerOutlineInFood = styled(baseOutline)`

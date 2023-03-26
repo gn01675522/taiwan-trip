@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { FormContainer } from "./bannerForm.styles";
+import { FormContainer, Input, SelectBlock } from "./bannerForm.styles";
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import Selected from "../UI/select/Select.component";
 
@@ -74,24 +74,35 @@ const BannerForm = ({ $pageType }) => {
     <>
       <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>
         {exceptTraffic && isPcScreen > 768 && (
-          <input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
+          <Input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
         )}
-        {selectType.map((selectedType, index) => {
-          return (
-            <Selected
-              ref={selectRefs}
-              index={index}
-              key={selectedType.category}
-              gridArea={index}
-              selected={selectedType}
+        <SelectBlock $pageType={$pageType}>
+          {selectType.map((selectedType, index) => {
+            return (
+              <Selected
+                ref={selectRefs}
+                index={index}
+                key={selectedType.category}
+                gridArea={index}
+                selected={selectedType}
+              />
+            );
+          })}
+
+          {(isPcScreen < 768 ||
+            isPcScreen > 1024 ||
+            $pageType !== "traffic") && (
+            <Button
+              type="submit"
+              gridArea="btn"
+              buttonType={
+                isPcScreen > 768
+                  ? BUTTON_TYPE_CLASSES.search
+                  : BUTTON_TYPE_CLASSES.mobileInBanner
+              }
             />
-          );
-        })}
-        <Button
-          type="submit"
-          gridArea="btn"
-          buttonType={BUTTON_TYPE_CLASSES.search}
-        />
+          )}
+        </SelectBlock>
       </FormContainer>
     </>
   );

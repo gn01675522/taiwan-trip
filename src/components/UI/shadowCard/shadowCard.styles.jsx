@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { screenWide } from "../../../dummy_data/DUMMY_DATA";
 import { Shadow } from "../svgToComponent/svgToComponent.styles";
 
-const { pad, pc } = screenWide;
+const { pc } = screenWide;
 
 export const CardOutline = styled.div`
   position: relative;

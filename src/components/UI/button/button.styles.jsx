@@ -1,9 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as Search } from "../../../assets/svg/search.svg";
-
-import { screenWide } from "../../../dummy_data/DUMMY_DATA";
-
-const { pad } = screenWide;
 
 const BaseButtonStyle = styled.button`
   display: flex;
@@ -57,7 +52,6 @@ export const PinkSquareWrapper = styled(BaseButtonStyle)`
   width: 40px;
   height: 40px;
   background-color: #ff1d6c;
-  grid-area: btn;
 `;
 
 export const WhiteTriangularSymbol = styled.div`
@@ -87,12 +81,11 @@ export const RectangularWrapper = styled(BaseButtonStyle)`
   box-shadow: none;
 `;
 
-export const SearchSymbol = styled(Search)`
-  @media screen and (max-width: ${pad}) {
+export const BtnInMobileBanner = styled.span`
+  ::after {
     content: "送出";
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
   }
 `;
-
-export const SearchType = {
-  
-}

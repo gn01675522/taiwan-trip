@@ -15,29 +15,46 @@ export const BannerOutline = styled.div`
   ${({ $pageType }) => {
     switch ($pageType) {
       case "traffic":
-        return `height:170px;`;
+        return `
+          height: 170px;
+        `;
       default:
         return `
           height: 536px;
-          @media screen and (max-width: ${pc}) {
-            height: min-content;
-            background: #F6F7FB;
-            padding: 24px 0 35px 0;
-          }
-          @media screen and (max-width: ${pad}) {
-            height: min-content;
-            background: white;
-            padding: 12px 16px 19px 19px;
-          }
         `;
     }
   }}
+  @media screen and (max-width: ${pc}) {
+    ${({ $pageType }) => {
+      switch ($pageType) {
+        case "traffic":
+          return `
+            background: white;
+            height: 155px;
+            padding-top: 38px;
+            align-items: start;
+          `;
+        default:
+          return `
+            height: min-content;
+            background: #f6f7fb;
+            padding: 24px 0 35px 0;
+          `;
+      }
+    }}
+  }
+  @media screen and (max-width: ${pad}) {
+    height: min-content;
+    background: white;
+    padding: 12px 16px 19px 19px;
+  }
 `;
 
-export const ButtomShadow = styled(Shadow)`
-  width: 97%;
-  margin: 0 1.5%;
-  top: 150px;
+export const BottomShadow = styled(Shadow)`
+  width: 90%;
+  margin: 0 5%;
+  top: 145px;
+  z-index: 99;
   @media screen and (min-width: ${pc}), screen and (min-width: ${pad}) {
     display: none;
   }

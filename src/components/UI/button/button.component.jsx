@@ -15,7 +15,7 @@ import {
   WhiteTriangularSymbol,
   BlackTriangularSymbol,
   RectangularWrapper,
-  SearchSymbol,
+  BtnInMobileBanner,
 } from "./button.styles";
 
 export const BUTTON_TYPE_CLASSES = {
@@ -24,6 +24,7 @@ export const BUTTON_TYPE_CLASSES = {
   previous: "previous",
   cancel: "cancel",
   detail: "detail",
+  mobileInBanner: "mobileInBanner",
 };
 
 const getButton = (buttonType) =>
@@ -31,6 +32,10 @@ const getButton = (buttonType) =>
     [BUTTON_TYPE_CLASSES.search]: {
       wrapper: PinkSquareWrapper,
       content: Search,
+    },
+    [BUTTON_TYPE_CLASSES.mobileInBanner]: {
+      wrapper: PinkSquareWrapper,
+      content: BtnInMobileBanner,
     },
     [BUTTON_TYPE_CLASSES.next]: {
       wrapper: BlackSquareWrapper,

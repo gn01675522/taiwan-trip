@@ -1,6 +1,7 @@
 //* parent element：
 //* 1. App.js
 
+import { useState, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import {
@@ -10,9 +11,7 @@ import {
   GreenCircleSymbol,
 } from "../../components/UI/svgToComponent/svgToComponent.styles";
 
-import Button, {
-  BUTTON_TYPE_CLASSES,
-} from "../../components/UI/button/button.component";
+import { BUTTON_TYPE_CLASSES } from "../../components/UI/button/button.component";
 
 import {
   HomeLink,
@@ -47,8 +46,13 @@ const navOption = [
 ];
 
 const Navigation = () => {
+  const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth);
   const navigate = useNavigate();
   const route = useLocation().pathname.slice(1);
+
+  useEffect(() => {
+    setIsMobileScreen(window.innerWidth);
+  }, [isMobileScreen]);
 
   const areLinksEqual = (link) => {
     const linkParam = link.slice(1);
@@ -93,10 +97,12 @@ const Navigation = () => {
         <HomeLink to="/">
           <TaiwanSymbol />
         </HomeLink>
-        <ButtonInMobile
-          buttonType={BUTTON_TYPE_CLASSES.search}
-          onClick={onClickToSearch}
-        />
+        {isMobileScreen < 768 && (
+          <ButtonInMobile
+            buttonType={BUTTON_TYPE_CLASSES.search}
+            onClick={onClickToSearch}
+          />
+        )}
         <NavigationLinkContainer>
           {navOption.map(({ title, link, frame, color }) => {
             const isMatchRoute = areLinksEqual(link);

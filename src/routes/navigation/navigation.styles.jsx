@@ -100,9 +100,6 @@ export const BottomShadow = styled(Shadow)`
   @media screen and (min-width: ${pc}) {
     display: none;
   }
-  @media screen and (max-width: ${pad}) {
-    display: none;
-  }
 `;
 
 export const Blocker = styled.div`
