@@ -17,13 +17,19 @@ export const ContainerOutlineInHome = styled(baseOutline)`
     padding: 0 65px 40px 65px;
   }
   @media screen and (max-width: ${pad}) {
-    padding: 35px 26px 40px 26px;
+    padding: 43px 26px 54px 26px;
   }
 `;
 
 export const ContainerOutlineInFood = styled(baseOutline)`
   grid-template-rows: repeat(2, auto);
   padding: 90px 109px 40px 105px;
+  @media screen and (max-width: ${pc}) {
+    padding: 0 59px 55px 59px;
+  }
+  @media screen and (max-width: ${pad}) {
+    padding: 43px 26px 54px 26px;
+  }
 `;
 
 export const ContainerOutlineInTraffic = styled(baseOutline)`
@@ -38,5 +44,11 @@ export const ContainerOutlineInTraffic = styled(baseOutline)`
     color: #ff1d6c;
     margin-bottom: 12px;
     text-align: end;
+  }
+  @media screen and (max-width: ${pc}) {
+    padding: 54px 26px 65px 26px;
+  }
+  @media screen and (max-width: ${pad}) {
+    padding: 80px 16px 40px 16px;
   }
 `;

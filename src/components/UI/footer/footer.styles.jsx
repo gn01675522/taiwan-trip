@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { screenWide } from "../../../dummy_data/DUMMY_DATA";
+
+const { pad, pc } = screenWide;
 
 export const FooterBody = styled.div`
   display: flex;
@@ -12,4 +15,7 @@ export const FooterBody = styled.div`
   align-items: center;
   background-color: white;
   z-index: 998;
+  @media screen and (max-width: ${pc}) {
+    height: 32px;
+  }
 `;
