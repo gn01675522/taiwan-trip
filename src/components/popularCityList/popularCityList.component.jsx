@@ -1,7 +1,7 @@
 //* which use this：
 //* 1. home.component.jsx
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 import ListBlock from "../UI/listBlock/listBlock.component";
@@ -27,6 +27,7 @@ const previousOrNext = (boolean) => {
 };
 
 const PopularCityList = () => {
+  const [isPcScreen, setIsPcScreen] = useState(window.innerWidth);
   const [isNextPage, setIsNextPage] = useState(false);
 
   const cityList = previousOrNext(isNextPage);
@@ -36,33 +37,61 @@ const PopularCityList = () => {
     setIsNextPage(!isNextPage);
   };
 
+  useEffect(() => {
+    const screenWideChange = () => {
+      setIsPcScreen(window.innerWidth);
+    };
+
+    window.addEventListener("resize", screenWideChange);
+
+    return () => {
+      window.removeEventListener("resize", screenWideChange);
+    };
+  }, [isPcScreen]);
+
   return (
     <ListBlock topicType="city">
-      <CityListContent>
-        {isNextPage && (
-          <Button
-            type="button"
-            btnInWhere="city"
-            buttonType={BUTTON_TYPE_CLASSES.previous}
-            onClick={onChangePage}
-          />
-        )}
-        <CityListLayout>
-          {cityList.map((city, index) => {
-            return <CityCard key={city.id} gridArea={index} cityList={city} />;
-          })}
-        </CityListLayout>
-        {!isNextPage && (
-          <Button
-            type="button"
-            btnInWhere="city"
-            buttonType={BUTTON_TYPE_CLASSES.next}
-            onClick={onChangePage}
-          />
-        )}
-      </CityListContent>
+      {isPcScreen > 1024 ? (
+        <CityListContent>
+          {isNextPage && (
+            <Button
+              type="button"
+              btnInWhere="city"
+              buttonType={BUTTON_TYPE_CLASSES.previous}
+              onClick={onChangePage}
+            />
+          )}
+          <CityListLayout>
+            {cityList.map((city, index) => {
+              return (
+                <CityCard key={city.id} gridArea={index} cityList={city} />
+              );
+            })}
+          </CityListLayout>
+          {!isNextPage && (
+            <Button
+              type="button"
+              btnInWhere="city"
+              buttonType={BUTTON_TYPE_CLASSES.next}
+              onClick={onChangePage}
+            />
+          )}
+        </CityListContent>
+      ) : (
+        <CityListContent>
+          <CityListLayout>
+            {DATA_FOR_CITY_LIST.map((city, index) => {
+              return (
+                <CityCard key={city.id} gridArea={index} cityList={city} />
+              );
+            })}
+          </CityListLayout>
+        </CityListContent>
+      )}
     </ListBlock>
   );
 };
 
 export default PopularCityList;
+
+// todo 調整城市列表，
