@@ -19,10 +19,12 @@ const ScenicSpot = () => {
   const { county } = useParams();
   const dispatch = useDispatch();
   const keyword = useSelector(selectSearchKeyword);
+  console.log("inside scenicSpot component", county);
 
   useEffect(() => {
     dispatch(fetchScenicSpotAsync(keyword, county));
-  }, [county, keyword]);
+    console.log("inside scenicSpot component's useEffect", county);
+  }, [keyword, county]);
 
   return (
     <>

@@ -17,7 +17,7 @@ export const ContainerOutlineInHome = styled(baseOutline)`
     padding: 0 65px 40px 65px;
   }
   @media screen and (max-width: ${pad}) {
-    padding: 43px 26px 54px 26px;
+    padding: 43px 7vw 54px 7vw;
   }
 `;
 
@@ -28,7 +28,7 @@ export const ContainerOutlineInFood = styled(baseOutline)`
     padding: 0 59px 55px 59px;
   }
   @media screen and (max-width: ${pad}) {
-    padding: 43px 26px 54px 26px;
+    padding: 43px 7vw 54px 7vw;
   }
 `;
 
@@ -46,7 +46,7 @@ export const ContainerOutlineInTraffic = styled(baseOutline)`
     text-align: end;
   }
   @media screen and (max-width: ${pc}) {
-    padding: 54px 26px 65px 26px;
+    padding: 54px 7vw 65px 7vw;
   }
   @media screen and (max-width: ${pad}) {
     padding: 80px 16px 40px 16px;

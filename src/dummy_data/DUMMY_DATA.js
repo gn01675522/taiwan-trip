@@ -157,6 +157,7 @@ export const CITY_TITLE_EN_TO_TC = [
   { enTitle: "HualienCounty", tcTitle: "花蓮縣" },
   { enTitle: "TaitungCounty", tcTitle: "台東縣" },
   { enTitle: "KinmenCounty", tcTitle: "金門縣" },
+  { enTitle: "Off-Island", tcTitle: "外島" },
 ];
 
 //* which use this：

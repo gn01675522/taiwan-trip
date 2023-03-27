@@ -1,6 +1,7 @@
 import { getAuthToken } from "./getApiAuthToken";
 import { createRandomNum } from "../utils/api/api.utils";
 //* 引入取得的 api token 資料，及隨機取得亂數的 utils
+import { OFF_ISLAND_DATA } from "../dummy_data/OFF_ISLAND_DATA";
 
 export const getTDXBusRoutes = async () => {
   const token = await getAuthToken();
@@ -101,25 +102,32 @@ export const getTDXHotelList = async (keyword, county) => {
 
 export const getTDXScenicSpotList = async (keyword, county) => {
   const token = await getAuthToken();
-  const apiUrl =
-    county && keyword
-      ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=20&%24format=JSON`
-      : county
-      ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`
-      : keyword
-      ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=30&%24format=JSON`
-      : `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`;
+  console.log("inside fetch api", county);
+  
+  if (county === "Off-Island") {
+    console.log("test");
+    return OFF_ISLAND_DATA.slice(0, 20);
+  } else {
+    const apiUrl =
+      county && keyword
+        ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=20&%24format=JSON`
+        : county
+        ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`
+        : keyword
+        ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=30&%24format=JSON`
+        : `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`;
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: "GET",
-      headers: token,
-    });
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-    throw error;
+    try {
+      const response = await fetch(apiUrl, {
+        method: "GET",
+        headers: token,
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   }
 };
-//* 取得景點資料；根據傳入的關鍵字及縣市來決定要使用哪個路由
+//* 取得景點資料；根據傳入的關鍵字及縣市來決定要使用哪個路由 Off-Island

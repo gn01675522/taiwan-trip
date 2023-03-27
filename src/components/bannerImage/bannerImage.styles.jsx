@@ -27,7 +27,7 @@ export const ImageWall = styled.div`
           `;
       default:
         return `
-        url(${HomeBannerImg})
+          url(${HomeBannerImg})
         `;
     }
   }};
