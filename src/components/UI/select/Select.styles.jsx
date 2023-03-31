@@ -33,8 +33,8 @@ export const SelectBar = styled.select`
 `;
 
 export const Option = styled.option`
-  ::hover {
+  /* :checked {
     color: white;
     background-color: #ff1d6c;
-  }
+  } */
 `;

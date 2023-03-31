@@ -37,12 +37,12 @@ const navOption = [
     frame: <YellowCircleSymbol />,
     color: "#ffb72c",
   },
-  {
-    title: "景點交通",
-    link: "/traffic",
-    frame: <GreenCircleSymbol />,
-    color: "#007350",
-  },
+  // {
+  //   title: "景點交通",
+  //   link: "/traffic",
+  //   frame: <GreenCircleSymbol />,
+  //   color: "#007350",
+  // },
 ];
 
 const Navigation = () => {

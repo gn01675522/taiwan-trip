@@ -93,5 +93,3 @@ const PopularCityList = () => {
 };
 
 export default PopularCityList;
-
-// todo 調整城市列表，
