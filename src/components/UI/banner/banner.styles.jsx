@@ -7,15 +7,18 @@ const { pad, pc } = screenWide;
 
 export const BannerOutline = styled.div`
   display: flex;
-  position: relative;
+  position: fixed;
   width: 100%;
+  top: 120;
   height: min-content;
   background: white;
   padding: 12px 16px 19px 19px;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 998;
   @media screen and (min-width: ${pad}) {
+    position: relative;
+    z-index: 100;
     ${({ $pageType }) => {
       switch ($pageType) {
         case "traffic":
@@ -52,11 +55,16 @@ export const BannerOutline = styled.div`
 `;
 
 export const BottomShadow = styled(Shadow)`
+  position: fixed;
   width: 90%;
   margin: 0 5%;
   top: 145px;
-  z-index: 99;
+  z-index: 997;
   @media screen and (min-width: ${pad}) {
     display: none;
   }
+`;
+
+export const Blocker = styled.div`
+  height: 71px;
 `;

@@ -105,7 +105,7 @@ export const getTDXHotelList = async (keyword, county) => {
 
 export const getTDXScenicSpotList = async (keyword, county) => {
   const token = await getAuthToken();
-
+  console.log(keyword);
   if (county === "Off-Island") {
     console.log("test");
     return OFF_ISLAND_DATA.slice(0, 20);
@@ -116,7 +116,7 @@ export const getTDXScenicSpotList = async (keyword, county) => {
         : county
         ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`
         : keyword
-        ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=30&%24format=JSON`
+        ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=20&%24format=JSON`
         : `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`;
 
     try {

@@ -30,6 +30,7 @@ export const NavigationContainer = styled.div`
   position: fixed;
   flex-direction: column;
   width: 100%;
+  gap: 13px;
   height: ${navigationHeight.mobile};
   justify-content: center;
   align-items: center;
@@ -39,6 +40,7 @@ export const NavigationContainer = styled.div`
   @media screen and (min-width: ${pad}) {
     height: ${navigationHeight.pad};
     flex-direction: row;
+    gap: 0;
     padding: 17px 16px 17px 40px;
     justify-content: space-between;
     align-items: baseline;

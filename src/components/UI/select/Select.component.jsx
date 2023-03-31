@@ -1,14 +1,12 @@
 //* which use this：
 //* 1. bannerForm.component.jsx
 
-import { useState, forwardRef } from "react";
+import { forwardRef } from "react";
 import { SelectBar, Option, SelectWrap } from "./Select.styles";
 
 const Selected = forwardRef(
   ({ selected, gridArea, index, ...otherProps }, ref) => {
-    const [isHover, setIsHover] = useState(false);
     const { category, selectedOption } = selected;
-
 
     return (
       <SelectWrap gridArea={gridArea}>

@@ -5,6 +5,7 @@ export const PAGE_TYPE = {
   hotel: "hotel",
   traffic: "traffic",
   scenicSpot: "scenicSpot",
+  search: "search",
 };
 //* which use this：
 //* 1. container.component.jsx
@@ -15,6 +16,7 @@ export const PAGE_TYPE = {
 //* 6. hotel.component.jsx
 //* 7. scenicSpotComponent.jsx
 //* 8. traffic.component.jsx
+//* 9. search.component.jsx
 
 export const HOME_SELECTED_OPTION = [
   {

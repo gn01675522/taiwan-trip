@@ -14,7 +14,7 @@ import ShadowCard from "../shadowCard/shadowCard.component";
 import BannerForm from "../../bannerForm/bannerForm.component";
 import TrafficBtnArea from "../../trafficBtnArea/trafficBtnArea.component";
 
-import { BannerOutline, BottomShadow } from "./banner.styles";
+import { BannerOutline, BottomShadow, Blocker } from "./banner.styles";
 
 const Banner = ({ pageType }) => {
   const [isPcScreen, setIsPcScreen] = useState(window.innerWidth);
@@ -50,6 +50,7 @@ const Banner = ({ pageType }) => {
       </BannerOutline>
       <BottomShadow />
       {pageType === "traffic" && <TrafficBtnArea />}
+      {isPcScreen < 768 && <Blocker />}
     </>
   );
 };

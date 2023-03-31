@@ -11,6 +11,7 @@ import {
   ContainerOutlineInHome,
   ContainerOutlineInFood,
   ContainerOutlineInTraffic,
+  ContainerOutlineInSearch,
 } from "./container.styles";
 
 import { PAGE_TYPE } from "../../../dummy_data/DUMMY_DATA";
@@ -21,6 +22,7 @@ const getPage = (pageType) =>
     [PAGE_TYPE.food]: ContainerOutlineInFood,
     [PAGE_TYPE.traffic]: ContainerOutlineInTraffic,
     [PAGE_TYPE.scenicSpot]: ContainerOutlineInHome,
+    [PAGE_TYPE.search]: ContainerOutlineInSearch,
   }[pageType]);
 
 const Container = ({ children, pageType }) => {

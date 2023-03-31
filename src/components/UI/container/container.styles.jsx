@@ -12,6 +12,7 @@ const baseOutline = styled.div`
 `;
 
 export const ContainerOutlineInHome = styled(baseOutline)`
+  height: 100%;
   grid-template-rows: repeat(3, auto);
   padding: 43px 7vw 54px 7vw;
   @media screen and (min-width: ${pad}) {
@@ -23,9 +24,9 @@ export const ContainerOutlineInHome = styled(baseOutline)`
 `;
 
 export const ContainerOutlineInFood = styled(baseOutline)`
+  height: 100%;
   grid-template-rows: repeat(2, auto);
   padding: 43px 7vw 54px 7vw;
-
   @media screen and (min-width: ${pad}) {
     padding: 0 8vw 55px 8vw;
   }
@@ -36,6 +37,7 @@ export const ContainerOutlineInFood = styled(baseOutline)`
 
 export const ContainerOutlineInTraffic = styled(baseOutline)`
   display: block;
+  height: 100%;
   padding: 80px 3.5vw 40px 3.5vw;
   :before {
     content: "*每隔15秒自動更新";
@@ -54,3 +56,9 @@ export const ContainerOutlineInTraffic = styled(baseOutline)`
     padding: 81px 12vw 84px 12vw;
   }
 `;
+
+export const ContainerOutlineInSearch = styled(baseOutline)`
+  display: block;
+  height: calc(100vh - 32px);
+  padding: 30px 16px 24px 16px;
+`; //* 32px 是 footer 的高度，因 search 頁面只會在 mobile 出現，所以就是這固定尺寸。

@@ -37,6 +37,7 @@ const App = () => {
           <Route path="hotel/:county" element={<Hotel />} />
           <Route path="food/:county" element={<Food />} />
           <Route path="scenicSpot/:county" element={<ScenicSpot />} />
+          <Route path="scenicSpot/*" element={<ScenicSpot />} />
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<FoodAndHotel />} />
           <Route path="traffic" element={<Traffic />} />

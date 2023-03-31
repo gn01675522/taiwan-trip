@@ -89,13 +89,14 @@ const Navigation = () => {
     }
   };
 
-  const onClickToSearch = () => {
-    navigate("/search");
-  };
-
   // 手機尺寸畫面需要針對不同頁面來改變 nav 連結顏色，
   // 上面的函式是拿來比對 route 及 連結的 link 是否為同類型頁面。
   // 比較 route 和 link 如果符合那麼就直接 true，以便加入 currentPage
+
+  // const onClickToSearch = () => {
+  //   navigate("/search");
+  // };
+  // 1024 以下會出現一個按鈕，這個函式就是點擊之後可以導向搜尋頁面，目前暫時 disable
 
   return (
     <>
@@ -103,12 +104,12 @@ const Navigation = () => {
         <HomeLink to="/">
           <TaiwanSymbol />
         </HomeLink>
-        {isMobileScreen < 768 && (
+        {/*{isMobileScreen < 768 && (
           <ButtonInMobile
             buttonType={BUTTON_TYPE_CLASSES.search}
             onClick={onClickToSearch}
           />
-        )}
+        )}*/}
         <NavigationLinkContainer>
           {navOption.map(({ title, link, frame, color }) => {
             const isMatchRoute = areLinksEqual(link);
