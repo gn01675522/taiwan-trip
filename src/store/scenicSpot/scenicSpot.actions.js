@@ -21,7 +21,6 @@ export const fetchScenicSpotFailed = (error) =>
 //* fetch api 失敗
 
 export const fetchScenicSpotAsync = (keyword, county) => {
-  console.log("inside scenicSpot action", county);
   return async (dispatch) => {
     dispatch(fetchScenicSpotStart());
     try {

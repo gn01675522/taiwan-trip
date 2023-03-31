@@ -7,40 +7,48 @@ const { pad, pc } = screenWide;
 export const FormContainer = styled.form`
   display: grid;
   width: 100%;
-  grid-template-rows: repeat(2, 40px);
+  grid-template-rows: 40px;
   grid-template-columns: 1fr;
+  grid-template-areas: "div";
   grid-gap: 6px;
-  grid-template-areas:
-    "input"
-    "div";
   justify-content: center;
   z-index: 990;
-  @media screen and (max-width: ${pc}) {
+  @media screen and (min-width: ${pad}) {
     width: 55%;
-  }
-
-  @media screen and (max-width: ${pad}) {
-    width: 100%;
-    grid-template-rows: 40px;
-    grid-template-areas: "div";
-  }
-
-  ${({ $pageType }) => {
-    switch ($pageType) {
-      case "traffic":
-        return `
+    grid-template-rows: repeat(2, 40px);
+    grid-template-areas:
+      "input"
+      "div";
+    ${({ $pageType }) => {
+      switch ($pageType) {
+        case "traffic":
+          return `
           width: 45%;
-          grid-template-columns: 1fr;
           grid-template-rows: 40px;
+          grid-template-columns: 1fr;
           grid-template-areas: 
             "div"
           ;
           height: min-content;
         `;
-      default:
-        return;
-    }
-  }}
+        default:
+          return;
+      }
+    }}
+  }
+  @media screen and (min-width: ${pc}) {
+    width: 100%;
+    ${({ $pageType }) => {
+      switch ($pageType) {
+        case "traffic":
+          return `
+          width: 45%;
+        `;
+        default:
+          return;
+      }
+    }}
+  }
 `;
 
 export const Input = styled.input`
@@ -73,10 +81,10 @@ export const SelectBlock = styled.div`
     switch ($pageType) {
       case "traffic":
         return `
-        @media screen and (max-width: ${pc}) {
+        @media screen and (min-width: ${pad}){
             grid-template-columns: 1fr 1fr;
-          }
-        @media screen and (max-width: ${pad}) {
+        }
+        @media screen and (min-width: ${pc}) {
           grid-template-columns: repeat(2, 1fr) 40px;
           }
         `;

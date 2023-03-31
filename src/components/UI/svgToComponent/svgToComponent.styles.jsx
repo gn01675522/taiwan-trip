@@ -10,23 +10,24 @@ import { screenWide } from "../../../dummy_data/DUMMY_DATA";
 const { pad, pc } = screenWide;
 
 const BaseCircleSymbolWrapper = css`
-  width: 34px;
-  height: 34px;
-  @media screen and (max-width: ${pad}) {
-    display: none;
+  display: none;
+  @media screen and (min-width: ${pad}) {
+    display: block;
+    width: 34px;
+    height: 34px;
   }
 `;
 
 export const TaiwanSymbol = styled(TaiwanLogoSVG)`
-  width: 99px;
-  height: 57px;
-  @media screen and (max-width: ${pc}) {
+  width: 90px;
+  height: 52px;
+  @media screen and (min-width: ${pad}) {
     width: 86px;
     height: 50px;
   }
-  @media screen and (max-width: ${pad}) {
-    width: 90px;
-    height: 52px;
+  @media screen and (min-width: ${pc}) {
+    width: 99px;
+    height: 57px;
   }
 `; // which use this： navigation.component.jsx
 

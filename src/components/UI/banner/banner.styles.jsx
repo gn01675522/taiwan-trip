@@ -9,22 +9,13 @@ export const BannerOutline = styled.div`
   display: flex;
   position: relative;
   width: 100%;
+  height: min-content;
+  background: white;
+  padding: 12px 16px 19px 19px;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  ${({ $pageType }) => {
-    switch ($pageType) {
-      case "traffic":
-        return `
-          height: 170px;
-        `;
-      default:
-        return `
-          height: 536px;
-        `;
-    }
-  }}
-  @media screen and (max-width: ${pc}) {
+  @media screen and (min-width: ${pad}) {
     ${({ $pageType }) => {
       switch ($pageType) {
         case "traffic":
@@ -43,10 +34,20 @@ export const BannerOutline = styled.div`
       }
     }}
   }
-  @media screen and (max-width: ${pad}) {
-    height: min-content;
-    background: white;
-    padding: 12px 16px 19px 19px;
+  @media screen and (min-width: ${pc}) {
+    padding: 0;
+    ${({ $pageType }) => {
+      switch ($pageType) {
+        case "traffic":
+          return `
+          height: 170px;
+        `;
+        default:
+          return `
+          height: 536px;
+        `;
+      }
+    }}
   }
 `;
 
@@ -55,7 +56,7 @@ export const BottomShadow = styled(Shadow)`
   margin: 0 5%;
   top: 145px;
   z-index: 99;
-  @media screen and (min-width: ${pc}), screen and (min-width: ${pad}) {
+  @media screen and (min-width: ${pad}) {
     display: none;
   }
 `;

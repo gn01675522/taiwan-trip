@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { screenWide } from "../../../dummy_data/DUMMY_DATA";
 import { Shadow } from "../svgToComponent/svgToComponent.styles";
 
-const { pc } = screenWide;
+const { pad, pc } = screenWide;
 
 export const CardOutline = styled.div`
   position: relative;
@@ -37,12 +37,27 @@ export const CardContent = styled.div`
         return;
       case "traffic":
         return `
-          height: 1000px;
+            height: min-content;
+            padding: 0;
+            background: none;
+          @media screen and (min-width: ${pad}) {
+            height: 1000px;
+            padding: 49px 31px;
+            background: white;
+          }
+          @media screen and (min-width: ${pc}) {
+            padding: 45px 100px;
+          }
         `;
       case "hotEvent":
       case "event":
         return `
-          padding: 16px;
+          padding: 12px;
+          cursor: pointer;
+          @media screen and (min-width: ${pc}) {
+            padding: 16px;
+            cursor: auto;
+          }
         `;
       case "food":
       case "hotel":
@@ -70,19 +85,28 @@ export const BottomShadow = styled(Shadow)`
     switch ($contentType) {
       case "banner":
         return `
-          width: 100%;
-          height: 74px;
-          margin: 0;
-          bottom: -35px;
-          @media screen and (max-width: ${pc}) {
             display: none;
-          }
+            @media screen and (min-width: ${pc}) {
+                display: block;
+                width: 100%;
+                height: 74px;
+                margin: 0;
+                bottom: -35px;
+            }
         `;
       case "detail":
-      case "traffic":
         return `
           height: 52px;
           bottom: -30px;
+        `;
+      case "traffic":
+        return `
+            display: none;
+            @media screen and (min-width: ${pad}) {
+                display: block;
+                height: 52px;
+                bottom: -30px;
+            }
         `;
       case "hotEvent":
         return `

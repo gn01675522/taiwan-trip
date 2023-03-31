@@ -40,8 +40,6 @@ const ListContent = ({ topic, county }) => {
   const contentType = getContent(topic);
   const contentData = useSelector(contentType);
 
-  console.log("inside listContent", county);
-
   return (
     <ListBlock topicType={topic} county={county}>
       <ListContentLayout topicType={topic}>

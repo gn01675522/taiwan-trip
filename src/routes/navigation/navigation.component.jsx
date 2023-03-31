@@ -52,6 +52,12 @@ const Navigation = () => {
 
   useEffect(() => {
     setIsMobileScreen(window.innerWidth);
+
+    window.addEventListener("resize", setIsMobileScreen);
+
+    return () => {
+      window.removeEventListener("resize", setIsMobileScreen);
+    };
   }, [isMobileScreen]);
 
   const areLinksEqual = (link) => {
@@ -122,7 +128,7 @@ const Navigation = () => {
           })}
         </NavigationLinkContainer>
       </NavigationContainer>
-      <BottomShadow />
+      {(isMobileScreen >= 768 || isMobileScreen < 1024) && <BottomShadow />}
       <Blocker />
       <Outlet />
     </>

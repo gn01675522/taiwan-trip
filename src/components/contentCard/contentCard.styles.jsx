@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import cantFindImg from "../../assets/picture/cantFindImg.jpg";
+import { screenWide } from "../../dummy_data/DUMMY_DATA";
+
+const { pc } = screenWide;
 
 export const ContentCardOutline = styled.div`
   display: grid;
-  grid-template-rows: 137px 42px 16px;
-  grid-gap: 10px;
+  grid-template-rows: 96px 42px 16px;
+  gap: 5px;
   width: 100%;
   height: 100%;
+  @media screen and (min-width: ${pc}) {
+    grid-template-rows: 137px 42px 16px;
+    grid-gap: 10px;
+  }
 `;
 
 export const ContentImage = styled.img`

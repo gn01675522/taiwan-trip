@@ -51,7 +51,7 @@ const PopularCityList = () => {
 
   return (
     <ListBlock topicType="city">
-      {isPcScreen > 1024 ? (
+      {isPcScreen >= 1024 ? (
         <CityListContent>
           {isNextPage && (
             <Button

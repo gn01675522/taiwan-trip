@@ -23,46 +23,49 @@ export const ButtonInMobile = styled(Button)`
   height: 30px;
   top: 38px;
   right: 19px;
-  @media screen and (min-width: ${pad}) {
-    display: none;
-  }
 `;
 
 export const NavigationContainer = styled.div`
   display: flex;
   position: fixed;
-  padding: 18px 6rem;
+  flex-direction: column;
   width: 100%;
-  height: ${navigationHeight.pc};
-  justify-content: space-between;
+  height: ${navigationHeight.mobile};
+  justify-content: center;
+  align-items: center;
+  padding: 15px 18px 0 18px;
   background-color: white;
   z-index: 999;
-  @media screen and (max-width: ${pc}) {
-    padding: 17px 40px;
+  @media screen and (min-width: ${pad}) {
     height: ${navigationHeight.pad};
+    flex-direction: row;
+    padding: 17px 16px 17px 40px;
+    justify-content: space-between;
+    align-items: baseline;
   }
-  @media screen and (max-width: ${pad}) {
-    flex-direction: column;
-    gap: 13px;
-    justify-content: center;
-    align-items: center;
-    height: ${navigationHeight.mobile};
-    padding: 15px 18px 0 18px;
+  @media screen and (min-width: ${pc}) {
+    height: ${navigationHeight.pc};
+    padding: 18px 6rem;
   }
 `;
 
 export const NavigationLinkContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 27px;
-  @media screen and (max-width: ${pad}) {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: space-between;
-    padding: 0 31px;
-    border-radius: 6px;
-    box-shadow: 0px 2px 4px rgba(13, 11, 12, 0.2);
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
+  padding: 0 31px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(13, 11, 12, 0.2);
+  @media screen and (min-width: ${pad}) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 27px;
+    width: auto;
+    height: min-content;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
   }
 `;
 
@@ -78,38 +81,42 @@ export const LinkTitle = styled.span`
   margin-top: 6px;
   line-height: 20.27px;
   font-size: 14px;
-  text-decoration: underline;
-  ${({ color }) => {
-    return `
-    color: ${color};
-    `;
+  text-decoration: none;
+  ${({ currentPage }) => {
+    return currentPage ? `color: #FF1D6C;` : `color: #acacac;`;
   }}
-  @media screen and (max-width: ${pad}) {
-    text-decoration: none;
-    ${({ currentPage }) => {
-      return currentPage ? `color: #FF1D6C;` : `color: #acacac;`;
+
+  @media screen and (min-width:${pad}) {
+    text-decoration: underline;
+    ${({ color }) => {
+      return `
+        color: ${color};
+    `;
     }}
   }
 `;
 
 export const BottomShadow = styled(Shadow)`
-  width: 97%;
-  margin: 0 1.5%;
-  top: 40px;
-  z-index: 990;
+  display: none;
+  @media screen and (min-width: ${pad}) {
+    display: block;
+    width: 97%;
+    margin: 0 1.5%;
+    top: 40px;
+    z-index: 990;
+  }
   @media screen and (min-width: ${pc}) {
     display: none;
   }
 `;
 
 export const Blocker = styled.div`
-  display: block;
   width: 100%;
-  height: 104px;
-  @media screen and (max-width: ${pc}) {
-    height: 84px;
+  height: ${navigationHeight.mobile};
+  @media screen and (min-width: ${pad}) {
+    height: ${navigationHeight.pad};
   }
-  @media screen and (max-width: ${pad}) {
-    height: 120px;
+  @media screen and (min-width: ${pc}) {
+    height: ${navigationHeight.pc};
   }
 `;

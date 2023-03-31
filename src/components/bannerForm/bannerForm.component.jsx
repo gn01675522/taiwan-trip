@@ -48,7 +48,7 @@ const BannerForm = ({ $pageType }) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const [path, pathParam] = selectRefs.current;
-    if (isPcScreen <= 768) {
+    if (isPcScreen < 768) {
       navigate(`/${path.value}/${pathParam.value}`);
     } else {
       dispatch(setSearchKeyword(inputRef.current.value));
@@ -73,7 +73,7 @@ const BannerForm = ({ $pageType }) => {
   return (
     <>
       <FormContainer $pageType={$pageType} onSubmit={onSubmitHandler}>
-        {exceptTraffic && isPcScreen > 768 && (
+        {exceptTraffic && isPcScreen >= 768 && (
           <Input type="text" placeholder="搜尋關鍵字" ref={inputRef} />
         )}
         <SelectBlock $pageType={$pageType}>
@@ -90,13 +90,13 @@ const BannerForm = ({ $pageType }) => {
           })}
 
           {(isPcScreen < 768 ||
-            isPcScreen > 1024 ||
+            isPcScreen >= 1024 ||
             $pageType !== "traffic") && (
             <Button
               type="submit"
               gridArea="btn"
               buttonType={
-                isPcScreen > 768
+                isPcScreen >= 768
                   ? BUTTON_TYPE_CLASSES.search
                   : BUTTON_TYPE_CLASSES.mobileInBanner
               }

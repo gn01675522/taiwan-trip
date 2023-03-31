@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-import { screenWide } from "../../dummy_data/DUMMY_DATA";
-
-const { pad, pc } = screenWide;
-
 export const BannerContentLayout = styled.div`
   display: grid;
   position: absolute;

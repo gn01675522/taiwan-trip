@@ -6,35 +6,37 @@ const { pad, pc } = screenWide;
 
 const baseOutline = styled.div`
   display: grid;
+  width: 100vw;
   grid-gap: 60px;
   background-color: #f6f7fb;
 `;
 
 export const ContainerOutlineInHome = styled(baseOutline)`
   grid-template-rows: repeat(3, auto);
-  padding: 65px 109px 60px 109px;
-  @media screen and (max-width: ${pc}) {
-    padding: 0 65px 40px 65px;
+  padding: 43px 7vw 54px 7vw;
+  @media screen and (min-width: ${pad}) {
+    padding: 0 8vw 40px 8vw;
   }
-  @media screen and (max-width: ${pad}) {
-    padding: 43px 7vw 54px 7vw;
+  @media screen and (min-width: ${pc}) {
+    padding: 65px 109px 60px 109px;
   }
 `;
 
 export const ContainerOutlineInFood = styled(baseOutline)`
   grid-template-rows: repeat(2, auto);
-  padding: 90px 109px 40px 105px;
-  @media screen and (max-width: ${pc}) {
-    padding: 0 59px 55px 59px;
+  padding: 43px 7vw 54px 7vw;
+
+  @media screen and (min-width: ${pad}) {
+    padding: 0 8vw 55px 8vw;
   }
-  @media screen and (max-width: ${pad}) {
-    padding: 43px 7vw 54px 7vw;
+  @media screen and (min-width: ${pc}) {
+    padding: 90px 109px 40px 105px;
   }
 `;
 
 export const ContainerOutlineInTraffic = styled(baseOutline)`
   display: block;
-  padding: 81px 163px 84px 163px;
+  padding: 80px 3.5vw 40px 3.5vw;
   :before {
     content: "*每隔15秒自動更新";
     display: block;
@@ -45,10 +47,10 @@ export const ContainerOutlineInTraffic = styled(baseOutline)`
     margin-bottom: 12px;
     text-align: end;
   }
-  @media screen and (max-width: ${pc}) {
-    padding: 54px 7vw 65px 7vw;
+  @media screen and (min-width: ${pad}) {
+    padding: 54px 3.5vw 65px 3.5vw;
   }
-  @media screen and (max-width: ${pad}) {
-    padding: 80px 16px 40px 16px;
+  @media screen and (min-width: ${pc}) {
+    padding: 81px 12vw 84px 12vw;
   }
 `;
