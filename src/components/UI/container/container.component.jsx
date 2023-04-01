@@ -9,7 +9,10 @@
 
 import {
   ContainerOutlineInHome,
+  ContainerOutlineInEvent,
   ContainerOutlineInFood,
+  ContainerOutlineInHotel,
+  ContainerOutlineInScenicSpot,
   ContainerOutlineInTraffic,
   ContainerOutlineInSearch,
 } from "./container.styles";
@@ -20,8 +23,10 @@ const getPage = (pageType) =>
   ({
     [PAGE_TYPE.home]: ContainerOutlineInHome,
     [PAGE_TYPE.food]: ContainerOutlineInFood,
+    [PAGE_TYPE.event]: ContainerOutlineInEvent,
+    [PAGE_TYPE.hotel]: ContainerOutlineInHotel,
     [PAGE_TYPE.traffic]: ContainerOutlineInTraffic,
-    [PAGE_TYPE.scenicSpot]: ContainerOutlineInHome,
+    [PAGE_TYPE.scenicSpot]: ContainerOutlineInScenicSpot,
     [PAGE_TYPE.search]: ContainerOutlineInSearch,
   }[pageType]);
 

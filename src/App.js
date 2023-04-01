@@ -8,11 +8,8 @@ import Footer from "./components/UI/footer/footer.component";
 import FoodAndHotel from "./routes/foodAndHotel/foodAndHotel.component";
 import Traffic from "./routes/traffic/traffic.component";
 import Detail from "./components/UI/detail/detail.component";
-import ScenicSpot from "./routes/scenicSpot/scenicSpot.component";
-import Event from "./routes/event/event.component";
-import Food from "./routes/food/food.component";
-import Hotel from "./routes/hotel/hotel.component";
 import Search from "./routes/search/search.component";
+import SingleTopic from "./routes/singleTopic/singleTopic.component";
 
 import { selectModalOpen } from "./store/detail/detail.selector";
 
@@ -21,6 +18,7 @@ import { GlobalStyle } from "./global.styles";
 const App = () => {
   const isModalOpen = useSelector(selectModalOpen);
   const htmlBody = document.querySelector("body");
+  const routeTitle = ["event", "hotel", "food", "scenicSpot"];
 
   useEffect(() => {
     htmlBody.style.overflow = isModalOpen ? "hidden" : "auto";
@@ -33,11 +31,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="event/:county/*" element={<Event />} />
-          <Route path="hotel/:county" element={<Hotel />} />
-          <Route path="food/:county" element={<Food />} />
-          <Route path="scenicSpot/:county" element={<ScenicSpot />} />
-          <Route path="scenicSpot/*" element={<ScenicSpot />} />
+          {routeTitle.map((title) => {
+            return (
+              <Route
+                key={title}
+                path={`/${title}/:county`}
+                element={<SingleTopic whichTopic={title} />}
+              />
+            );
+          })}
           <Route path="detail" element={<Detail />} />
           <Route path="foodAndHotel" element={<FoodAndHotel />} />
           <Route path="traffic" element={<Traffic />} />

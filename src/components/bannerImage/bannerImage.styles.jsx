@@ -15,6 +15,7 @@ export const ImageWall = styled.div`
   background-image: ${({ $pageType }) => {
     switch ($pageType) {
       case "food":
+      case "hotel":
         return `
         url(${FoodBannerImg})
         `;

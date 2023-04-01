@@ -23,6 +23,8 @@ export const ContainerOutlineInHome = styled(baseOutline)`
   }
 `;
 
+export const ContainerOutlineInEvent = styled(ContainerOutlineInHome)``;
+
 export const ContainerOutlineInFood = styled(baseOutline)`
   height: 100%;
   grid-template-rows: repeat(2, auto);
@@ -34,6 +36,10 @@ export const ContainerOutlineInFood = styled(baseOutline)`
     padding: 90px 109px 40px 105px;
   }
 `;
+
+export const ContainerOutlineInHotel = styled(ContainerOutlineInFood)``;
+
+export const ContainerOutlineInScenicSpot = styled(ContainerOutlineInHome)``;
 
 export const ContainerOutlineInTraffic = styled(baseOutline)`
   display: block;
@@ -62,3 +68,6 @@ export const ContainerOutlineInSearch = styled(baseOutline)`
   height: calc(100vh - 32px);
   padding: 30px 16px 24px 16px;
 `; //* 32px 是 footer 的高度，因 search 頁面只會在 mobile 出現，所以就是這固定尺寸。
+
+//* 有些內部無任何 css 的 component 是為了讓每個 PAGE_TYPE 都有對應的元件
+//* 最主要目的是為了之後如果內容有任何改變，就不用另外再新增，可以直接修改。

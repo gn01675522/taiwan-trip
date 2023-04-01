@@ -21,6 +21,7 @@ import { setSearchKeyword } from "../../store/search/search.actions";
 const SELECT_TYPE_CLASSES = {
   home: "home",
   scenicSpot: "scenicSpot",
+  event: "event",
   food: "food",
   hotel: "hotel",
   traffic: "traffic",
@@ -29,6 +30,7 @@ const SELECT_TYPE_CLASSES = {
 const getSelectType = (pageType) =>
   ({
     [SELECT_TYPE_CLASSES.home]: HOME_SELECTED_OPTION,
+    [SELECT_TYPE_CLASSES.event]: HOME_SELECTED_OPTION,
     [SELECT_TYPE_CLASSES.scenicSpot]: HOME_SELECTED_OPTION,
     [SELECT_TYPE_CLASSES.food]: FOOD_SELECTED_OPTION,
     [SELECT_TYPE_CLASSES.hotel]: FOOD_SELECTED_OPTION,
