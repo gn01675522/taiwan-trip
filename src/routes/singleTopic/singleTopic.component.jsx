@@ -10,8 +10,6 @@ import Container from "../../components/UI/container/container.component";
 
 import ListContent from "../../components/listContent/listContent.component";
 
-import { PAGE_TYPE } from "../../dummy_data/DUMMY_DATA";
-
 import { fetchEventListAsync } from "../../store/event/event.actions";
 import { fetchHotelListAsync } from "../../store/hotel/hotel.actions";
 import { fetchFoodListAsync } from "../../store/food/food.actions";

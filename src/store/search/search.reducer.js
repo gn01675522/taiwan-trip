@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   searchKeyword: null,
   searchCategory: null,
   searchCounty: null,
+  searchHistory: [],
 };
 
 export const searchReducer = (state = INITIAL_STATE, action = {}) => {

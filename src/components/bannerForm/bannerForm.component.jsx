@@ -44,6 +44,9 @@ const BannerForm = ({ $pageType }) => {
   const selectRefs = useRef([]);
   const navigate = useNavigate();
 
+  const keywordSaveInLocalStorage = JSON.parse(
+    localStorage.getItem("search_keyword")
+  );
   const selectType = getSelectType($pageType);
   const exceptTraffic = $pageType !== "traffic";
 
@@ -53,6 +56,10 @@ const BannerForm = ({ $pageType }) => {
     if (isPcScreen < 768) {
       navigate(`/${path.value}/${pathParam.value}`);
     } else {
+      localStorage.setItem(
+        "search_keyword",
+        JSON.stringify([...keywordSaveInLocalStorage, inputRef.current.value])
+      );
       dispatch(setSearchKeyword(inputRef.current.value));
       navigate(`/${path.value}/${pathParam.value}`);
     }

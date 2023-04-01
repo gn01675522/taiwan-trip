@@ -21,22 +21,29 @@ import { BUTTON_TYPE_CLASSES } from "../../components/UI/button/button.component
 import { setSearchKeyword } from "../../store/search/search.actions";
 
 const Search = () => {
-  const [historyKeyword, setHistoryKeyword] = useState([]);
+  const [searchHistory, setSearchHistory] = useState(
+    JSON.parse(localStorage.getItem("search_keyword"))
+      ? [...JSON.parse(localStorage.getItem("search_keyword"))]
+      : []
+  );
   const inputRef = useRef();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSearchHandler = () => {
-    setHistoryKeyword([...historyKeyword, inputRef.current.value]);
+    setSearchHistory([...searchHistory, inputRef.current.value]);
     dispatch(setSearchKeyword(inputRef.current.value));
-    navigate(`/scenicSpot/${inputRef.current.value}`);
+    localStorage.setItem("search_keyword", JSON.stringify(searchHistory));
+    // navigate(`/scenicSpot/${inputRef.current.value}`);
   };
   //todo 點擊搜尋後先儲存關鍵字，並且 dispatch 關鍵字並抓取資料，接著導向相對應路由；目前卡在 App 路由設定有衝突，待解決。
 
   const onClearHistoryHandler = () => {
-    setHistoryKeyword([]);
+    setSearchHistory([]);
+    localStorage.removeItem("search_keyword");
   };
   //* 清除搜尋紀錄
+
   return (
     <Container pageType={PAGE_TYPE.search}>
       <SearchBlock>
@@ -52,7 +59,7 @@ const Search = () => {
           清除搜尋紀錄
         </ClearHistoryButton>
         <HistorySheet>
-          {historyKeyword.map((keyword, index) => (
+          {searchHistory.map((keyword, index) => (
             <HistoryOption key={index} onClick={onSearchHandler}>
               {keyword}
             </HistoryOption>
