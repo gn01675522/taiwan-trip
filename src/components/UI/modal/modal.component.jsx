@@ -15,9 +15,9 @@ const Modal = ({ children }) => {
   const onShowModal = () => {
     dispatch(setModalOpen(false));
   };
-
+  // onClick={onShowModal}
   return (
-    <Backdrop onClick={onShowModal}>
+    <Backdrop>
       <ModalBody>
         <ShadowCard $contentType="detail" $pageType="banner">
           {children}

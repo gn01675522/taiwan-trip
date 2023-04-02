@@ -10,6 +10,9 @@ const BaseButtonStyle = styled.button`
   align-items: center;
   cursor: pointer;
   box-shadow: 0px 4px 3px rgba(13, 11, 12, 0.2);
+  grid-area: ${({ buttonType }) => {
+    return `${buttonType}`;
+  }};
 `;
 
 export const BlackSquareWrapper = styled(BaseButtonStyle)`

@@ -1,6 +1,7 @@
 //* which use this：
 //* 1. detail.component.jsx
 
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
@@ -13,6 +14,7 @@ import { ReactComponent as Tel } from "../../assets/svg/telSymbol.svg";
 import {
   DetailPhoto,
   ButtonBlock,
+  ButtonWrap,
   EventTitleBlock,
   EventContentBlock,
   EventInfoBlock,
@@ -23,16 +25,45 @@ import {
 import { selectModalData } from "../../store/detail/detail.selector";
 
 const DetailContent = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { title, address, description, picture, phone, charge, during } =
     useSelector(selectModalData);
 
+  const pictureAry = Object.values(picture).filter((picture) => {
+    return picture.includes("http");
+  });
+  //* 原始資料中有些會將其他資訊跟 picture 放在一起
+  //* 這邊使用 filter 並以 http 當作條件來判斷是否為有效連結
+
+  const onClickToNext = () => {
+    setCurrentIndex(currentIndex + 1);
+  };
+  const onClickToPrevious = () => {
+    setCurrentIndex(currentIndex - 1);
+  };
+  //* 透過按鈕選擇不同圖片的函式f
+
   return (
     <>
-      <DetailPhoto img={picture.PictureUrl1} />
-      <ButtonBlock>
-        <Button buttonType={BUTTON_TYPE_CLASSES.previous} />
-        <Button buttonType={BUTTON_TYPE_CLASSES.next} />
-      </ButtonBlock>
+      <DetailPhoto img={pictureAry[currentIndex]} />
+      {pictureAry.length > 0 && (
+        <ButtonBlock>
+          <ButtonWrap>
+            {currentIndex > 0 && (
+              <Button
+                buttonType={BUTTON_TYPE_CLASSES.previous}
+                onClick={onClickToPrevious}
+              />
+            )}
+            {currentIndex < pictureAry.length - 1 && (
+              <Button
+                buttonType={BUTTON_TYPE_CLASSES.next}
+                onClick={onClickToNext}
+              />
+            )}
+          </ButtonWrap>
+        </ButtonBlock>
+      )}
       <EventTitleBlock>{title}</EventTitleBlock>
       <EventContentBlock>{description}</EventContentBlock>
       <EventInfoBlock>

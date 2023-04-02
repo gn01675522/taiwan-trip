@@ -60,7 +60,11 @@ const Button = ({ children, buttonType, btnInWhere, ...otherProps }) => {
 
   return (
     <>
-      <CustomBtnWrapper btnInWhere={btnInWhere} {...otherProps}>
+      <CustomBtnWrapper
+        btnInWhere={btnInWhere}
+        buttonType={buttonType}
+        {...otherProps}
+      >
         {CustomBtnContent ? <CustomBtnContent /> : children}
       </CustomBtnWrapper>
     </>

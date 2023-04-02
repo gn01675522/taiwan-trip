@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cantFindImg from "../../assets/picture/cantFindImg.jpg";
+import Button, { BUTTON_TYPE_CLASSES } from "../UI/button/button.component";
 
 export const DetailPhoto = styled.div`
   width: 100%;
@@ -16,7 +17,15 @@ export const ButtonBlock = styled.div`
   justify-content: end;
   width: 100%;
   height: 32px;
-  gap: 18px;
+`;
+
+export const ButtonWrap = styled.div`
+  display: grid;
+  width: max-content;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 18px;
+  grid-template-areas: "previous next";
 `;
 
 export const EventTitleBlock = styled.div`
@@ -37,8 +46,8 @@ export const EventContentBlock = styled.div`
 
 export const EventInfoBlock = styled.div`
   display: grid;
-  grid-template-columns: 58% 34%;
   width: 100%;
+  grid-template-columns: 58% 34%;
   grid-gap: 41px;
   justify-content: space-between;
 `;
