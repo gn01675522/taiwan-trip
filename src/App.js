@@ -44,7 +44,12 @@ const App = () => {
           <Route path="foodAndHotel" element={<FoodAndHotel />} />
           <Route path="traffic" element={<Traffic />} />
         </Route>
-        <Route path="search" element={<Search />} />
+        <Route path="search" element={<Search />}>
+          {/*<Route
+            path="search/*"
+            element={<SingleTopic whichTopic="scenicSpot" />}
+        />*/}
+        </Route>
       </Routes>
       <Footer />
     </>

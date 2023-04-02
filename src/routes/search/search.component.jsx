@@ -34,7 +34,7 @@ const Search = () => {
     setSearchHistory([...searchHistory, inputRef.current.value]);
     dispatch(setSearchKeyword(inputRef.current.value));
     localStorage.setItem("search_keyword", JSON.stringify(searchHistory));
-    // navigate(`/scenicSpot/${inputRef.current.value}`);
+    navigate(`/search/${inputRef.current.value}`);
   };
   //todo 點擊搜尋後先儲存關鍵字，並且 dispatch 關鍵字並抓取資料，接著導向相對應路由；目前卡在 App 路由設定有衝突，待解決。
 
