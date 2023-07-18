@@ -17,7 +17,6 @@ export const getTDXBusRoutes = async () => {
 
     return data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -44,7 +43,6 @@ export const getTDXEventList = async (keyword, county) => {
       });
       data = await response.json();
     } catch (error) {
-      console.log(error);
       throw error;
     }
   } while (!data.length);
@@ -72,7 +70,6 @@ export const getTDXFoodList = async (keyword, county) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -97,7 +94,6 @@ export const getTDXHotelList = async (keyword, county) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
@@ -105,9 +101,7 @@ export const getTDXHotelList = async (keyword, county) => {
 
 export const getTDXScenicSpotList = async (keyword, county) => {
   const token = await getAuthToken();
-  console.log(keyword);
   if (county === "Off-Island") {
-    console.log("test");
     return OFF_ISLAND_DATA.slice(0, 20);
   } else {
     const apiUrl =
@@ -127,7 +121,6 @@ export const getTDXScenicSpotList = async (keyword, county) => {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.log(error);
       throw error;
     }
   }

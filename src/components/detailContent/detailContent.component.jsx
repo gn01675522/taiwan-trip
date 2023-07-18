@@ -29,8 +29,6 @@ const DetailContent = () => {
   const { title, address, description, picture, phone, charge, during } =
     useSelector(selectModalData);
 
-  console.log(picture);
-
   const pictureAry = Object.values(picture).filter((picture) => {
     return picture.includes("http");
   });
