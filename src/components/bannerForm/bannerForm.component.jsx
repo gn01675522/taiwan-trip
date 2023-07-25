@@ -39,30 +39,37 @@ const getSelectType = (pageType) =>
 
 const BannerForm = ({ $pageType }) => {
   const [isPcScreen, setIsPcScreen] = useState(window.innerWidth);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const inputRef = useRef();
   const selectRefs = useRef([]);
   const navigate = useNavigate();
 
-  const keywordSaveInLocalStorage = JSON.parse(
-    localStorage.getItem("search_keyword")
-  );
+  // const keywordSaveInLocalStorage = JSON.parse(
+  //   localStorage.getItem("search_keyword")
+  // );
   const selectType = getSelectType($pageType);
   const exceptTraffic = $pageType !== "traffic";
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const [path, pathParam] = selectRefs.current;
-    if (isPcScreen < 768) {
-      navigate(`/${path.value}/${pathParam.value}`);
-    } else {
-      localStorage.setItem(
-        "search_keyword",
-        JSON.stringify([...keywordSaveInLocalStorage, inputRef.current.value])
-      );
-      dispatch(setSearchKeyword(inputRef.current.value));
-      navigate(`/${path.value}/${pathParam.value}`);
-    }
+    const keyword = inputRef.current.value;
+
+    navigate(
+      `/${path.value}/${pathParam.value || "all"}${
+        keyword ? `/${keyword}` : ""
+      }`
+    );
+    // if (isPcScreen < 768) {
+    //   navigate(`/${path.value}/${pathParam.value}`);
+    // } else {
+    //   localStorage.setItem(
+    //     "search_keyword",
+    //     JSON.stringify([...keywordSaveInLocalStorage, inputRef.current.value])
+    //   );
+    //   dispatch(setSearchKeyword(inputRef.current.value));
+    //   navigate(`/${path.value}/${pathParam.value}`);
+    // }
   };
   //* 點擊搜尋後將 ref 的資訊傳至 reducer 裡面，並根據選擇的類別及城市切換到相對應的路由
 

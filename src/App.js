@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     htmlBody.style.overflow = isModalOpen ? "hidden" : "auto";
-  }, [isModalOpen]);
+  }, [htmlBody.style, isModalOpen]);
 
   return (
     <>
@@ -35,7 +35,7 @@ const App = () => {
             return (
               <Route
                 key={title}
-                path={`/${title}/:county`}
+                path={`/${title}/:county/:keyword?`}
                 element={<SingleTopic whichTopic={title} />}
               />
             );

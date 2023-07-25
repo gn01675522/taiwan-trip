@@ -139,6 +139,7 @@ export const TRAFFIC_SELECTED_OPTION = [
 // 交通部分尚未開啟建構，故先以固定資料做測試
 
 export const CITY_TITLE_EN_TO_TC = [
+  { enTitle: "all", tcTitle: "全部" },
   { enTitle: "Taipei", tcTitle: "臺北市" },
   { enTitle: "NewTaipei", tcTitle: "新北市" },
   { enTitle: "Taoyuan", tcTitle: "桃園市" },

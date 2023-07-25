@@ -24,7 +24,7 @@ export const getTDXBusRoutes = async () => {
 
 export const getTDXEventList = async (keyword, county) => {
   const token = await getAuthToken();
-  const skipNum = createRandomNum(819);
+  // const skipNum = createRandomNum(819);
   const apiUrl =
     county && keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity/${county}?%24filter=contains(ActivityName,'${keyword}')&%24top=20&%24format=JSON`
@@ -32,7 +32,8 @@ export const getTDXEventList = async (keyword, county) => {
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity/${county}?%24top=20&%24format=JSON`
       : keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24filter=contains(ActivityName,'${keyword}')&%24top=30&%24format=JSON`
-      : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=4&%24skip=${skipNum}&%24format=JSON`;
+      : "https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=20&%24format=JSON";
+  // : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity?%24top=4&%24skip=${skipNum}&%24format=JSON`;
 
   let data;
   do {
@@ -52,7 +53,7 @@ export const getTDXEventList = async (keyword, county) => {
 
 export const getTDXFoodList = async (keyword, county) => {
   const token = await getAuthToken();
-  const skipNum = createRandomNum(5113);
+  // const skipNum = createRandomNum(5113);
   const apiUrl =
     county && keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/${county}?%24filter=contains(RestaurantName,'${keyword}')&%24top=20&%24format=JSON`
@@ -60,7 +61,8 @@ export const getTDXFoodList = async (keyword, county) => {
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/${county}?%24top=20&%24format=JSON`
       : keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24filter=contains(RestaurantName,'${keyword}')&%24top=20&%24format=JSON`
-      : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${skipNum}&%24format=JSON`;
+      : "https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=20&%24format=JSON";
+  // : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=10&%24skip=${skipNum}&%24format=JSON`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -77,7 +79,7 @@ export const getTDXFoodList = async (keyword, county) => {
 
 export const getTDXHotelList = async (keyword, county) => {
   const token = await getAuthToken();
-  const skipNum = createRandomNum(13231);
+  // const skipNum = createRandomNum(13231);
   const apiUrl =
     county && keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel/${county}?%24filter=contains(HotelName,'${keyword}')&%24top=20&%24format=JSON`
@@ -85,7 +87,8 @@ export const getTDXHotelList = async (keyword, county) => {
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel/${county}?%24top=20&%24format=JSON`
       : keyword
       ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24filter=contains(HotelName'${keyword}')&%24top=20&%24format=JSON`
-      : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${skipNum}&%24format=JSON`;
+      : "https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=20&%24format=JSON";
+  // : `https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=10&%24skip=${skipNum}&%24format=JSON`;
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -111,7 +114,7 @@ export const getTDXScenicSpotList = async (keyword, county) => {
         ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`
         : keyword
         ? `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24filter=contains(ScenicSpotName,'${keyword}')&%24top=20&%24format=JSON`
-        : `https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${county}?%24top=20&%24format=JSON`;
+        : "https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24top=20&%24format=JSON";
 
     try {
       const response = await fetch(apiUrl, {

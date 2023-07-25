@@ -13,7 +13,7 @@ const Selected = forwardRef(
         <SelectBar
           ref={(prop) => (ref.current[index] = prop)}
           title={category}
-          required
+          required={category === "categories" ? true : false}
           {...otherProps}
         >
           {selectedOption.map((option) => {

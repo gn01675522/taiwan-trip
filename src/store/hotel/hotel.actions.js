@@ -18,7 +18,10 @@ export const fetchHotelListAsync = (keyword, county) => {
   return async (dispatch) => {
     dispatch(fetchHotelListStart());
     try {
-      const hotelList = await getTDXHotelList(keyword, county);
+      const hotelList = await getTDXHotelList(
+        keyword,
+        county === "all" ? null : county
+      );
       dispatch(fetchHotelListSuccess(hotelList));
     } catch (error) {
       dispatch(fetchHotelListFailed(error));

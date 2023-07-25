@@ -18,7 +18,10 @@ export const fetchEventListAsync = (keyword, county) => {
   return async (dispatch) => {
     dispatch(fetchEventListStart());
     try {
-      const eventList = await getTDXEventList(keyword, county);
+      const eventList = await getTDXEventList(
+        keyword,
+        county === "all" ? null : county
+      );
       dispatch(fetchEventListSuccess(eventList));
     } catch (error) {
       dispatch(fetchEventListFailed(error));

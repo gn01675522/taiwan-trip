@@ -18,7 +18,10 @@ export const fetchFoodListAsync = (keyword, county) => {
   return async (dispatch) => {
     dispatch(fetchFoodListStart());
     try {
-      const foodList = await getTDXFoodList(keyword, county);
+      const foodList = await getTDXFoodList(
+        keyword,
+        county === "all" ? null : county
+      );
       dispatch(fetchFoodListSuccess(foodList));
     } catch (error) {
       dispatch(fetchFoodListFailed());

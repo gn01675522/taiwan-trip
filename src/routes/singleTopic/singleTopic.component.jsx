@@ -15,12 +15,11 @@ import { fetchHotelListAsync } from "../../store/hotel/hotel.actions";
 import { fetchFoodListAsync } from "../../store/food/food.actions";
 import { fetchScenicSpotAsync } from "../../store/scenicSpot/scenicSpot.actions.js";
 
-import { selectSearchKeyword } from "../../store/search/search.selector";
-
 const SingleTopic = ({ whichTopic }) => {
-  const { county } = useParams();
+  const { county, keyword } = useParams();
+  console.log("inside SingleTopic", county);
+  console.log("inside SingleTopic", keyword);
   const dispatch = useDispatch();
-  const keyword = useSelector(selectSearchKeyword);
 
   useEffect(() => {
     switch (whichTopic) {
@@ -39,7 +38,7 @@ const SingleTopic = ({ whichTopic }) => {
       default:
         return;
     }
-  }, [keyword, county, whichTopic]);
+  }, [dispatch, keyword, county, whichTopic]);
 
   return (
     <>
