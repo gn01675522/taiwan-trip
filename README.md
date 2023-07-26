@@ -1,5 +1,3 @@
-# 視覺設計稿提供者：Facebook 社團 - Taiwan UI/UX Side Project 管理員 Doris KT；感謝提供設計稿！
-
 ## 使用方式
 
 1. 請使用 `npm i` 來安裝關聯套件。
@@ -7,11 +5,9 @@
 
 ## 注意事項及提醒
 
-1.  此專案之 API 來自 TDX 交通部運輸資料流通服務，故須使用 API KEY 及 API SECRET KEY；  
-    若沒有相對應的 KEY，則一日呼叫上限為 50 次！若有需要使用 API KEY，專案內有提供 env.example，
-    請依據內部環境變數名稱來設定 KEY 值，並將檔案改變為 .env。
-2.  由於來源資料有些是不齊全的，已針對某些不齊全狀況做特別處理，但可能還是會有些意外狀況。
-3.  承上；因此，有時候會有大量資料找不到圖片或資料缺漏，以及有整區資料找不到的情況 (例如：搜尋美食 -> 台北市)。
+1. 此專案之 API 來自 TDX 交通部運輸資料流通服務，故須使用 API KEY 及 API SECRET KEY；若沒有相對應的 KEY，則一日呼叫上限為 50 次！
+2. 若您已自備 API KEY，專案內有提供 env.example，請依據內部環境變數名稱來設定 KEY 值，並將檔案改變為 .env。
+3. 或您可至 https://taiwan-trip.netlify.app 觀看已部署好的 DEMO。
 
 ### 專案具備功能
 
@@ -43,6 +39,4 @@ React.js
 6.  dotenv (dependency)
 7.  lottie-web
 
-### 其它
-
-1. 原本設計稿有公車時間實時顯現功能，目前尚在開發中。
+# 視覺設計稿提供者：Facebook 社團 - Taiwan UI/UX Side Project 管理員 Doris KT；感謝提供設計稿！

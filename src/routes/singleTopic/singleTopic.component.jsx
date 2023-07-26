@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Banner from "../../components/UI/banner/banner.component";
 import Container from "../../components/UI/container/container.component";
@@ -17,8 +17,6 @@ import { fetchScenicSpotAsync } from "../../store/scenicSpot/scenicSpot.actions.
 
 const SingleTopic = ({ whichTopic }) => {
   const { county, keyword } = useParams();
-  console.log("inside SingleTopic", county);
-  console.log("inside SingleTopic", keyword);
   const dispatch = useDispatch();
 
   useEffect(() => {

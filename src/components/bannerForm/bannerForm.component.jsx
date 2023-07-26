@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { FormContainer, Input, SelectBlock } from "./bannerForm.styles";
@@ -15,8 +14,6 @@ import {
   FOOD_SELECTED_OPTION,
   TRAFFIC_SELECTED_OPTION,
 } from "../../dummy_data/DUMMY_DATA";
-
-import { setSearchKeyword } from "../../store/search/search.actions";
 
 const SELECT_TYPE_CLASSES = {
   home: "home",
@@ -39,14 +36,13 @@ const getSelectType = (pageType) =>
 
 const BannerForm = ({ $pageType }) => {
   const [isPcScreen, setIsPcScreen] = useState(window.innerWidth);
-  // const dispatch = useDispatch();
   const inputRef = useRef();
   const selectRefs = useRef([]);
   const navigate = useNavigate();
 
-  // const keywordSaveInLocalStorage = JSON.parse(
-  //   localStorage.getItem("search_keyword")
-  // );
+  const keywordSaveInLocalStorage = JSON.parse(
+    localStorage.getItem("search_keyword")
+  );
   const selectType = getSelectType($pageType);
   const exceptTraffic = $pageType !== "traffic";
 
@@ -54,22 +50,18 @@ const BannerForm = ({ $pageType }) => {
     event.preventDefault();
     const [path, pathParam] = selectRefs.current;
     const keyword = inputRef.current.value;
+    if (keyword) {
+      localStorage.setItem(
+        "search_keyword",
+        JSON.stringify([...keywordSaveInLocalStorage, inputRef.current.value])
+      );
+    }
 
     navigate(
       `/${path.value}/${pathParam.value || "all"}${
         keyword ? `/${keyword}` : ""
       }`
     );
-    // if (isPcScreen < 768) {
-    //   navigate(`/${path.value}/${pathParam.value}`);
-    // } else {
-    //   localStorage.setItem(
-    //     "search_keyword",
-    //     JSON.stringify([...keywordSaveInLocalStorage, inputRef.current.value])
-    //   );
-    //   dispatch(setSearchKeyword(inputRef.current.value));
-    //   navigate(`/${path.value}/${pathParam.value}`);
-    // }
   };
   //* 點擊搜尋後將 ref 的資訊傳至 reducer 裡面，並根據選擇的類別及城市切換到相對應的路由
 
