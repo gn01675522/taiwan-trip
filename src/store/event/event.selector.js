@@ -58,6 +58,11 @@ export const selectEventListMap = createSelector(
     }, [])
 );
 
+export const selectHotEvent = createSelector(
+  [selectEventListMap],
+  (eventList) => eventList.slice(0, 4)
+);
+
 export const selectEventIsLoading = createSelector(
   [selectEventReducer],
   (event) => event.isLoading

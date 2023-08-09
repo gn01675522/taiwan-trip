@@ -14,7 +14,10 @@ import LargeEventCard from "../largeEventCard/largeEventCard.component";
 
 import { ListContentLayout } from "./listContent.styles";
 
-import { selectEventListMap } from "../../store/event/event.selector";
+import {
+  selectEventListMap,
+  selectHotEvent,
+} from "../../store/event/event.selector";
 import { selectFoodListMap } from "../../store/food/food.selector";
 import { selectHotelListMap } from "../../store/hotel/hotel.selector";
 import { selectScenicSpotListMap } from "../../store/scenicSpot/scenicSpot.selector";
@@ -30,7 +33,7 @@ const CONTENT_CLASSES = {
 const getContent = (topic) =>
   ({
     [CONTENT_CLASSES.event]: selectEventListMap,
-    [CONTENT_CLASSES.hotEvent]: selectEventListMap,
+    [CONTENT_CLASSES.hotEvent]: selectHotEvent,
     [CONTENT_CLASSES.food]: selectFoodListMap,
     [CONTENT_CLASSES.hotel]: selectHotelListMap,
     [CONTENT_CLASSES.scenicSpot]: selectScenicSpotListMap,
