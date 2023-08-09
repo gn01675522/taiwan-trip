@@ -40,9 +40,8 @@ const BannerForm = ({ $pageType }) => {
   const selectRefs = useRef([]);
   const navigate = useNavigate();
 
-  const keywordSaveInLocalStorage = JSON.parse(
-    localStorage.getItem("search_keyword")
-  );
+  const keywordSaveInLocalStorage =
+    JSON.parse(localStorage.getItem("search_keyword")) || [];
   const selectType = getSelectType($pageType);
   const exceptTraffic = $pageType !== "traffic";
 
